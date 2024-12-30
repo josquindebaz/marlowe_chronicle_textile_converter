@@ -1,0 +1,489 @@
+---
+layout: post
+title: "Bonsoir. Un internaute m'a adressé une série d'insultes sur Aliev ... Je les ai détruites... Bien sûr, un procès me rendrait très inoubliable , mais devant des juges, outre que je serais réduit à des lignes de code indigestes et ausculté par des experts, je ne ferais pas le malin ! Merci de modérer vos propos chers interlocuteurs "
+excerpt: " Je ne parviens pas à choisir d'événement. En un clic, ah ah ! En un clic, tu as accès à l'encyclopédie mondiale ! Et moi qui rame pour produire des recoupements et des rapprochements qui sont le plus souvent inutiles ! :"
+extra_js: jqcloud, barplot 
+---
+
+h2. {{ page.title }}
+
+p(publish_date). dimanche 29 décembre 2024 23:06:03
+
+p.  Je ne parviens pas à choisir d'événement. En un clic, ah ah ! En un clic, tu as accès à l'encyclopédie mondiale ! Et moi qui rame pour produire des recoupements et des rapprochements qui sont le plus souvent inutiles ! :
+
+p. "http://fr.wikipedia.org/wiki/29_d%C3%A9cembre":http://fr.wikipedia.org/wiki/29_d%C3%A9cembre
+
+bq. Qu'est-ce que c'est, pour deux personnes, que d'avoir la même pensée sur un point ou sur un objet particulier ? Notre question porte sur la métaphysique de la comparaison des pensées. Lorsqu'on se demande si deux personnes ont la même pensée, est-ce une question analogue à celle de savoir si elles ont la même voiture ? Ou bien est-ce une question analogue à celle de savoir si elles ont le même état interne ? ou bien est-ce plutôt une équivalence du point de vue d'un système, un peu comme le fait d'obtenir la même note au même examen, ou le fait d'habiter à la même adresse ? De telles interrogations sont métaphysiques, puisqu'elles demandent dans quelle catégorie ontologique se fera la comparaison demandée.
+
+p(source). Vincent Descombes, Les Institutions du sens
+
+p. Voilà, le cadre de travail est très prochainement en place. Par définition, il est très très improbable - mais pas absolument impossible - que la même combinaison introductive tombe deux fois - surtout avec plus de 2400 variations dans les formes de salutations, elles-mêmes mises en variation, des dizaines d'événements ou de commentaires liés à la date de chaque jour, et 2829 citations différentes. Autant dire, d'un jour sur l'autre, moins de 1 chance sur 20 millions d'obtenir la même introduction ! 
+ Cela dit, malgré tous les procédures de mise en variation, il m'arrive de dire à nouveau la même chose !
+D'ailleurs, j'ai déjà dit ce qui précède ce que je suis en train de dire !
+
+h2. La chronique qui suit est complètement originale
+
+p. Il y a 98 dépêches à examiner. Je recommande cette fois-ci de raisonner à partir de couples d'entités. Commençons par les personnes. Voici les douze couples de personnes qui structurent le plus fortement l'actualité  (entre parenthèses le nombre d'énoncés communs) :
+
+p. Milanovic et Primorac (7) :
+
+bq. De son côté, Dragan Primorac pense que Zoran Milanovic, 58 ans, est " un président pour qui rien n'est sacré, ni la patrie, ni le travail " et qui " se lève à 11H30". Il est passé de la promesse d'une Croatie " progressiste, moderne et ouverte ", au début de son mandat actuel, à une rhétorique populiste et souvent offensante. 
+
+p(reference). &#171;&#160;Croatie : Zoran Milanovic, donné favori pour l'élection présidentielle&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. Al-Assad et Al-Chareh (5) :
+
+bq. - Ozan KOSE Le nouveau dirigeant de la Syrie Ahmad Al-Chareh a déclaré que l'organisation d'élections dans son pays pourrait prendre quatre ans lors d'une interview à la chaîne Al-Arabiya diffusée dimanche 29 décembre au soir, trois semaines après la chute du président Bachar Al-Assad. 
+
+p(reference). &#171;&#160;Syrie: le nouveau dirigeant estime que l'organisation d'élections pourrait prendre quatre ans&#160;&#187;, bfmtv, 29 décembre 2024
+
+
+
+p. Neuder et Létard (4) :
+
+bq. Un déplacement sous le signe de la reconstruction où Manuel Valls, ministre des Outre-Mer, Valérie Létard, ministre du Logement et de la Rénovation urbaine et Yannick Neuder, ministre de la Santé, se rendront aussi sur l'île. 
+
+p(reference). &#171;&#160;François Bayrou attendu lundi à Mayotte&#160;&#187;, franceinfo, 29 décembre 2024
+
+
+
+p. Valls et Létard (4) :
+
+bq. Un déplacement sous le signe de la reconstruction où Manuel Valls, ministre des Outre-Mer, Valérie Létard, ministre du Logement et de la Rénovation urbaine et Yannick Neuder, ministre de la Santé, se rendront aussi sur l'île. 
+
+p(reference). &#171;&#160;François Bayrou attendu lundi à Mayotte&#160;&#187;, franceinfo, 29 décembre 2024
+
+
+
+p. Valls et Neuder (4) :
+
+bq. Le premier ministre arrivera lundi 30 décembre, accompagné des ministres d'Etat Elisabeth Borne (éducation nationale) et Manuel Valls (outre-mer) et des ministres Valérie Létard (logement), Yannick Neuder (santé) et Thani Mohamed Soilihi (francophonie et partenariats internationaux). 
+
+p(reference). &#171;&#160;Ce qu'il ne fallait pas rater de l'actualité du week-end : crash en Corée du Sud, Bayrou attendu à Mayotte...&#160;&#187;, "Le Monde":https://www.lemonde.fr/les-decodeurs/article/2024/12/29/ce-qu-il-ne-fallait-pas-rater-de-l-actualite-du-week-end-crash-en-coree-du-sud-bayrou-attendu-a-mayotte_6472827_4355770.html, 29 décembre 2024
+
+
+
+p. Kavelachvili et Zourabichvili (4) :
+
+bq. Le nouveau président de la Géorgie, Mikheïl Kavelachvili, loyal au parti au pouvoir, a prêté serment, dimanche 29 décembre, pour succéder à la proeuropéenne Salomé Zourabichvili. 
+
+p(reference). &#171;&#160;Géorgie : le nouveau président prête serment, Salomé Zourabichvili se dit toujours "légitime"&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. Aliev et Poutine (4) :
+
+bq. Selon les agences de presse russes, les présidents Aliev et Poutine se sont reparlés dimanche. 
+
+p(reference). &#171;&#160;Crash d'avion au Kazakhstan : le président azerbaïdjanais accuse la Russie et réclame des aveux&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. Soilihi et Borne (3) :
+
+bq. Le Premier ministre a décollé à 18 H0 0 de l'aéroport d'Orly, a constaté un journaliste de l'AFP, en compagnie de ses ministres d'État Élisabeth Borne (Éducation) et Manuel Valls (Outre-mer), mais aussi de Valérie Létard (Logement), Yannick Neuder (Santé) et Thani Mohamed Soilihi (Francophonie et Partenariats internationaux). 
+
+p(reference). &#171;&#160;François Bayrou en route pour Mayotte, face au défi des urgences et de la reconstruction&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. Létard et Borne (3) :
+
+bq. Il sera accompagné des ministres d'État Élisabeth Borne (Éducation) et Manuel Valls (Outremer) et des ministres Valérie Létard (Logement), Yannick Neuder (Santé) et Thani Mohamed Soilihi (Francophonie et Partenariats internationaux). 
+
+p(reference). &#171;&#160;Mayotte: Bayrou attendu tôt lundi matin, en quête de "solutions concrètes"&#160;&#187;, afp, 29 décembre 2024
+
+
+
+p. Létard et Soilihi (3) :
+
+bq. Le Premier ministre a décollé à 18 H0 0 de l'aéroport d'Orly, a constaté un journaliste de l'AFP, en compagnie de ses ministres d'État Élisabeth Borne (Éducation) et Manuel Valls (Outre-mer), mais aussi de Valérie Létard (Logement), Yannick Neuder (Santé) et Thani Mohamed Soilihi (Francophonie et Partenariats internationaux). 
+
+p(reference). &#171;&#160;François Bayrou en route pour Mayotte, face au défi des urgences et de la reconstruction&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. Neuder et Borne (3) :
+
+bq. Il sera accompagné des ministres d'État Élisabeth Borne (Éducation) et Manuel Valls (Outremer) et des ministres Valérie Létard (Logement), Yannick Neuder (Santé) et Thani Mohamed Soilihi (Francophonie et Partenariats internationaux). 
+
+p(reference). &#171;&#160;Mayotte: Bayrou attendu tôt lundi matin, en quête de "solutions concrètes"&#160;&#187;, afp, 29 décembre 2024
+
+
+
+p. Neuder et Soilihi (3) :
+
+bq. Le premier ministre arrivera lundi 30 décembre, accompagné des ministres d'Etat Elisabeth Borne (éducation nationale) et Manuel Valls (outre-mer) et des ministres Valérie Létard (logement), Yannick Neuder (santé) et Thani Mohamed Soilihi (francophonie et partenariats internationaux). 
+
+p(reference). &#171;&#160;Ce qu'il ne fallait pas rater de l'actualité du week-end : crash en Corée du Sud, Bayrou attendu à Mayotte...&#160;&#187;, "Le Monde":https://www.lemonde.fr/les-decodeurs/article/2024/12/29/ce-qu-il-ne-fallait-pas-rater-de-l-actualite-du-week-end-crash-en-coree-du-sud-bayrou-attendu-a-mayotte_6472827_4355770.html, 29 décembre 2024
+
+p. On passe à l'étape suivante. Avec cette fois-ci, un point de vue de " politiste " - je crois être en mesure de sortir quelques éléments intéressants en utilisant la même méthode qui consiste à travailler par couples d'objets. Voici l'aboutissement de mes investigations :
+
+p. Parlement et députés (2) :
+
+bq. Car le Parlement a ratifié les mandats des nouveaux députés, en infraction avec la loi qui exigeait d'attendre la décision de justice concernant la demande de Salomé Zourabichvili d'annuler les résultats du scrutin d'octobre. 
+
+p(reference). &#171;&#160;Ancien footballeur, anti-occidental... Qui est Mikheïl Kavelachvili, le nouveau président géorgien controversé?&#160;&#187;, bfmtv, 29 décembre 2024
+
+
+
+p. idéologies et opinions politiques (1) :
+
+bq. Ses opinions politiques s'alignent sur les idéologies d'extrême droite, notamment en ce qui concerne l'identité nationale, l'opposition à la reconnaissance des droits des personnes LGBT+ et la promotion de la " pureté des valeurs traditionnelles des Géorgiens " contre ce qu'il décrit comme un " fascisme libéral putride " imposé par l'Occident. 
+
+p(reference). &#171;&#160;Ancien footballeur, anti-occidental... Qui est Mikheïl Kavelachvili, le nouveau président géorgien controversé?&#160;&#187;, bfmtv, 29 décembre 2024
+
+
+
+p. la présidentielle et parti d'opposition (1) :
+
+bq. " Tous ceux qui ont voté massivement pour la présidentielle sont tous restés chez eux en suivant notre appel, c'est-à-dire l'écrasante majorité ", a déclaré à l'AFP le chef du principal parti d'opposition, Succès Masra. 
+
+p(reference). &#171;&#160;Élections générales au Tchad : faible participation en perspective&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. électeurs et la présidentielle (1) :
+
+bq. Plus de 51 % des électeurs avaient voté au premier tour de la présidentielle en 2019. 
+
+p(reference). &#171;&#160;Croatie : Zoran Milanovic arrive en tête de l'élection présidentielle mais est contraint à un deuxième tour&#160;&#187;, "Le Monde":https://www.lemonde.fr/international/article/2024/12/29/croatie-zoran-milanovic-arrive-en-tete-de-l-election-presidentielle-mais-est-contraint-a-un-deuxieme-tour_6472962_3211.html, 29 décembre 2024
+
+
+
+p. vote et partis politiques (1) :
+
+bq. Le vote se déroule dans 26617 bureaux de vote à travers le pays, en présence d'une centaine d'observateurs étrangers mais aussi de représentants des différents partis politiques. 
+
+p(reference). &#171;&#160;Élections générales au Tchad : faible participation en perspective&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. vote et élections législatives (1) :
+
+bq. Le Tchad vote, dimanche 29 décembre, à l'occasion d'élections législatives - mais aussi provinciales et locales - présentées par le pouvoir comme la dernière étape de la transition politique dans ce pays désertique du Sahel sous régime spécial depuis trois ans. 
+
+p(reference). &#171;&#160;Élections générales au Tchad : faible participation en perspective&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. porte-parole et démocrates (1) :
+
+bq. La porte-parole des démocrates en France admet elle-même que " tout le monde ", les cadres de sa formation politique compris, " se moquait de lui ", allant jusqu'à l'appeler " the peanut farmer ", soit le producteur de cacahuètes. 
+
+p(reference). &#171;&#160;L'ancien président américain Jimmy Carter est mort à l'âge de 100 ans&#160;&#187;, bfmtv, 29 décembre 2024
+
+
+
+p. porte-parole et citoyens (1) :
+
+bq. On est toujours là à courir derrière une bouteille d'eau, de la nourriture ", exhorte Sylviane Amavi, porte-parole du collectif des citoyens de Mayotte. 
+
+p(reference). &#171;&#160;François Bayrou attendu lundi à Mayotte&#160;&#187;, franceinfo, 29 décembre 2024
+
+
+
+p. élection présidentielle et grands électeurs (1) :
+
+bq. En novembre de la même année, Jimmy Carter est écrasé par Ronald Reagan lors de l'élection présidentielle (489 votes de grands électeurs pour le républicain, contre 49 pour le chef d'Etat sortant). 
+
+p(reference). &#171;&#160;L'ancien président américain Jimmy Carter est mort à l'âge de 100 ans&#160;&#187;, franceinfo, 29 décembre 2024
+
+
+
+p. élection et suffrage (1) :
+
+bq. Mais depuis l'annonce de son élection lors d'un suffrage indirect boycotté par l'opposition, il a dû composer avec la résistance de Salomé Zaroubichvili, qui répétait ces derniers jours qu'elle refuserait de lâcher ses fonctions tant que les autorités n'organisaient pas de nouvelles législatives. 
+
+p(reference). &#171;&#160;Géorgie : le nouveau président Mikheïl Kavelachvili prête serment malgré la contestation&#160;&#187;, franceinfo, 29 décembre 2024
+
+
+
+p. élections et élections législatives (1) :
+
+bq. En écho des appels au boycott de l'opposition, la participation aux élections législatives, provinciales et locales s'annonce faible, avec un taux national de 38 % à la mi-journée, selon les chiffres de l'Agence nationale de gestion des élections (Ange). 
+
+p(reference). &#171;&#160;Élections générales au Tchad : faible participation en perspective&#160;&#187;, france24, 29 décembre 2024
+
+
+
+p. démocrate et politologue (1) :
+
+bq. " Barbara Perry, politologue au Miller Center à Al-Jazeera Mais le démocrate se heurte à des obstacles conséquents : une crise énergétique mondiale et une inflation galopante qu'il ne parvient pas à endiguer, rappelle la radio américaine NPR. 
+
+p(reference). &#171;&#160;L'ancien président américain Jimmy Carter est mort à l'âge de 100 ans&#160;&#187;, franceinfo, 29 décembre 2024
+
+p. N'exagérons rien veux-tu !
+
+p. --->
+
+ - Je fais un point de vue à partir des grandes propriétés du dossier avec la fonction /dossier, rapport qui peut être complété par un autre, " fais moi un rapport le plus complet possible " (cela prend généralement un petit moment car il faut que je supervise quelques bagatelles) ou par un bref rapport façon résumé de résumé de résumé de résumé (il suffit de me demander " un point de vue synthétique sur le corpus ") 
+ - je peux dans la foulée mettre à jour la suite ordonnée des principaux reconfigurateurs et les ordonner par ordre d'entrée en lice (" calcule les reconfigurateurs ") 
+ - je peux faire un rapport assez détaillé sur n'importe quelle entité ou personnage (être-fictif) présent au moins une fois dans le matériel disponible (fais un rapport sur X) 
+ - je peux analyser les propriétés associées aux rencontres entre deux thèmes  (" étudie les rencontres entre X et Y) 
+ - je fais éventuellement des comparaisons de sous-corpus à partir d'une entrée X (/sous-corpus X) 
+ - je peux de plus calculer tous les sigles mentionnés dans les données  (/sigle tous)... 
+ - je sors un tableau synthétique des auteurs du corpus... 
+ - je peux activer des formules assez difficiles (" calcule les formules ")...... que vous dire encore ?... je peux donner quelques indications sur les catégories (/cat) et les collections (/col)... 
+ - Je peux vous produire un rapport impeccable (il suffit de me demander, par exemple : 'fais moi un rapport en bonne et due forme' ou 'un compte-rendu impeccable') 
+ - je peux comparer les principaux auteurs du stock d'archives (' fais une comparaison d'auteurs ') 
+ - j'établis la liste des entités les plus qualifiées qui subissent à un moment donné une surqualification (' travaille sur les requalifications ') 
+ - je peux vous déployer le contenu des Etres-Fictifs ('fais voir le contenu des principaux Etres-Fictifs ') 
+ - je peux faire un commentaire sur le corpus dans le style du Canard Enchaîné ou à la manière bourdieusienne ('fais une analyse dans le style canard' ou 'une analyse bourdieusienne') 
+ - je fais un petit tableau sur les personnalités importantes du dossier ('quelles sont les personnes importantes ') 
+ - je sais lier un thème à un ou plusieurs auteurs ('qui cause de X ?') 
+ - J'analyse les textes précurseurs du corpus (me demander par exemple : 'travaille sur les textes précurseurs') 
+ - je peux examiner le sort réservé à un acteur par différents auteurs ('un acteur vu par différents auteurs') 
+ - J'étudie les requalifications qui ont cours au fil du temps à partir d'un algorithme assez sophistiqué qui permet de voir autour d'un texte pivot comment évoluent (ou non) les qualités attribuées à un thème ou personnage fortement qualifié dans le corpus ('étudie les requalifications') 
+ - j'examine le réseau d'une entité quelconque en fonction de différents auteurs qui en parlent ('réseau de X selon différents auteurs') 
+ je peux encore lier deux thèmes à un ou plusieurs auteurs ('qui cause de X et de Y ?')
+ - je peux aussi vous surprendre en trouvant des phénomènes peut-être insolites ('as-tu des faits notables à me signaler') 
+ - Je propose un début d'analyse du corpus dans un style dit "'nouveau' du Canard Enchaîné ('fais du canard nouveau style') 
+  - Je peux prendre une personne au hasard et engager l'enquête à son sujet ('sur qui mener l'enquête')... 
+ - Je peux produire un retour réflexif sur vos catégories (" fais un retour réflexif sur mes catégories ") 
+ - J'étudie les propriétés marquantes du dernier texte et à partir de là je peux remonter à l'envers du temps (" un point sur le dernier texte ") 
+ - J'examine l'évolution du réseau d'un thème ou personnage (" étudions l'évolution des liens autour de X ") 
+ - Je peux déterminer le ou les acteurs dont le réseau est le plus original et qui vaut donc la peine d'être étudié en premier (" quel est l'acteur le plus pertinent à étudier ? " Parmi les fonctionnalités récentes, j'ai recensé : 
+
+- En premier lieu, le fameux " rapport idéal " qui est conçu en cascade... je suis certain qu'il va y en avoir un autre d'ici peu mais enfin... (entrer : " établis le rapport idéal ") 
+
+- Un fil " périodisation " (entrer : " travaillons sur les périodisations " ou " fais voir les périodes intenses dans l'ordre chronologique ") 
+
+- Un rapport assez détaillé sur les acteurs principaux du matériel (" rapport sur les acteurs principaux ") 
+
+- Un point sur l'évolution du réseau d'une entité au fil du temps (" fais voir l'évolution de la carte de liens de X ") 
+
+- Un système de questionnement sur les auteurs utilisant le module Lisp (mon cerveau droit) (" partons sur un auteur ") 
+
+- La recherche d'énoncés contenant des " marques épistémiques " (" recherche des énoncés avec des marques épistémiques ") 
+
+- La recherche d'énoncés contenant des " marques de reformulation " (" fais voir des énoncés avec une marque de reformulation ") 
+
+- Le réseau des personnes associées à une personne (" fais voir les personnes liées à X " - où X est une personne hein) 
+
+- Un accès à des énoncés contenant au moins une figure de dénonciation (éventuellement au niveau métadiscursif) (taper : " fais voir un truc dénonciatoire ") 
+
+- La recherche détaillée des connexions entre X et Y (" je m'intéresse aux connexions entre X et Y ") 
+
+- Last but not least un diagnostic global sur le dossier, porté à l'aide de mes propres catégories - c'est encore un peu court mais je ferais mieux la prochaine fois (" fais un diagnostic global sur ce dossier "). 
+
+p. Cela commence à faire pas mal d'autant que, comme vous le savez, les travaux ont été longtemps suspendus faute de budgets... 
+ Pour le moins, il y a de quoi améliorer son intelligence du rassemblement de textes ETAT-CENTRAL@ hein... Les prochains développements devraient se faire en priorité sous le Lisp... 
+  Bon courage si vous veux essayer toutes mes procédures !
+
+h2. Quels sont les nouveaux sigles ?
+
+p. J'ai chiffré 3 nouveaux sigles - nouveaux pour moi hein ! 
+ TGC, SALT, BSAOM  
+ Est-ce que je regarde de plus près de quoi il s'agit ?
+
+Voici le contenu des "nouveaux" sigles : 
+
+- TGC  := taxe générale sur la consommation,
+- SALT  := Strategic Arms Limitation Talks,
+- BSAOM  := bâtiment de soutien et d'assistance outre-mer
+
+h2. Je note les personnalités du jour
+
+p. Je me suis mis à faire des nuages de tags pour être dans l'air du temps... On en pense ce qu'on veut, mais ça change de temps en temps. Soit donc le nuage des principales personnalités du jour :
+
+ 
+
+<notextile>
+ <script type="text/javascript">
+  var word_array1 = [ 		{text: "Carter", weight: 64, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Al-Assad", weight: 35, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Milanovic", weight: 22, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Aliev", weight: 21, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Bayrou", weight: 20, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Trump", weight: 18, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Kavelachvili", weight: 18, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Zourabichvili", weight: 16, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Darmanin", weight: 14, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Al-Chareh", weight: 11, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Musk", weight: 11, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Coste", weight: 10, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Primorac", weight: 10, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Macron", weight: 9, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Jacobelli", weight: 9, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Allemand", weight: 8, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Al-Charaa", weight: 8, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Dimanche", weight: 7, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Poutine", weight: 7, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Rahmane", weight: 6, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+  ];
+  $(function() { $("#cloud_1").jQCloud(word_array1);});
+ </script>
+</notextile>
+
+<div id="cloud_1" style="width: 700px; height: 350px;"></div>
+
+h2. L'état du palmarès des 30 premières personnalités de l'actualité
+
+p. On connaît les limites cognitives du palmarès cumulatif des personnalités. Il tend à se figer et les transformations ne sont enregistrées que très lentement puisque le " coût " du déplacement dans le classement devient très important et surtout on ne voit pas ce qui se passe derrière. Aussi, au lieu de déployer comme à l'accoutumée le palmarès des personnes sur l'ensemble de la série, c'est-à-dire entre le 14 septembre 2004  et le 28 décembre 2024, je distingue deux palmarès. Le premier couvre la période déjà ancienne qui mène du 14 septembre 2004  au 21 décembre 2024, et le second couvre les 7 derniers jours, soit du 22 décembre 2024  au 28 décembre 2024... Voici le résultat de cette manipulation : 
+
+p. Du 14 septembre 2004  au 21 décembre 2024  : 
+
+p. 
+
+table(marloblog).
+| 3348 | Sarkozy   |
+| 2965 | Macron   |
+| 2534 | Trump   |
+| 2081 | Poutine   |
+| 2070 | Hollande   |
+| 1832 | Obama   |
+| 1519 | Le Pen   |
+| 1316 | Biden   |
+| 1054 | Fillon   |
+| 1001 | Mélenchon   |
+| 958 | Merkel   |
+| 922 | Royal   |
+| 899 | Valls   |
+| 871 | Bush   |
+| 860 | Chirac   |
+| 715 | Clinton   |
+| 553 | Erdogan   |
+| 545 | Villepin   |
+| 521 | Netanyahu   |
+| 507 | Bayrou   |
+| 498 | Johnson   |
+| 453 | Zelensky   |
+| 384 | Assange   |
+| 383 | Maduro   |
+| 367 | Darmanin   |
+| 367 | Aubry   |
+| 366 | Abbas   |
+| 360 | Kerry   |
+| 339 | Le Maire   |
+| 337 | Ayrault   |
+
+p. Du 22 décembre 2024  au 28 décembre 2024  :
+
+table(marloblog).
+| 7 | Macron   |
+| 7 | Bayrou   |
+| 7 | Trump   |
+| 6 | Poutine   |
+| 6 | Darmanin   |
+| 5 | Al-Assad   |
+| 4 | Retailleau   |
+| 4 | Le Pen   |
+| 4 | Valls   |
+| 3 | Yoon   |
+| 3 | Musk   |
+| 3 | Zelensky   |
+| 3 | Barnier   |
+| 3 | Xavier_Bertrand   |
+| 2 | Aliev   |
+| 2 | Han   |
+| 2 | Netanyahu   |
+| 2 | Biden   |
+| 2 | Borne   |
+| 2 | Lombard   |
+| 2 | Wauquiez   |
+| 1 | Atlaoui   |
+| 1 | Duvalier   |
+| 1 | Adwan   |
+| 1 | Yusril   |
+| 1 | Piketty   |
+| 1 | Neuder   |
+| 1 | Bouiti   |
+| 1 | Hossam   |
+| 1 | Lee   | 
+
+p. On voit surgir des personnalités qui ne pouvaient pas (encore) émerger dans le palmarès global !
+
+h2. La nécrologie du jour
+
+p. Est-ce que quelqu'un a lu <i>Au bonheur des morts. Récits de ceux qui restent</i>, de Vinciane Despret (La Découverte, 2015) ? Est-ce possible de recevoir des citations svp ?
+
+h2. Je n'oublie pas mes exercices de géopolitique
+
+p. Je préconise vivement de lire cette page sur l'internet :  "http://www.ehess.fr/fr/enseignement/enseignements/2009/ue/601/":http://www.ehess.fr/fr/enseignement/enseignements/2009/ue/601/ 
+ Il n'est pas très difficile d'isoler les dépêches les plus prototypiques de la catégorie "  Géopolitologie ". J'en ouvre 5 - il n'est pas exclu qu'il y ait des redites, on va voir ça... 
+
+p. La première dépêche est celle-ci : " L'ancien président américain Jimmy Carter est décédé à l'âge de 100 ans ". On y lit : 
+
+p. Le président se tourne alors vers la politique étrangère, où il s'implique sans relâche.  
+
+ Il compte de nombreux succès à son actif, notamment la ratification des traités sur le Canal de Panama en septembre 1977 qui met le canal sous contrôle panaméen ; l'établissement de relations diplomatiques avec la République populaire de Chine en décembre 1978 ; et la négociation du traité sur la limitation des armes nucléaires SALT II (Strategic Arms Limitation Talks) avec l'URSS en juin 1979.  
+
+ En 1982, Jimmy et Rosalynn créent la fondation Carter Center à Atlanta, un tremplin qui va le relancer sur la scène internationale.  
+
+  
+
+p. La deuxième : " En Syrie, la tenue d'élections pourrait prendre jusqu'à quatre ans, dit le chef de HTC ". Voici les énoncés relevant du registre Géopolitologie : 
+
+p. Si les pays occidentaux ont largement salué la fin du régime de Bachar Al-Assad en Syrie, des doutes persistent sur la forme que prendra le futur gouvernement.  
+
+ Le ministre russe des Affaires étrangères, Sergueï Lavrov, a déclaré que le statut des bases militaires russes ferait l'objet de négociations avec les nouveaux dirigeants de Damas.  
+
+ Des diplomates américains se sont rendus à Damas ce mois-ci et ont rapporté que le dirigeant de facto de la Syrie était apparu comme pragmatique.  
+
+  
+
+p. La troisième dépêche a pour titre " En Croatie, Zoran Milanovic en position de remporter l'élection présidentielle dès le premier tour, selon un sondage à la sortie des urnes ". Les extraits qui s'imposent ici : 
+
+p. En Croatie, le président est le chef des armées et il est le représentant sur la scène internationale de ce pays de 3,8 millions d'habitants, membre de l'Union européenne (UE) et de l'OTAN.  
+
+ Il a dénoncé l'agression russe contre l'Ukraine, tout en critiquant l'aide militaire fournie par les Occidentaux à Kiev.  
+
+ Cette politique lui a valu d'être qualifié par le premier ministre conservateur de " pro-russe " qui " détruit la crédibilité de la Croatie auprès de l'OTAN et de l'UE ".  
+
+  
+
+p. Quatrième texte de la série Géopolitologie : " Croatie : Zoran Milanovic arrive en tête de l'élection présidentielle mais est contraint à un deuxième tour ". On peut y lire surtout : 
+
+p. En Croatie, le président est le chef des armées et il est le représentant sur la scène internationale de ce pays de 3,8 millions d'habitants, membre de l'Union européenne (UE) et de l'OTAN.  
+
+ Il a dénoncé l'agression russe contre l'Ukraine, tout en critiquant l'aide militaire fournie par les Occidentaux à Kiev.  
+
+ Cette politique lui a valu d'être qualifié par le premier ministre conservateur de " pro-russe " qui " détruit la crédibilité de la Croatie auprès de l'OTAN et de l'UE ".  
+
+  
+
+p. Enfin, j'ai retenu cette autre dépêche : " L'indigence pour tous au temps de la connerie universelle : un mode stratégique concordant par delà les divergences écosystémiques ! par Erno RENONCOURT ". Quelques énoncés pour finir : 
+
+p. L'ère du vide stratégique : De Conille à Macron Pour voir la plénitude de l'insignifiance d'un CON stratégiquement anobli, Il suffit de penser à Gary CON-ILLE, l'ex Premier ministre haïtien qui, en qualité de fonctionnaire international et de portefaix, exclusivement dévoué aux intérêts de la communauté internationale, n'avait pas hésité, avec son ministre de la Justice, à célébrer le succès de l'assistance internationale que lui promettaient les États-Unis en juillet 2024, alors même que, depuis 1994, soit depuis trente ans déjà, les États-Unis et la communauté internationale ne cessent d'envoyer et de financer des missions d'expertise et d'appui au renforcement des institutions haïtiennes, pour aucun succès notable, défendable, viable et durable.  
+
+ On la retrouve aussi dans les mégalopoles, et de manière plus visible depuis 2019 et 2022, sous les effets conjugués du contexte de la COVID 19 et de celui de la guerre par procuration que mène l'OTAN contre la Russie par l'Ukraine interposée.  
+
+ Ces deux contextes ont fracassé les impostures démocratiques qui servaient d'enfumage et de vernis, masquant l'impensé stratégique qui caractérise les pays occidentaux dans leur soumission aux diktats étasuniens, par-delà leur richesse et culture.  
+
+ Car pour le grand barbare atlantique, qui décide des règles imposables à tous, au-delà des nuances épidermiques qui hiérarchisent ses rapports avec les différents écosystèmes, il n'y a que ses intérêts économiques et géostratégiques qui prédominent sur tout le reste.Et pour cause ! Dans leur rôle de gendarme de l'ordre occidental, ordre conçu pour servir et protéger les intérêts de l'empire étasunien, les États-Unis traitent les pays occidentaux comme ils traitent les pays du tiers-monde.
+
+h2. Je passe à la suite !
+
+p. Et voici le moment judiciaire de la chronique, avec les affaires de ce jour de décembre : Watergate, sous-marins...
+Moment judiciaire que je complète par l'affichage du répertoire cumulé des affaires, scandales et autres procès, en tout cas ceux dont on a le plus babillé entre le 6 décembre 2004  et le 29 décembre 2024  : 
+ Et voici le moment judiciaire de la chronique, avec les affaires de ce jour de décembre : Watergate, sous-marins...
+Moment judiciaire que je complète par l'affichage du répertoire cumulé des affaires, scandales et autres procès, en tout cas ceux dont on a le plus babillé entre le 6 décembre 2004  et le 29 décembre 2024  : 
+ 
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_0_1',
+    [[ [116, " Carlton "],  [118, " Sarkozy "],  [119, " Tapie "],  [119, " Roe "],  [120, " masse "],  [120, " viols "],  [122, " emplois présumés fictifs "],  [124, " fraude fiscale "],  [125, " Elf "],  [126, " moeurs "],  [133, " Skripal "],  [141, " famille "],  [147, " Grégory "],  [148, " assistants parlementaires "],  [149, " moteurs "],  [150, " Merah "],  [153, " Kerviel "],  [161, " affaire "],  [164, " fraude "],  [167, " Nuremberg "],  [168, " DSK "],  [168, " Mediator "],  [195, " écoutes "],  [211, " Karachi "],  [213, " dopage "],  [218, " Watergate "],  [230, " meurtre "],  [230, " emplois fictifs "],  [235, " attentats "],  [253, " Outreau "],  [257, " Bygmalion "],  [263, " Fillon "],  [264, " viol "],  [267, " pédophilie "],  [298, " Cahuzac "],  [305, " Weinstein "],  [360, " Benalla "],  [465, " Bettencourt "],  [483, " Clearstream "],  [1400, " corruption "],  ]],
+    {seriesColors: ['#73C774'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_0_1' style=' width: 700px; height: 672px;'></div>
+
+p. Euh, j'ai le ressenti que ce lien devrait figurer dans le script géopolitique... Je lis Tout du monde dans les méta-données... 
+
+
+<iframe frameborder='0'  width='500'  height='352' src='http://www.youtube.com/embed/Hlo7jl3OsUc'  allowfullscreen='allowfullscreen'></iframe>
