@@ -1,5 +1,4 @@
-""" Convert Marlowe chronique to textile
-and enrich it with plugins for blog
+""" Convert Marlowe chronicle to textile and enrich it with plugins for blog
 Author Josquin Debaz
 GPL 3
 """
@@ -24,6 +23,7 @@ def format_sigles(block):
                                         "\\1 := \\2 ",
                                         fragment).strip()
                                  for fragment in fragments[1:]])
+
     return block
 
 
@@ -102,12 +102,14 @@ def format_links(block):
                                   ' "http://\\1":http://\\1',
                                   fragment)
         block += fragment
+
     return block
 
 
 def format_numbered_list(block):
     """format a numbered list for textile"""
     block = re.sub(r"<br>\s*<br> (\d)\. ", "\n\nh3. \\1. ", block)
+
     return block
 
 
@@ -117,12 +119,14 @@ def table_or_barplot(block, barplot_count):
         select = "table"
     else:
         select = random.choice(["table", "barplot"])
+
     if select == 'table':
-        return ("table", format_table(block))
+        return "table", format_table(block)
+
     try:
-        return ("barplot", format_barplot(block, barplot_count))
+        return "barplot", format_barplot(block, barplot_count)
     except:
-        return ("table", format_table(block))
+        return "table", format_table(block)
 
 
 def format_table(block):
@@ -138,6 +142,7 @@ def format_table(block):
                               '\n| \\1 | \\2 |', fragment)
         block += fragment
     block += fragments[-1]
+
     return block
 
 
@@ -191,6 +196,7 @@ def format_barplot(block, barplot_count):
         else:
             item = "\n\np. " + item
         new += item
+
     return new
 
 
@@ -216,7 +222,8 @@ def format_histo(block, num):
             "ticks: ticks},\n\t\tyaxis: {pad: 1.05, "
             "tickOptions: {formatString: '%d'}}\n\t}\n});\n});\n"
             " </script>\n</notextile>\n\n")
-    new += '<div id="chart_%d" style="width: 700px;"></div>' % (num)
+    new += '<div id="chart_%d" style="width: 700px;"></div>' % num
+
     return core[0] + new + core[2]
 
 
@@ -225,11 +232,12 @@ def format_graphe(block, graphe_count):
     fragments = re.split("--graphe--", block)
     block = fragments[0]
     block += ('\n\n<notextile>\n  <div id="graph-container_%d" '
-              'class="graph-container"> </div>\n') % (graphe_count)
+              'class="graph-container"> </div>\n') % graphe_count
     formed = NetworkGraphe(fragments[1], graphe_count)
     block += formed.js
     block += "</notextile>\n\n"
     block += fragments[2]
+
     return block
 
 
@@ -238,7 +246,7 @@ def format_cloud(block, cloud_count):
     fragments = re.split("--nuage--", block)
     block = fragments[0] + ('\n\n<notextile>\n <script '
                             'type="text/javascript">\n '
-                            ' var word_array%d = [ ') % (cloud_count)
+                            ' var word_array%d = [ ') % cloud_count
     block += "".join([re.sub(r"\s*(.*)\s{1,},\s*(.*)\s{1,}",
                              '\t\t{text: "\\1", weight: \\2, color: "#"+("000000"'
                              '+Math.random().toString(16).slice(2, '
@@ -250,6 +258,7 @@ def format_cloud(block, cloud_count):
               'style="width: 700px; height: 350px;">'
               '</div>\n\n') % (cloud_count, cloud_count, cloud_count)
     block += fragments[2]
+
     return block
 
 
@@ -334,6 +343,7 @@ def format_quotes(block):
     #block = re.sub("\s*&#8221;","&#160;&#187; ", block)
     #block = re.sub("\s*\u201d","&#160;&#187; ", block)
     #block = re.sub("\s*\xbb","&#160;&#187; ", block)
+
     return block
 
 
@@ -343,6 +353,7 @@ def protect_quotes(block):
         block = format_quotes(block)
     else:
         block = re.sub('"*', '\\"', block)
+
     return block
 
 
@@ -354,6 +365,7 @@ def format_date(block):
         day, month, year = re.split(r"/", date)
         new = datetime.date(int(year), int(month), int(day))
         block = re.sub(date, new.strftime("%-d %B %Y"), block)
+
     return block
 
 
@@ -372,10 +384,11 @@ def format_marks(block):
     block = re.sub(r"\s{1,}'\s{1,}", "'", block)
     block = re.sub(r"\s-(\w.*\w)-([\s\&])", " - \\1 -\\2", block)
     block = re.sub(r"(bq\.)([^ ])", "\\1 \\2", block)
+
     return block
 
 
-class TownCoordinates():
+class TownCoordinates:
     """Store town coordinates"""
 
     def __init__(self):
@@ -395,6 +408,7 @@ class TownCoordinates():
         """get rown return latitude and longitude"""
         if town in self.towns:
             return self.towns[town]
+
         return False
 
     def save_coord(self, town, latitude, longitude):
@@ -406,8 +420,8 @@ class TownCoordinates():
             handle.write(str_)
 
 
-class ChroniqueParser():
-    """Analyse and parse chronique content"""
+class ChroniqueParser:
+    """Analyse and parse chronicle content"""
 
     def __init__(self, texte):
         self.date = ""
@@ -429,7 +443,7 @@ class ChroniqueParser():
         self.generate_blocks()
         # self.write_textile()
         self.logs = "%s\n" % (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
-        self.logs += "chronique text size: %d chars\n" % (len(following))
+        self.logs += "chronicle text size: %d chars\n" % (len(following))
         self.logs += "found %d blocks\n" % (len(self.typed_sentences))
         self.logs += "%s\n" % self.title
         #print(self.logs)
@@ -550,7 +564,7 @@ class ChroniqueParser():
                 self.typed_sentences[i][0] = format_marks(block)
 
     def generate_blocks(self):
-        """add blocks to chronique"""
+        """add blocks to chronicle"""
         for sentence, type_sentence in self.typed_sentences:
             if type_sentence == "title":
                 if self.excerpt:
@@ -585,6 +599,7 @@ class ChroniqueParser():
                 block += "\n\np. %s" % decoupe[-1]
         elif occurences == 1:
             block = self.format_citation(block)
+
         return block
 
     def format_citation(self, citation):
@@ -669,6 +684,7 @@ class ChroniqueParser():
         citation = re.sub(r"^\s*(.*:)\s{1,}p\.<br>", "\n\np. \\1", citation)
         citation = re.sub(r"^\s*<br>", "\n\np. ", citation)
         citation = re.sub(r"bq\.\s*<BR>\s*", "bq. ", citation)
+
         return citation
 
     def get_date(self, content):
@@ -681,6 +697,7 @@ class ChroniqueParser():
             datetime.date(int(year), int(month), int(day)),
             datetime.time(int(hour), int(minutes), int(secondes))
         )
+
         return following
 
     def generate_preambule(self):
@@ -696,8 +713,7 @@ class ChroniqueParser():
                           (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
 
     def write_textile(self):
-        """write chronique for jekyll"""
-        #with open("/home/josquin/www/marloblog/_posts/chroniques/"
+        """write chronicle for jekyll"""
         with open("/home/josquin/marloblog/_posts/chroniques/"
                   "%s-chronique_mrlw.textile" % self.date.strftime("%Y-%m-%d"),
                   'w') as handle:
@@ -721,6 +737,7 @@ class Referencer:
             url = libmrlwchrnck.get_url(aut, date, tit)
             url = "TODO"
             self.urls[(aut, date, tit)] = url
+
         return url
 
 

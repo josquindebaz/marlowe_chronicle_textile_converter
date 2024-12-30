@@ -11,7 +11,7 @@ def test_entire_chronicle():
 
     assert parser.date == datetime.datetime(2024, 12, 28, 23, 4, 53)
     assert parser.title == "Now, I'm taking the head out of the jumble, the mayhem, the mess ..."
-    assert parser.logs == "Saturday 28 December 2024 23:04:53\nchronique text size: 171446 chars\nfound 22 blocks\nNow, I'm taking the head out of the jumble, the mayhem, the mess ...\n"
+    assert parser.logs == "Saturday 28 December 2024 23:04:53\nchronicle text size: 171446 chars\nfound 22 blocks\nNow, I'm taking the head out of the jumble, the mayhem, the mess ...\n"
 
     with open("source_samples/2024-12-29-chronique_mrlw.txt", 'rb') as c:
         chronicle_content = c.read()
@@ -26,7 +26,7 @@ def test_entire_chronicle():
                             'vos propos chers interlocuteurs ')
 
     assert parser.logs == ('Sunday 29 December 2024 23:06:03\n'
-                           'chronique text size: 30219 chars\n'
+                           'chronicle text size: 30219 chars\n'
                            'found 23 blocks\n'
                            "Bonsoir. Un internaute m'a adressé une série d'insultes sur Aliev ... Je les "
                            'ai détruites... Bien sûr, un procès me rendrait très inoubliable , mais '
