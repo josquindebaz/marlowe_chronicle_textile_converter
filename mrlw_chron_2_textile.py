@@ -233,7 +233,7 @@ def format_graphe(block, graphe_count):
     block += ('\n\n<notextile>\n  <div id="graph-container_%d" '
               'class="graph-container"> </div>\n') % graphe_count
     formed = SigmaJsGenerator(fragments[1], graphe_count)
-    block += formed.js
+    block += formed.graph
     block += "</notextile>\n\n"
     block += fragments[2]
 
