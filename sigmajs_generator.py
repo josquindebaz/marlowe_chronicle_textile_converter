@@ -15,17 +15,7 @@ class SigmaJsGenerator:
         self.set_lists(network_text)
         self.add_edges()
 
-        self.add_ending()
-
-    def add_ending(self):
-        """Add last lines of the graph"""
-
-        self.graph += ("%s.settings({labelThreshold: 1, defaultEdgeType: 'curve'});\n"
-                       "%s.refresh();\n"
-                       "%s.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
-                       "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\n"
-                       "setTimeout(function() {%s.stopForceAtlas2();}, 3000);\n"
-                       "</script>\n") % (self.graph_id, self.graph_id, self.graph_id, self.graph_id)
+        self.graph += make_ending(self.graph_id)
 
     def set_lists(self, text):
         """compute node lists """
@@ -119,3 +109,14 @@ def make_intro(graph_id, graph_number):
 
     return (f'<script class="code" type="text/javascript"> '
             f'var {graph_id} = new sigma (\'graph-container_{graph_number}\');\n')
+
+
+def make_ending(graph_id):
+    """Set last lines of the graph"""
+
+    return (f"{graph_id}.settings(""{labelThreshold: 1, defaultEdgeType: 'curve'});\n"
+            f"{graph_id}.refresh();\n"
+            f"{graph_id}.startForceAtlas2(""{barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
+            "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\nsetTimeout(function() {"
+            f"{graph_id}.stopForceAtlas2();""}, 3000);\n"
+            "</script>\n")

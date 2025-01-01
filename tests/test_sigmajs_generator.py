@@ -1,7 +1,12 @@
 from sigmajs_generator import SigmaJsGenerator
 
 expected_intro = '<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');'
-
+expected_ending = ("sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});\n"
+                   "sigma_1.refresh();\n"
+                   "sigma_1.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
+                   "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\n"
+                   "setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);\n"
+                   '</script>\n')
 
 def test_can_add_intro():
     generated_graph = SigmaJsGenerator("", 1)
@@ -14,13 +19,9 @@ def test_can_add_intro():
 def test_can_add_ending():
     generated_graph = SigmaJsGenerator("", 1)
 
-    result = generated_graph.graph.split("\n")
+    result = generated_graph.graph
 
-    assert result[2] == "sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});"
-    assert result[3] == "sigma_1.refresh();"
-    assert (result[4] == "sigma_1.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
-                         "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});")
-    assert result[5] == "setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);"
+    assert result == expected_intro + "\n\n" + expected_ending
 
 
 def test_can_add_edges():
