@@ -1,12 +1,12 @@
 from sigmajs_generator import SigmaJsGenerator
 
+expected_intro = '<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');'
 
-def test_can_set_intro():
+
+def test_can_add_intro():
     generated_graph = SigmaJsGenerator("", 1)
 
     result = generated_graph.graph.split("\n")[0]
-
-    expected_intro = '<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');'
 
     assert result == expected_intro
 

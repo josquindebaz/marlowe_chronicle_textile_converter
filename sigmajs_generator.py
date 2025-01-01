@@ -8,22 +8,14 @@ class SigmaJsGenerator:
     def __init__(self, network_text, graph_number):
         self.list_nodes = []
         self.list_edges = {}
-        self.graph = ""
 
         self.graph_id = "sigma_%d" % graph_number
-        self.set_intro(graph_number)
+        self.graph = make_intro(self.graph_id, graph_number)
 
         self.set_lists(network_text)
         self.add_edges()
 
         self.add_ending()
-
-    def set_intro(self, graph_count):
-        """Set first lines of the graph"""
-
-        self.graph = ('<script class="code" type="text/javascript"> '
-                      'var %s = new sigma (\'graph-container_%d\');\n') % \
-                     (self.graph_id, graph_count)
 
     def add_ending(self):
         """Add last lines of the graph"""
@@ -120,3 +112,10 @@ class SigmaJsGenerator:
                                       self.list_nodes.index(edge),
                                       color)
                     edge_count += 1
+
+
+def make_intro(graph_id, graph_number):
+    """Set first lines of the graph"""
+
+    return (f'<script class="code" type="text/javascript"> '
+            f'var {graph_id} = new sigma (\'graph-container_{graph_number}\');\n')
