@@ -48,85 +48,85 @@ def set_lists(network_text):
     return nodes, edges
 
 
+def add_edges(graph_id, list_nodes, list_edges):
+    """generate edges text"""
+
+    edge_text = ""
+    node_count = 0
+    color_dictionary = {}
+    size_dictionary = {}
+    color_list = ["#c69749",
+                  "#7d48c8",
+                  "#70b147",
+                  "#d353ad",
+                  "#5aa992",
+                  "#c24638",
+                  "#7389c5",
+                  "#5a592a",
+                  "#623466",
+                  "#c07282"]
+
+    for node in list_nodes:
+        size = 0
+
+        if node in list_edges:
+            for key_deg, val_deg in list_edges.items():
+                if node == key_deg:
+                    size += len(val_deg)
+                elif node in val_deg:
+                    size += 1
+        else:
+            size = 1
+
+        size_dictionary[node] = size
+
+        if size not in color_dictionary:
+            if color_list:
+                color_dictionary[size] = color_list.pop()
+            else:
+                color_dictionary[size] = "#7e8cc6"
+
+        edge_text += ("%s.graph.addNode({id: 'n%d', label: \"%s\", "
+                       "x: %f, y: %f, size: %d, color: '%s'}); ") % (
+                          graph_id,
+                          list_nodes.index(node),
+                          node,
+                          math.cos(node_count * 2 * math.pi / len(list_nodes)),
+                          math.sin(node_count * 2 * math.pi / len(list_nodes)),
+                          size,
+                          color_dictionary[size])
+        node_count += 1
+
+    edge_count = 0
+    edge_text += "\n"
+
+    for node, edges in list_edges.items():
+        for edge in edges:
+            if size_dictionary[node] > size_dictionary[edge]:
+                color = color_dictionary[size_dictionary[node]]
+            else:
+                color = color_dictionary[size_dictionary[edge]]
+
+            if node != edge:
+                edge_text += ("%s.graph.addEdge({ id: 'e%d', source: 'n%d',"
+                               "target: 'n%d', color: '%s'}); ") % (
+                                  graph_id,
+                                  edge_count,
+                                  list_nodes.index(node),
+                                  list_nodes.index(edge),
+                                  color)
+                edge_count += 1
+
+    return edge_text
+
+
 class SigmaJsGenerator:
     """Convert a description of a word network to a SigmaJs graph"""
 
     def __init__(self, network_text, graph_number):
-        self.list_nodes = []
-        self.list_edges = {}
-
         graph_id = "sigma_%d" % graph_number
         self.graph = make_intro(graph_id, graph_number)
-
-        self.list_nodes, self.list_edges = set_lists(network_text)
-        self.add_edges(graph_id)
-
+        nodes, edges = set_lists(network_text)
+        self.graph += set_edges(graph_id, nodes, edges)
         self.graph += make_ending(graph_id)
 
-    def add_edges(self, graph_id):
-        """generate edges text"""
-
-        node_count = 0
-        color_dictionary = {}
-        size_dictionary = {}
-        color_list = ["#c69749",
-                      "#7d48c8",
-                      "#70b147",
-                      "#d353ad",
-                      "#5aa992",
-                      "#c24638",
-                      "#7389c5",
-                      "#5a592a",
-                      "#623466",
-                      "#c07282"]
-
-        for node in self.list_nodes:
-            size = 0
-
-            if node in self.list_edges:
-                for key_deg, val_deg in self.list_edges.items():
-                    if node == key_deg:
-                        size += len(val_deg)
-                    elif node in val_deg:
-                        size += 1
-            else:
-                size = 1
-
-            size_dictionary[node] = size
-
-            if size not in color_dictionary:
-                if color_list:
-                    color_dictionary[size] = color_list.pop()
-                else:
-                    color_dictionary[size] = "#7e8cc6"
-
-            self.graph += ("%s.graph.addNode({id: 'n%d', label: \"%s\", "
-                           "x: %f, y: %f, size: %d, color: '%s'}); ") % (
-                              graph_id,
-                              self.list_nodes.index(node),
-                              node,
-                              math.cos(node_count * 2 * math.pi / len(self.list_nodes)),
-                              math.sin(node_count * 2 * math.pi / len(self.list_nodes)),
-                              size,
-                              color_dictionary[size])
-            node_count += 1
-
-        edge_count = 0
-        self.graph += "\n"
-
-        for node, edges in self.list_edges.items():
-            for edge in edges:
-                if size_dictionary[node] > size_dictionary[edge]:
-                    color = color_dictionary[size_dictionary[node]]
-                else:
-                    color = color_dictionary[size_dictionary[edge]]
-
-                if node != edge:
-                    self.graph += ("%s.graph.addEdge({ id: 'e%d', source: 'n%d',"
-                                   "target: 'n%d', color: '%s'}); ") % (
-                                      graph_id,
-                                      edge_count,
-                                      self.list_nodes.index(node),
-                                      self.list_nodes.index(edge),
-                                      color)
-                    edge_count += 1
