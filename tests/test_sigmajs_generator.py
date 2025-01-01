@@ -1,4 +1,4 @@
-from sigmajs_generator import SigmaJsGenerator, set_lists
+from sigmajs_generator import SigmaJsGenerator, set_lists, set_edges
 
 expected_intro = '<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');'
 expected_ending = ("sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});\n"
@@ -7,6 +7,7 @@ expected_ending = ("sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve
                    "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\n"
                    "setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);\n"
                    '</script>\n')
+
 
 def test_can_add_intro():
     generated_graph = SigmaJsGenerator("", 1)
@@ -42,6 +43,7 @@ def test_can_add_edges():
 
     assert result[2] == expected_edges
 
+
 def test_can_set_lists():
     network_text = "foo : foo, bar ; bar : bar ; alice : foo, bar, alice ; ;"
 
@@ -49,3 +51,17 @@ def test_can_set_lists():
 
     assert result_nodes == ['foo', 'bar', 'alice']
     assert result_edges == {'foo': ['bar'], 'alice': ['foo', 'bar']}
+
+
+def test_can_set_edges():
+    result = set_edges(1, ['foo', 'bar', 'alice'], {'foo': ['bar'], 'alice': ['foo', 'bar']})
+
+    expected_edges_text = \
+        ("1.graph.addNode({id: 'n0', label: \"foo\", x: 1.000000, y: 0.000000, size: 2, color: '#c07282'}); "
+         "1.graph.addNode({id: 'n1', label: \"bar\", x: -0.500000, y: 0.866025, size: 1, color: '#623466'}); "
+         "1.graph.addNode({id: 'n2', label: \"alice\", x: -0.500000, y: -0.866025, size: 2, color: '#c07282'}); \n"
+         "1.graph.addEdge({ id: 'e0', source: 'n0',target: 'n1', color: '#c07282'}); "
+         "1.graph.addEdge({ id: 'e1', source: 'n2',target: 'n0', color: '#c07282'}); "
+         "1.graph.addEdge({ id: 'e2', source: 'n2',target: 'n1', color: '#c07282'}); ")
+
+    assert result == expected_edges_text

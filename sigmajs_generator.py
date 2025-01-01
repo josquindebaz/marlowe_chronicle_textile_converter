@@ -1,6 +1,19 @@
 import math
 from re import split
 
+default_color = "#7e8cc6"
+
+principal_colors = ["#c69749",
+                    "#7d48c8",
+                    "#70b147",
+                    "#d353ad",
+                    "#5aa992",
+                    "#c24638",
+                    "#7389c5",
+                    "#5a592a",
+                    "#623466",
+                    "#c07282"]
+
 
 def make_intro(graph_id, graph_number):
     """Set first lines of the graph"""
@@ -16,8 +29,7 @@ def make_ending(graph_id):
             f"{graph_id}.refresh();\n"
             f"{graph_id}.startForceAtlas2(""{barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
             "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\nsetTimeout(function() {"
-            f"{graph_id}.stopForceAtlas2();""}, 3000);\n"
-            "</script>\n")
+            f"{graph_id}.stopForceAtlas2();""}, 3000);\n</script>\n")
 
 
 def set_lists(network_text):
@@ -48,76 +60,60 @@ def set_lists(network_text):
     return nodes, edges
 
 
-def add_edges(graph_id, list_nodes, list_edges):
-    """generate edges text"""
+def set_edges(graph_id, nodes, edges):
+    """generate text to describe edges in SigmaJS format"""
 
     edge_text = ""
-    node_count = 0
-    color_dictionary = {}
-    size_dictionary = {}
-    color_list = ["#c69749",
-                  "#7d48c8",
-                  "#70b147",
-                  "#d353ad",
-                  "#5aa992",
-                  "#c24638",
-                  "#7389c5",
-                  "#5a592a",
-                  "#623466",
-                  "#c07282"]
+    partition_colors = {}
+    degrees = {}
 
-    for node in list_nodes:
-        size = 0
+    for node_count, source in enumerate(nodes):
+        theta = node_count * 2 * math.pi / len(nodes)
+        position = "x: %f, y: %f" % (math.cos(theta), math.sin(theta))
 
-        if node in list_edges:
-            for key_deg, val_deg in list_edges.items():
-                if node == key_deg:
-                    size += len(val_deg)
-                elif node in val_deg:
-                    size += 1
-        else:
-            size = 1
+        node_degree = get_node_degree(edges, source)
+        degrees[source] = node_degree
 
-        size_dictionary[node] = size
-
-        if size not in color_dictionary:
-            if color_list:
-                color_dictionary[size] = color_list.pop()
+        if node_degree not in partition_colors:
+            if principal_colors:
+                partition_colors[node_degree] = principal_colors.pop()
             else:
-                color_dictionary[size] = "#7e8cc6"
+                partition_colors[node_degree] = default_color
 
-        edge_text += ("%s.graph.addNode({id: 'n%d', label: \"%s\", "
-                       "x: %f, y: %f, size: %d, color: '%s'}); ") % (
-                          graph_id,
-                          list_nodes.index(node),
-                          node,
-                          math.cos(node_count * 2 * math.pi / len(list_nodes)),
-                          math.sin(node_count * 2 * math.pi / len(list_nodes)),
-                          size,
-                          color_dictionary[size])
-        node_count += 1
+        edge_text += (f"{graph_id}.graph.addNode(""{id: "f"'n{nodes.index(source)}', label: \"{source}\", "
+                      f"{position}, size: {node_degree}, color: '{partition_colors[node_degree]}'""}); ")
 
-    edge_count = 0
     edge_text += "\n"
 
-    for node, edges in list_edges.items():
-        for edge in edges:
-            if size_dictionary[node] > size_dictionary[edge]:
-                color = color_dictionary[size_dictionary[node]]
+    edge_number = 0
+    for source, targets in edges.items():
+        for target in targets:
+            if degrees[source] > degrees[target]:
+                edge_color = partition_colors[degrees[source]]
             else:
-                color = color_dictionary[size_dictionary[edge]]
+                edge_color = partition_colors[degrees[target]]
 
-            if node != edge:
-                edge_text += ("%s.graph.addEdge({ id: 'e%d', source: 'n%d',"
-                               "target: 'n%d', color: '%s'}); ") % (
-                                  graph_id,
-                                  edge_count,
-                                  list_nodes.index(node),
-                                  list_nodes.index(edge),
-                                  color)
-                edge_count += 1
+            edge_text += (f"{graph_id}.graph.addEdge(""{"f" id: 'e{edge_number}', "
+                          f"source: 'n{nodes.index(source)}',target: "f"'n{nodes.index(target)}',"
+                          f" color: '{edge_color}'""}); ")
+
+            edge_number += 1
 
     return edge_text
+
+
+def get_node_degree(edges, node):
+    if node not in edges:
+        return 1
+
+    degree = 0
+    for source, targets in edges.items():
+        if node == source:
+            degree += len(targets)
+        elif node in targets:
+            degree += 1
+
+    return degree
 
 
 class SigmaJsGenerator:
@@ -125,8 +121,10 @@ class SigmaJsGenerator:
 
     def __init__(self, network_text, graph_number):
         graph_id = "sigma_%d" % graph_number
+
         self.graph = make_intro(graph_id, graph_number)
+
         nodes, edges = set_lists(network_text)
+
         self.graph += set_edges(graph_id, nodes, edges)
         self.graph += make_ending(graph_id)
-
