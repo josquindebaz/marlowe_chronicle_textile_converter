@@ -3,16 +3,15 @@ Author Josquin Debaz
 GPL 3
 """
 
-import os
 import re
 import datetime
 import random
 import urllib.request
 import urllib.parse
-import json
 import libmrlwchrnck
 from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
+from CityLocator import CityLocator
 
 
 def format_sigles(block):
@@ -265,7 +264,7 @@ def format_cloud(block, cloud_count):
 def format_map(block):
     """format map of towns"""
     new, core, end = re.split(r"\s*--mapcapeurop--\s*", block)
-    known_towns = TownCoordinates()
+    city_locator = CityLocator()
 
     new += ('\n\n<notextile>\n\n<div id="map">\n<script class="code" '
             'type="text/javascript">\nvar initMap = function(){\n\t'
@@ -278,14 +277,15 @@ def format_map(block):
             'map.dimensions.x;\n\tcanvas.height = map.dimensions.y;\n\t'
             'map.parent.appendChild(canvas);\n')
 
-    towns = dict(re.split(",", line)
+    cities = dict(re.split(",", line)
                  for line in re.split(r"\s*;\s*", core)[:-1])
-    for town in towns:
-        ask = known_towns.get_coord(town)
+
+    for city in cities:
+        ask = city_locator.get_coord(city)
         if ask:
             latitude, longitude = ask
         else:
-            params = urllib.parse.urlencode({"q": town,
+            params = urllib.parse.urlencode({"q": city,
                                              "format": "json",
                                              "limit": 1,
                                              "email": "debaz@ehess.fr"})
@@ -297,15 +297,15 @@ def format_map(block):
                 latitude, longitude = re.search(r'"lat":"([\d\-]*\.\d*)",'
                                                 r'"lon":"([\d\-]*\.\d*)",',
                                                 loc).group(1, 2)
-                known_towns.save_coord(town, latitude, longitude)
+                city_locator.save_coord(city, latitude, longitude)
             except:
-                print("pb with nominatim: %s" % town)
+                print("pb with nominatim: %s" % city)
         new += "\tvar %s = new com.modestmaps.Location(%s,%s);\n" % \
-               (re.sub(r'[\s\-éè]', '_', town), latitude, longitude)
+               (re.sub(r'[\s\-éè]', '_', city), latitude, longitude)
 
     new += "\tvar locations = [%s];\n" % \
-           ", ".join([re.sub(r'[\s\-éè]', '_', town) for town in towns.keys()])
-    new += "\tvar values = [%s];\n" % ", ".join(towns.values())
+           ", ".join([re.sub(r'[\s\-éè]', '_', town) for town in cities.keys()])
+    new += "\tvar values = [%s];\n" % ", ".join(cities.values())
     new += ("\tvar max = Math.max.apply(Math, values);\n\t"
             "map.setExtent(locations);\n\tmap.zoomOut();\n\t"
             "function redraw(){\n\t\tvar ctx = canvas.getContext('2d');\n"
@@ -386,38 +386,6 @@ def format_marks(block):
     block = re.sub(r"(bq\.)([^ ])", "\\1 \\2", block)
 
     return block
-
-
-class TownCoordinates:
-    """Store town coordinates"""
-
-    def __init__(self):
-        self.coord_file = "town_coords.json"
-        self.towns = {}
-        self.read_file()
-
-    def read_file(self):
-        """read json file"""
-        if os.path.isfile(self.coord_file):
-            with open(self.coord_file) as handle:
-                coords = json.load(handle)
-                for item in coords.items():
-                    self.towns[item[0]] = [item[1][0], item[1][1]]
-
-    def get_coord(self, town):
-        """get rown return latitude and longitude"""
-        if town in self.towns:
-            return self.towns[town]
-
-        return False
-
-    def save_coord(self, town, latitude, longitude):
-        """write coords in json file"""
-        self.towns[town] = [latitude, longitude]
-        with open(self.coord_file, 'w', encoding='utf8') as handle:
-            str_ = json.dumps(self.towns, indent=4,
-                              sort_keys=True, ensure_ascii=False)
-            handle.write(str_)
 
 
 class ChroniqueParser:
