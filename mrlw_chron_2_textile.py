@@ -11,6 +11,7 @@ import urllib.request
 import urllib.parse
 import json
 import libmrlwchrnck
+from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
 
 
@@ -717,27 +718,6 @@ class ChroniqueParser:
                   "%s-chronique_mrlw.textile" % self.date.strftime("%Y-%m-%d"),
                   'w') as handle:
             handle.write(self.chronique)
-
-
-class Referencer:
-    """get url for source from webfouille"""
-
-    def __init__(self, date):
-        self.urls = {}
-        self.urls = libmrlwchrnck.get_urls(date)
-
-    def get_url(self, aut, date, tit):
-        """take a known url or ask"""
-        tit = re.sub(r'(\s{2,})"$', "\\1", tit).strip()
-
-        if (aut, date, tit) in self.urls:
-            url = self.urls[(aut, date, tit)]
-        else:
-            url = libmrlwchrnck.get_url(aut, date, tit)
-            url = "TODO"
-            self.urls[(aut, date, tit)] = url
-
-        return url
 
 
 if __name__ == '__main__':

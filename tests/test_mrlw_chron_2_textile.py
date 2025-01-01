@@ -193,7 +193,4 @@ def test_format_sigles_can_handle_acronyms():
 # def test_write_textile():
 #     assert False
 
-# Referencer
-# def test_get_url():
-#     assert False
 
