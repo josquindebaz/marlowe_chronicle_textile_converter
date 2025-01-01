@@ -148,18 +148,6 @@ def test_format_sigles_can_handle_acronyms():
 #     assert False
 
 
-# TownCoordinates
-# def test_read_file():
-#     assert False
-#
-#
-# def test_get_coord():
-#     assert False
-#
-#
-# def test_save_coord():
-#     assert False
-
 # ChroniqueParser
 
 # def test_type_sentences():
