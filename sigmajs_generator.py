@@ -9,13 +9,13 @@ class SigmaJsGenerator:
         self.list_nodes = []
         self.list_edges = {}
 
-        self.graph_id = "sigma_%d" % graph_number
-        self.graph = make_intro(self.graph_id, graph_number)
+        graph_id = "sigma_%d" % graph_number
+        self.graph = make_intro(graph_id, graph_number)
 
         self.set_lists(network_text)
-        self.add_edges()
+        self.add_edges(graph_id)
 
-        self.graph += make_ending(self.graph_id)
+        self.graph += make_ending(graph_id)
 
     def set_lists(self, text):
         """compute node lists """
@@ -35,7 +35,7 @@ class SigmaJsGenerator:
                             self.list_nodes.append(element)
                     self.list_edges[elements[1]] = network
 
-    def add_edges(self):
+    def add_edges(self, graph_id):
         """generate edges text"""
 
         node_count = 0
@@ -74,7 +74,7 @@ class SigmaJsGenerator:
 
             self.graph += ("%s.graph.addNode({id: 'n%d', label: \"%s\", "
                            "x: %f, y: %f, size: %d, color: '%s'}); ") % (
-                              self.graph_id,
+                              graph_id,
                               self.list_nodes.index(node),
                               node,
                               math.cos(node_count * 2 * math.pi / len(self.list_nodes)),
@@ -96,7 +96,7 @@ class SigmaJsGenerator:
                 if node != edge:
                     self.graph += ("%s.graph.addEdge({ id: 'e%d', source: 'n%d',"
                                    "target: 'n%d', color: '%s'}); ") % (
-                                      self.graph_id,
+                                      graph_id,
                                       edge_count,
                                       self.list_nodes.index(node),
                                       self.list_nodes.index(edge),
