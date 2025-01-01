@@ -1,4 +1,4 @@
-from sigmajs_generator import SigmaJsGenerator
+from sigmajs_generator import SigmaJsGenerator, set_lists
 
 expected_intro = '<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');'
 expected_ending = ("sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});\n"
@@ -41,3 +41,11 @@ def test_can_add_edges():
                       "sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});")
 
     assert result[2] == expected_edges
+
+def test_can_set_lists():
+    network_text = "foo : foo, bar ; bar : bar ; alice : foo, bar, alice ; ;"
+
+    result_nodes, result_edges = set_lists(network_text)
+
+    assert result_nodes == ['foo', 'bar', 'alice']
+    assert result_edges == {'foo': ['bar'], 'alice': ['foo', 'bar']}
