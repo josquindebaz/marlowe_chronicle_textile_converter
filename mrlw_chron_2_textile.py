@@ -6,8 +6,6 @@ GPL 3
 import re
 import datetime
 import random
-import urllib.request
-import urllib.parse
 import libmrlwchrnck
 from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
@@ -281,25 +279,8 @@ def format_map(block):
                  for line in re.split(r"\s*;\s*", core)[:-1])
 
     for city in cities:
-        ask = city_locator.get_coord(city)
-        if ask:
-            latitude, longitude = ask
-        else:
-            params = urllib.parse.urlencode({"q": city,
-                                             "format": "json",
-                                             "limit": 1,
-                                             "email": "debaz@ehess.fr"})
-            url = "http://nominatim.openstreetmap.org/search?%s" % params
-            try:
-                with urllib.request.urlopen(url) as requete_url:
-                    answer = requete_url.read()
-                loc = answer.decode()
-                latitude, longitude = re.search(r'"lat":"([\d\-]*\.\d*)",'
-                                                r'"lon":"([\d\-]*\.\d*)",',
-                                                loc).group(1, 2)
-                city_locator.save_coord(city, latitude, longitude)
-            except:
-                print("pb with nominatim: %s" % city)
+        latitude, longitude = city_locator.get_coordinates(city)
+
         new += "\tvar %s = new com.modestmaps.Location(%s,%s);\n" % \
                (re.sub(r'[\s\-éè]', '_', city), latitude, longitude)
 

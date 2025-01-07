@@ -1,6 +1,8 @@
 import json
 import os
-
+import re
+import urllib.request
+import urllib.parse
 
 class CityLocator:
     """Store town coordinates"""
@@ -26,18 +28,38 @@ class CityLocator:
         for item in coordinates.items():
             self.cities[item[0]] = [item[1][0], item[1][1]]
 
-    def get_coord(self, town):
+    def get_coordinates(self, city):
         """return latitude and longitude of given city"""
 
-        if town not in self.cities:
-            return None
+        if city in self.cities:
+            return self.cities[city]
 
-        return self.cities[town]
+        params = urllib.parse.urlencode({"q": city,
+                                         "format": "json",
+                                         "limit": 1,
+                                         "email": "debaz@ehess.fr"})
 
-    def save_coord(self, town, latitude, longitude):
+        url = "http://nominatim.openstreetmap.org/search?%s" % params
+        try:
+            with urllib.request.urlopen(url) as request:
+                answer = request.read()
+            location = answer.decode()
+            latitude, longitude = re.search(r'"lat":"([\d\-]*\.\d*)",'
+                                            r'"lon":"([\d\-]*\.\d*)",',
+                                            location).group(1, 2)
+
+            self.save_coordinates(city, latitude, longitude)
+            return self.cities[city]
+
+        except:
+            print("problem with nominatim: %s" % city)
+            return [0, 0]
+
+
+    def save_coordinates(self, city, latitude, longitude):
         """write city coordinates in json file"""
 
-        self.cities[town] = [latitude, longitude]
+        self.cities[city] = [latitude, longitude]
 
         with open(self.coordinates_file, 'w', encoding='utf8') as handle:
             str_ = json.dumps(self.cities,
