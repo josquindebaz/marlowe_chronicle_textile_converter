@@ -342,7 +342,7 @@ def protect_quotes(block):
 def format_date(block):
     """better date forms"""
     # locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
-    dates = re.findall(r"[\s:](\d{1,2}/\s*\d{1,2}/\d{4})[^\/]", block)
+    dates = re.findall(r"[\s:](\d{1,2}/\s*\d{1,2}/\d{4})[^/]", block)
     for date in list(set(dates)):
         day, month, year = re.split(r"/", date)
         new = datetime.date(int(year), int(month), int(day))
@@ -355,16 +355,16 @@ def format_marks(block):
     """add, delete and simplify marks for textile"""
     block = format_date(block)
     #block = format_quotes(block)
-    block = re.sub(r"\s{1,}&#160;", "&#160;", block)
-    block = re.sub(r"&#160;\s{1,}", "&#160;", block)
+    block = re.sub(r"\s+&#160;", "&#160;", block)
+    block = re.sub(r"&#160;\s+", "&#160;", block)
     block = re.sub("<br> <br> - ", "\n\n- ", block)
-    block = re.sub(r"<br> <br>([^\s]*)$", "\n\np.\\1", block)
+    block = re.sub(r"<br> <br>(\S*)$", "\n\np.\\1", block)
     block = re.sub("(<br> <br>)", "\n\np.", block)
     block = re.sub("(<br>|<BR>)", "\n", block)
-    block = re.sub(r"\s{1,}([\)\.,…])", "\\1", block)
-    block = re.sub(r"(\()\s{1,}", "\\1", block)
-    block = re.sub(r"\s{1,}'\s{1,}", "'", block)
-    block = re.sub(r"\s-(\w.*\w)-([\s\&])", " - \\1 -\\2", block)
+    block = re.sub(r"\s+([).,…])", "\\1", block)
+    block = re.sub(r"(\()\s+", "\\1", block)
+    block = re.sub(r"\s+'\s+", "'", block)
+    block = re.sub(r"\s-(\w.*\w)-([\s&])", " - \\1 -\\2", block)
     block = re.sub(r"(bq\.)([^ ])", "\\1 \\2", block)
 
     return block
@@ -445,7 +445,7 @@ class ChroniqueParser:
             if sentence[1] == 'title':
                 title = self.typed_sentences[0][0]
                 if re.search(r"\r\n", title):
-                    title, self.excerpt = re.split(r"[\r\n]{1,}", title)
+                    title, self.excerpt = re.split(r"[\r\n]+", title)
                 self.title = title
             elif sentence[1] == "sigles":
                 block = sentence[0]
@@ -528,7 +528,7 @@ class ChroniqueParser:
                     sentence = re.sub(r"\np\. p\. ", "\np. ", sentence)
                     sentence = re.sub(r"\np\.([^ ])", "\np. \\1", sentence)
                     sentence = re.sub(r"\np\.\s*(h\d\.)", "\n\\1 ", sentence)
-                    sentence = re.sub(r"(\n\nh\d{1}.* : )",
+                    sentence = re.sub(r"(\n\nh\d.* : )",
                                       "\\1\n\np.", sentence)
                     self.chronique += sentence
             else:
@@ -631,7 +631,7 @@ class ChroniqueParser:
                     else:
                         citation += "\n\nbq. %s" % decoupe[1]
 
-        citation = re.sub(r"^\s*(.*:)\s{1,}p\.<br>", "\n\np. \\1", citation)
+        citation = re.sub(r"^\s*(.*:)\s+p\.<br>", "\n\np. \\1", citation)
         citation = re.sub(r"^\s*<br>", "\n\np. ", citation)
         citation = re.sub(r"bq\.\s*<BR>\s*", "bq. ", citation)
 
@@ -643,7 +643,7 @@ class ChroniqueParser:
         day, month, year, hour, minutes, secondes = \
             re.search(r"(\d*)/\s*(\d*)/(\d{4})\s*(\d*):(\d*):(\d*).*$",
                       date_time).group(1, 2, 3, 4, 5, 6)
-        self.date = datetime.datetime.combine( \
+        self.date = datetime.datetime.combine(
             datetime.date(int(year), int(month), int(day)),
             datetime.time(int(hour), int(minutes), int(secondes))
         )
