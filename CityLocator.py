@@ -1,8 +1,29 @@
 import json
 import os
-import re
-import urllib.request
+import urllib.error
 import urllib.parse
+import urllib.request
+
+
+def query_coordinates(city):
+    """ Query coordinates to Nominatim API"""
+    params = urllib.parse.urlencode({"q": city, "format": "json", "limit": 1})
+    url = "http://nominatim.openstreetmap.org/search?%s" % params
+
+    try:
+        with urllib.request.urlopen(url) as response:
+            answer = response.read()
+
+        location = json.loads(answer.decode())
+        latitude = location[0]['lat']
+        longitude = location[0]['lon']
+
+        return [latitude, longitude]
+
+    except urllib.error.URLError as e:
+        print(f"Problem with nominatim: {city}: {e}")
+        return [0, 0]
+
 
 class CityLocator:
     """Store town coordinates"""
@@ -31,30 +52,12 @@ class CityLocator:
     def get_coordinates(self, city):
         """return latitude and longitude of given city"""
 
-        if city in self.cities:
-            return self.cities[city]
-
-        params = urllib.parse.urlencode({"q": city,
-                                         "format": "json",
-                                         "limit": 1,
-                                         "email": "debaz@ehess.fr"})
-
-        url = "http://nominatim.openstreetmap.org/search?%s" % params
-        try:
-            with urllib.request.urlopen(url) as request:
-                answer = request.read()
-            location = answer.decode()
-            latitude, longitude = re.search(r'"lat":"([\d\-]*\.\d*)",'
-                                            r'"lon":"([\d\-]*\.\d*)",',
-                                            location).group(1, 2)
-
+        if city not in self.cities:
+            latitude, longitude = query_coordinates(city)
+            self.cities[city] = [latitude, longitude]
             self.save_coordinates(city, latitude, longitude)
-            return self.cities[city]
 
-        except:
-            print("problem with nominatim: %s" % city)
-            return [0, 0]
-
+        return self.cities[city]
 
     def save_coordinates(self, city, latitude, longitude):
         """write city coordinates in json file"""
