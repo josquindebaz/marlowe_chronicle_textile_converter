@@ -5,7 +5,7 @@ import os
 class CityLocator:
     """Store town coordinates"""
 
-    def __init__(self, file="town_coords.json"):
+    def __init__(self, file="city_coordinates.json"):
         self.cities = {}
         self.coordinates_file = file
         self.read_file()
@@ -14,7 +14,11 @@ class CityLocator:
         """read json file"""
 
         if not os.path.isfile(self.coordinates_file):
-            return
+            path_for_tests = os.path.join("../", self.coordinates_file)
+            if not os.path.isfile(path_for_tests):
+                return
+            else:
+                self.coordinates_file = path_for_tests
 
         with open(self.coordinates_file) as handle:
             coordinates = json.load(handle)

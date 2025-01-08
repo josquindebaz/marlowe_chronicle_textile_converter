@@ -84,7 +84,7 @@ def test_chronicle_with_map():
         chronicle_content = c.read()
 
     parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
-#C7754C
+
     assert parser.date == datetime.datetime(2025, 1, 3, 23, 7, 2)
     assert parser.title == "Marlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)"
     assert parser.logs == "Friday 3 January 2025 23:07:02\nchronicle text size: 17002 chars\nfound 24 blocks\nMarlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)\n"
@@ -107,46 +107,46 @@ var initMap = function(){
 	canvas.width = map.dimensions.x;
 	canvas.height = map.dimensions.y;
 	map.parent.appendChild(canvas);
-	var Lisbonne = new com.modestmaps.Location(38.7077507,-9.1365919);
-	var Ath_nes = new com.modestmaps.Location(37.9755648,23.7348324);
-	var Monaco = new com.modestmaps.Location(43.7323492,7.4276832);
-	var Santiago = new com.modestmaps.Location(9.8694792,-83.7980749);
+	var Lisbonne = new com.modestmaps.Location(38.7069320,-9.1356321);
+	var Ath_nes = new com.modestmaps.Location(37.9841493,23.7279843);
+	var Monaco = new com.modestmaps.Location(43.7311424,7.4197576);
+	var Santiago = new com.modestmaps.Location(-33.4377968,-70.6504451);
 	var T_h_ran = new com.modestmaps.Location(35.6892523,51.3896004);
 	var Vatican = new com.modestmaps.Location(41.9034912,12.4528349);
-	var Tirana = new com.modestmaps.Location(41.3281482,19.8184435);
-	var Sucre = new com.modestmaps.Location(-19.0477251,-65.2594306);
+	var Tirana = new com.modestmaps.Location(41.3279457,19.8185323);
+	var Sucre = new com.modestmaps.Location(-19.047862,-65.2596023);
 	var Podgorica = new com.modestmaps.Location(42.4415238,19.2621081);
-	var Montevideo = new com.modestmaps.Location(-34.9058916,-56.1913095);
-	var Freetown = new com.modestmaps.Location(8.479004,-13.26795);
-	var Bakou = new com.modestmaps.Location(40.3755885,49.8328009);
-	var Accra = new com.modestmaps.Location(5.5571096,-0.2012376);
-	var Bangkok = new com.modestmaps.Location(13.7524938,100.4935089);
-	var Kiev = new com.modestmaps.Location(50.4500336,30.5241361);
-	var Bruxelles = new com.modestmaps.Location(50.8465573,4.351697);
-	var Moscou = new com.modestmaps.Location(55.625578,37.6063916);
+	var Montevideo = new com.modestmaps.Location(-34.9059039,-56.1913569);
+	var Freetown = new com.modestmaps.Location(8.4790017,-13.2680158);
+	var Bakou = new com.modestmaps.Location(40.3754289,49.8328549);
+	var Accra = new com.modestmaps.Location(5.5600141,-0.2057436);
+	var Bangkok = new com.modestmaps.Location(13.5859219,100.416086601645);
+	var Kiev = new com.modestmaps.Location(50.4501071,30.5240501);
+	var Bruxelles = new com.modestmaps.Location(50.8503396,4.3517103);
+	var Moscou = new com.modestmaps.Location(55.7557860,37.6176330);
 	var Madrid = new com.modestmaps.Location(40.4167047,-3.7035825);
-	var Vienne = new com.modestmaps.Location(48.2083537,16.3725042);
-	var Copenhague = new com.modestmaps.Location(55.6867243,12.5700724);
-	var Lima = new com.modestmaps.Location(-12.0621065,-77.0365256);
-	var Tel_Aviv = new com.modestmaps.Location(32.0852997,34.7818064);
-	var Oslo = new com.modestmaps.Location(59.9133301,10.7389701);
-	var Sanaa = new com.modestmaps.Location(15.35,44.2);
-	var J_rusalem = new com.modestmaps.Location(31.7788242,35.2257626);
-	var New_York = new com.modestmaps.Location(40.7127281,-74.0060152);
-	var Rome = new com.modestmaps.Location(41.8933203,12.4829321);
-	var Bagdad = new com.modestmaps.Location(33.3061701,44.3872213);
-	var Tokyo = new com.modestmaps.Location(35.6768601,139.7638947);
-	var Abidjan = new com.modestmaps.Location(5.320357,-4.016107);
-	var P_kin = new com.modestmaps.Location(40.190632,116.412144);
-	var Berlin = new com.modestmaps.Location(52.510885,13.3989367);
-	var Buenos_Aires = new com.modestmaps.Location(-34.6083696,-58.4440583);
-	var Doha = new com.modestmaps.Location(25.2856329,51.5264162);
-	var Londres = new com.modestmaps.Location(51.5074456,-0.1277653);
-	var Washington = new com.modestmaps.Location(38.8950368,-77.0365427);
-	var Caracas = new com.modestmaps.Location(10.5060934,-66.9146008);
+	var Vienne = new com.modestmaps.Location(48.156,16.371);
+	var Copenhague = new com.modestmaps.Location(55.6760968,12.5683371);
+	var Lima = new com.modestmaps.Location(-12.0433333,-77.0283333);
+	var Tel_Aviv = new com.modestmaps.Location(32.0804808,34.7805274);
+	var Oslo = new com.modestmaps.Location(59.9138688,10.7522454);
+	var Sanaa = new com.modestmaps.Location(15.342101,44.2005197);
+	var J_rusalem = new com.modestmaps.Location(31.7968155,35.2137815559015);
+	var New_York = new com.modestmaps.Location(40.7143528,-74.0059731);
+	var Rome = new com.modestmaps.Location(41.8933439,12.4830718);
+	var Bagdad = new com.modestmaps.Location(33.3024248,44.3787992);
+	var Tokyo = new com.modestmaps.Location(34.2255804,139.294774527387);
+	var Abidjan = new com.modestmaps.Location(5.4091179,-4.0422099);
+	var P_kin = new com.modestmaps.Location(39.9042140,116.4074130);
+	var Berlin = new com.modestmaps.Location(52.5234051,13.4113999);
+	var Buenos_Aires = new com.modestmaps.Location(-34.612869,-58.4459789);
+	var Doha = new com.modestmaps.Location(25.3014957,51.4996673988223);
+	var Londres = new com.modestmaps.Location(51.5001524,-0.1262362);
+	var Washington = new com.modestmaps.Location(38.8951118,-77.0363658);
+	var Caracas = new com.modestmaps.Location(10.506098,-66.9146017);
 	var S_oul = new com.modestmaps.Location(37.5666791,126.9782914);
-	var Paris = new com.modestmaps.Location(48.8588897,2.3200410217200766);
-	var Damas = new com.modestmaps.Location(9.888902999999999,-84.0444841487346);
+	var Paris = new com.modestmaps.Location(48.8566101,2.3514992);
+	var Damas = new com.modestmaps.Location(33.5130695,36.3095814);
 	var locations = [Lisbonne, Ath_nes, Monaco, Santiago, T_h_ran, Vatican, Tirana, Sucre, Podgorica, Montevideo, Freetown, Bakou, Accra, Bangkok, Kiev, Bruxelles, Moscou, Madrid, Vienne, Copenhague, Lima, Tel_Aviv, Oslo, Sanaa, J_rusalem, New_York, Rome, Bagdad, Tokyo, Abidjan, P_kin, Berlin, Buenos_Aires, Doha, Londres, Washington, Caracas, S_oul, Paris, Damas];
 	var values = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 5, 5, 5, 7, 14, 18, 23, 29, 48];
 	var max = Math.max.apply(Math, values);
@@ -184,7 +184,9 @@ p(reference). "Fond et positions © les contributeurs d'OpenStreetMap":https://w
 
 J'ose présumer que Tirésias et Nominatim ont les bonnes coordonnées !\r\n\r\r\n"""
 
-    assert (parser.typed_sentences[20][0][:4220]  == expected_map[:4220])
+    assert (parser.typed_sentences[20][0][:4230]  == expected_map[:4230])
+    assert (parser.typed_sentences[20][0][4236:]  == expected_map[4236:])
+
 
 ######## static methods
 
