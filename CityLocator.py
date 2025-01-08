@@ -1,5 +1,6 @@
 import json
 import os
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -7,6 +8,7 @@ import urllib.request
 
 def query_coordinates(city):
     """ Query coordinates to Nominatim API"""
+
     params = urllib.parse.urlencode({"q": city, "format": "json", "limit": 1})
     url = "http://nominatim.openstreetmap.org/search?%s" % params
 
@@ -18,10 +20,12 @@ def query_coordinates(city):
         latitude = location[0]['lat']
         longitude = location[0]['lon']
 
+        time.sleep(1) # make sure not to spam Nominatim API
+
         return [latitude, longitude]
 
     except urllib.error.URLError as e:
-        print(f"Problem with nominatim: {city}: {e}")
+        print(f"Problem with Nominatim: {city}: {e}")
         return [0, 0]
 
 
@@ -65,8 +69,5 @@ class CityLocator:
         self.cities[city] = [latitude, longitude]
 
         with open(self.coordinates_file, 'w', encoding='utf8') as handle:
-            str_ = json.dumps(self.cities,
-                              indent=4,
-                              sort_keys=True,
-                              ensure_ascii=False)
+            str_ = json.dumps(self.cities, indent=4, sort_keys=True, ensure_ascii=False)
             handle.write(str_)

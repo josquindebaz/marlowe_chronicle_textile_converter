@@ -261,8 +261,9 @@ def format_cloud(block, cloud_count):
 
 def format_map(block):
     """format map of towns"""
-    new, core, end = re.split(r"\s*--mapcapeurop--\s*", block)
     city_locator = CityLocator()
+
+    new, core, end = re.split(r"\s*--mapcapeurop--\s*", block)
 
     new += ('\n\n<notextile>\n\n<div id="map">\n<script class="code" '
             'type="text/javascript">\nvar initMap = function(){\n\t'
