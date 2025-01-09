@@ -295,7 +295,16 @@ def test_split_date_and_following():
     content = " 3/ 1/2025 23:7:2 \r\n\r\r\nMarlowe : "
 
     result = mrlw_chron_2_textile.split_date_and_following(content)
-    print(result)
+
     assert len(result) == 2
-    assert result[0] == datetime.datetime(2025, 1, 3, 23, 7, 2)
+    assert result[0] == " 3/ 1/2025 23:7:2 "
     assert result[1] == '\r\r\nMarlowe : '
+
+
+def test_format_introduction_date():
+    introduction_date = " 3/ 1/2025 23:7:2 "
+
+    result = mrlw_chron_2_textile.get_introduction_date(introduction_date)
+
+    assert result == datetime.datetime(2025, 1, 3, 23, 7, 2)
+
