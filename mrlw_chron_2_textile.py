@@ -370,6 +370,24 @@ def format_marks(block):
     return block
 
 
+def split_date_and_following(content):
+    """get the timestamp and return the following text"""
+
+    return re.split("\r\n", content, 1)
+
+def get_introduction_date(date):
+    """Get date from text date"""
+
+    (day, month, year,
+     hour, minutes, seconds) = (re.search(r"(\d*)/\s*(\d*)/(\d{4})\s*(\d*):(\d*):(\d*)", date)
+                                .group(1, 2, 3, 4, 5, 6))
+
+    return datetime.datetime.combine(
+        datetime.date(int(year), int(month), int(day)),
+        datetime.time(int(hour), int(minutes), int(seconds))
+    )
+
+
 class ChroniqueParser:
     """Analyse and parse chronicle content"""
 
@@ -381,12 +399,11 @@ class ChroniqueParser:
         self.typed_sentences = []
         self.extra_js = []
         self.logs = ""
+
         origin = texte.decode("cp1252")
-        following = self.get_date(origin)
-        #teste avant de continuer -> date et taille following
-        #        if (datetime.datetime.now()-self.date).days > 0:
-        #            print("Old chronique, exiting")
-        #            os.sys.exit()
+        introduction_date, following = split_date_and_following(origin)
+        self.date = get_introduction_date(introduction_date)
+
         self.type_sentences(re.split(r"Marlowe\s*:\s*", following)[1:])
         self.prepare_blocks()
         self.generate_preambule()
@@ -636,19 +653,6 @@ class ChroniqueParser:
         citation = re.sub(r"bq\.\s*<BR>\s*", "bq. ", citation)
 
         return citation
-
-    def get_date(self, content):
-        """get the timestamp and return the following text"""
-        date_time, following = re.split("\r\n", content, 1)
-        day, month, year, hour, minutes, secondes = \
-            re.search(r"(\d*)/\s*(\d*)/(\d{4})\s*(\d*):(\d*):(\d*).*$",
-                      date_time).group(1, 2, 3, 4, 5, 6)
-        self.date = datetime.datetime.combine(
-            datetime.date(int(year), int(month), int(day)),
-            datetime.time(int(hour), int(minutes), int(secondes))
-        )
-
-        return following
 
     def generate_preambule(self):
         """the preambule of the jeckyll file"""

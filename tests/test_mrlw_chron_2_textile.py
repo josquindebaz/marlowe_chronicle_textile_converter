@@ -184,8 +184,8 @@ p(reference). "Fond et positions © les contributeurs d'OpenStreetMap":https://w
 
 J'ose présumer que Tirésias et Nominatim ont les bonnes coordonnées !\r\n\r\r\n"""
 
-    assert (parser.typed_sentences[20][0][:4230]  == expected_map[:4230])
-    assert (parser.typed_sentences[20][0][4236:]  == expected_map[4236:])
+    assert (parser.typed_sentences[20][0][:4230] == expected_map[:4230])
+    assert (parser.typed_sentences[20][0][4236:] == expected_map[4236:])
 
 
 ######## static methods
@@ -205,6 +205,7 @@ def test_format_sigles_can_handle_acronyms():
     result = mrlw_chron_2_textile.format_sigles(block)
 
     assert result == 'Voici le contenu des "nouveaux" sigles : \n\n- TGC  := taxe générale sur la consommation,\n- SALT  := Strategic Arms Limitation Talks,\n- BSAOM  := bâtiment de soutien et d \' assistance outre-mer'
+
 
 # def test_format_links():
 #     assert False
@@ -279,8 +280,7 @@ def test_format_sigles_can_handle_acronyms():
 #     assert False
 #
 #
-# def test_get_date():
-#     assert False
+
 #
 #
 # def test_generate_preambule():
@@ -290,4 +290,21 @@ def test_format_sigles_can_handle_acronyms():
 # def test_write_textile():
 #     assert False
 
+
+def test_split_date_and_following():
+    content = " 3/ 1/2025 23:7:2 \r\n\r\r\nMarlowe : "
+
+    result = mrlw_chron_2_textile.split_date_and_following(content)
+
+    assert len(result) == 2
+    assert result[0] == " 3/ 1/2025 23:7:2 "
+    assert result[1] == '\r\r\nMarlowe : '
+
+
+def test_format_introduction_date():
+    introduction_date = " 3/ 1/2025 23:7:2 "
+
+    result = mrlw_chron_2_textile.get_introduction_date(introduction_date)
+
+    assert result == datetime.datetime(2025, 1, 3, 23, 7, 2)
 
