@@ -27,11 +27,15 @@ def format_sigles(block):
 def format_links(block):
     """format link for textile according to their target type
         including video and images"""
+
     block = re.sub("gspr.ehess.free.fr", "gspr-ehess.com", block)
     block = re.sub("92.243.27.161", "prosperologie.org", block)
+
     motif_images = re.compile(r"(http\S*.(jpg|png|gif|jpeg|JPG|img))")
+
     fragments = re.split(r'[^:](http\S*)', block)
     block = fragments[0]
+
     for i, fragment in enumerate(fragments[1:]):
         if i % 2 == 0:
             if motif_images.search(fragment):
@@ -54,40 +58,40 @@ def format_links(block):
                                   "allowfullscreen='allowfullscreen'>"
                                   "</iframe>\n\n",
                                   fragment)
-            elif re.search(r"http[s]?://\S*\.pdf", fragment):
-                fragment = re.sub(r"(http[s]?://\S*\.pdf)",
+            elif re.search(r"https?://\S*\.pdf", fragment):
+                fragment = re.sub(r"(https?://\S*\.pdf)",
                                   '"\\1":\\1\n\n<object '
                                   'data="\\1#toolbar=0&navpanes=0&view=Fit" '
                                   'width="500" height="650" '
                                   'type="application/pdf"></object>',
                                   fragment)
-            elif re.search(r"http[s]?://www.dailymotion.com/\S*", fragment):
-                if re.search(r"http[s]?://www.dailymotion.com/embed/video/\S*",
+            elif re.search(r"https?://www.dailymotion.com/\S*", fragment):
+                if re.search(r"https?://www.dailymotion.com/embed/video/\S*",
                              fragment):
-                    fragment = re.sub(r"(http[s]?://www.dailymotion.com/"
+                    fragment = re.sub(r"(https?://www.dailymotion.com/"
                                       r"embed/video/\S*)",
                                       '\n\n<iframe frameborder="0" '
                                       'width="500" height="352" '
                                       'src="\\1"></iframe>\n\n',
                                       fragment)
-                elif re.search(r"http[s]?://www.dailymotion.com/video/.*",
+                elif re.search(r"https?://www.dailymotion.com/video/.*",
                                fragment):
-                    fragment = re.sub(r"(http[s]?://www.dailymotion.com/)"
+                    fragment = re.sub(r"(https?://www.dailymotion.com/)"
                                       r"(video/[^_]*).*\s*",
                                       '\n\n<iframe frameborder="0" '
                                       'width="500" height="352" '
                                       'src="\\1embed/\\2\"></iframe>\n\n',
                                       fragment)
-            elif re.search(r"http[s]?://vimeo.com/\d{1,}", fragment):
-                fragment = re.sub(r"http[s]?://vimeo.com/(\d{1,})",
+            elif re.search(r"https?://vimeo.com/\d+", fragment):
+                fragment = re.sub(r"https?://vimeo.com/(\d+)",
                                   '\n\n<iframe frameborder="0" '
                                   'width="500" height="352" '
                                   'src="https://player.vimeo.com/video/\\1\" '
                                   'webkitAllowFullScreen mozallowfullscreen '
                                   'allowFullScreen></iframe>\n\n',
                                   fragment)
-            elif re.search(r"http[s]?://www.canal-u.tv/video/S*", fragment):
-                fragment = re.sub(r"http[s]?://www.canal-u.tv/video/(\S*)"
+            elif re.search(r"https?://www.canal-u.tv/video/S*", fragment):
+                fragment = re.sub(r"https?://www.canal-u.tv/video/(\S*)"
                                   r"/(\S*)",
                                   '\n\n<iframe src="https://www.canal-u.tv/'
                                   'video/\\1/embed.1/\\2" width="550" '
