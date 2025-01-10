@@ -31,7 +31,7 @@ def format_links(block):
     block = re.sub("gspr.ehess.free.fr", "gspr-ehess.com", block)
     block = re.sub("92.243.27.161", "prosperologie.org", block)
 
-    motif_images = re.compile(r"(http\S*.(jpg|png|gif|jpeg|JPG|img))")
+    motif_images = re.compile(r"(https?\S*.(jpg|png|gif|jpeg|JPG|img))")
 
     fragments = re.split(r'[^:](http\S*)', block)
     block = fragments[0]
@@ -39,10 +39,10 @@ def format_links(block):
     for i, fragment in enumerate(fragments[1:]):
         if i % 2 == 0:
             if motif_images.search(fragment):
-                fragment = re.sub(r"(http\S*.(jpg|png|gif|jpeg|JPG|img))",
-                                  "!\\1!", fragment)
+                fragment = re.sub(r"(https?\S*.(jpg|png|gif|jpeg|JPG|img))",
+                                  " !\\1!", fragment)
             elif re.search("youtube.com/watch", fragment):
-                fragment = re.sub(r'http\S?://www.youtube.com/watch?'
+                fragment = re.sub(r'https?://www.youtube.com/watch?'
                                   r'\S*v=([^\s&]*)',
                                   "\n\n<iframe frameborder='0'  width='500' "
                                   " height='352' "
@@ -51,7 +51,7 @@ def format_links(block):
                                   "</iframe>\n\n",
                                   fragment)
             elif re.search("youtu.be", fragment):
-                fragment = re.sub(r"http\S?://youtu.be/(.*)",
+                fragment = re.sub(r"https?://youtu.be/(.*)",
                                   "\n\n<iframe frameborder='0' width='500' "
                                   "height='352' "
                                   "src='http://www.youtube.com/embed/\\1'  "
@@ -99,8 +99,8 @@ def format_links(block):
                                   'allowfullscreen scrolling="no"></iframe>',
                                   fragment)
             else:
-                fragment = re.sub(r'http\S*://(\S*)',
-                                  ' "http://\\1":http://\\1',
+                fragment = re.sub(r'(https?://\S*)',
+                                  ' "\\1":\\1',
                                   fragment)
         block += fragment
 

@@ -209,7 +209,7 @@ def test_format_sigles_can_handle_acronyms():
 
 def test_format_links():
     content = 'any link https://any.link/something can do'
-    expected = 'any link "http://any.link/something":http://any.link/something can do'
+    expected = 'any link "https://any.link/something":https://any.link/something can do'
 
     result = mrlw_chron_2_textile.format_links(content)
 
@@ -252,8 +252,8 @@ def test_format_links_change_multiple_links():
 
 
 def test_format_links_change_images():
-    content = "This is an http://www.poetsgraves.co.uk/images/borgesgrave.jpg image"
-    expected = 'This is an!http://www.poetsgraves.co.uk/images/borgesgrave.jpg! image'
+    content = "This is an https://www.poetsgraves.co.uk/images/borgesgrave.jpg image"
+    expected = 'This is an !https://www.poetsgraves.co.uk/images/borgesgrave.jpg! image'
 
     result = mrlw_chron_2_textile.format_links(content)
 
