@@ -310,6 +310,13 @@ def get_introduction_date(date):
     )
 
 
+def harmonize_domain_url(block):
+    block = re.sub("gspr.ehess.free.fr", "gspr-ehess.com", block)
+    block = re.sub("92.243.27.161", "prosperologie.org", block)
+
+    return block
+
+
 class ChroniqueParser:
     """Analyse and parse chronicle content"""
 
@@ -410,6 +417,8 @@ class ChroniqueParser:
                 block = self.generate_citations(block)
 
                 if re.search(r"http\S?://\S*", block):
+                    block = harmonize_domain_url(block)
+
                     block = format_links(block)
 
                 if re.search(r'\d*  -  ', block):

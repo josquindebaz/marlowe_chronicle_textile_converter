@@ -18,28 +18,10 @@ def test_format_links_does_not_change_when_no_link():
     assert result == content
 
 
-def test_format_links_change_gspr_free():
-    content = "Voici un lien http://gspr.ehess.free.fr/ à consulter."
-    expected = 'Voici un lien "http://gspr-ehess.com/":http://gspr-ehess.com/ à consulter.'
-
-    result = textile_utils.format_links(content)
-
-    assert result == expected
-
-
-def test_format_links_change_prosperologie_ip():
-    content = "Voici un lien http://92.243.27.161 à consulter."
-    expected = 'Voici un lien "http://prosperologie.org":http://prosperologie.org à consulter.'
-
-    result = textile_utils.format_links(content)
-
-    assert result == expected
-
-
 def test_format_links_change_multiple_links():
-    content = "Voici deux liens http://92.243.27.161 et http://gspr.ehess.free.fr/ à consulter."
-    expected = ('Voici deux liens "http://prosperologie.org":http://prosperologie.org et '
-                '"http://gspr-ehess.com/":http://gspr-ehess.com/ à consulter.')
+    content = "Voici deux liens http://bla.com et https://blabla.fr/something à consulter."
+    expected = ('Voici deux liens "http://bla.com":http://bla.com et '
+                '"https://blabla.fr/something":https://blabla.fr/something à consulter.')
 
     result = textile_utils.format_links(content)
 

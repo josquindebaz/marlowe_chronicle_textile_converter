@@ -5,9 +5,6 @@ def format_links(block):
     """format link for textile according to their target type
         including video and images"""
 
-    block = re.sub("gspr.ehess.free.fr", "gspr-ehess.com", block)
-    block = re.sub("92.243.27.161", "prosperologie.org", block)
-
     motif_images = re.compile(r"(https?\S*.(jpg|png|gif|jpeg|JPG|img))")
 
     fragments = re.split(r'[^:](http\S*)', block)
