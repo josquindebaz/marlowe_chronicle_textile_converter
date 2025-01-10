@@ -18,54 +18,57 @@ def format_links(block):
     block = fragments[0]
 
     for i, fragment in enumerate(fragments[1:]):
-        if i % 2 == 0:
-            if image_pattern.search(fragment):
-                fragment = image_pattern.sub(" !\\1!", fragment)
+        if i % 2 != 0:
+            pass
 
-            elif youtube_pattern.search(fragment):
-                replacement = "\n\n<iframe frameborder='0' width='500' height='352' " \
-                              "src='http://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n"
+        if image_pattern.search(fragment):
+            fragment = image_pattern.sub(" !\\1!", fragment)
 
-                fragment = youtube_pattern.sub(replacement, fragment)
+        elif youtube_pattern.search(fragment):
+            replacement = "\n\n<iframe frameborder='0' width='500' height='352' " \
+                          "src='http://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n"
 
-            elif youtu_be_pattern.search(fragment):
-                replacement = "\n\n<iframe frameborder='0' width='500' height='352' " \
-                              "src='http://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n"
+            fragment = youtube_pattern.sub(replacement, fragment)
 
-                fragment = youtu_be_pattern.sub(replacement, fragment)
+        elif youtu_be_pattern.search(fragment):
+            replacement = "\n\n<iframe frameborder='0' width='500' height='352' " \
+                          "src='http://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n"
 
-            elif pdf_pattern.search(fragment):
-                replacement = '"\\1":\\1\n\n<object data="\\1#toolbar=0&navpanes=0&view=Fit" ' \
-                              'width="500" height="650" type="application/pdf"></object>'
+            fragment = youtu_be_pattern.sub(replacement, fragment)
 
-                fragment = pdf_pattern.sub(replacement, fragment)
+        elif pdf_pattern.search(fragment):
+            replacement = '"\\1":\\1\n\n<object data="\\1#toolbar=0&navpanes=0&view=Fit" ' \
+                          'width="500" height="650" type="application/pdf"></object>'
 
-            elif daily_embed_pattern.search(fragment):
-                replacement = '\n\n<iframe frameborder="0" width="500" height="352" src="\\1"></iframe>\n\n'
+            fragment = pdf_pattern.sub(replacement, fragment)
 
-                fragment = daily_embed_pattern.sub(replacement, fragment)
+        elif daily_embed_pattern.search(fragment):
+            replacement = '\n\n<iframe frameborder="0" width="500" height="352" src="\\1"></iframe>\n\n'
 
-            elif daily_video_pattern.search(fragment):
-                replacement = '\n\n<iframe frameborder="0" width="500" height="352" src="\\1embed/\\2\"></iframe>\n\n'
+            fragment = daily_embed_pattern.sub(replacement, fragment)
 
-                fragment = daily_video_pattern.sub(replacement, fragment)
+        elif daily_video_pattern.search(fragment):
+            replacement = '\n\n<iframe frameborder="0" width="500" height="352" src="\\1embed/\\2\"></iframe>\n\n'
 
-            elif vimeo_pattern.search(fragment):
-                replacement = '\n\n<iframe frameborder="0" width="500" height="352" src="https://player.vimeo.com/video/\\1\" ' \
-                              'webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>\n\n'
+            fragment = daily_video_pattern.sub(replacement, fragment)
 
-                fragment = vimeo_pattern.sub(replacement, fragment)
+        elif vimeo_pattern.search(fragment):
+            replacement = '\n\n<iframe frameborder="0" width="500" height="352" src="https://player.vimeo.com/video/\\1\" ' \
+                          'webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>\n\n'
 
-            elif canal_u_pattern.search(fragment):
-                replacement = '\n\n<iframe src="https://www.canal-u.tv/video/\\1/embed.1/\\2" width="550" ' \
-                              'height="306" frameborder="0" allowfullscreen scrolling="no"></iframe>'
+            fragment = vimeo_pattern.sub(replacement, fragment)
 
-                fragment = canal_u_pattern.sub(replacement, fragment)
+        elif canal_u_pattern.search(fragment):
+            replacement = '\n\n<iframe src="https://www.canal-u.tv/video/\\1/embed.1/\\2" width="550" ' \
+                          'height="306" frameborder="0" allowfullscreen scrolling="no"></iframe>'
 
-            else:
-                fragment = re.sub(r'(https?://\S*)',
-                                  ' "\\1":\\1',
-                                  fragment)
+            fragment = canal_u_pattern.sub(replacement, fragment)
+
+        else:
+            fragment = re.sub(r'(https?://\S*)',
+                              ' "\\1":\\1',
+                              fragment)
+
         block += fragment
 
     return block
