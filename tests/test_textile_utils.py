@@ -39,8 +39,8 @@ def test_format_links_change_images():
 
 def test_format_links_change_youtube():
     content = "This is a https://www.youtube.com/watch?v=FK-KC2aQpcI video"
-    expected = ("This is a\n\n<iframe frameborder='0'  width='500'  height='352' "
-                "src='http://www.youtube.com/embed/FK-KC2aQpcI'  "
+    expected = ("This is a\n\n<iframe frameborder='0' width='500' height='352' "
+                "src='http://www.youtube.com/embed/FK-KC2aQpcI' "
                 "allowfullscreen='allowfullscreen'></iframe>\n\n video")
 
     result = textile_utils.format_links(content)
@@ -51,7 +51,7 @@ def test_format_links_change_youtube():
 def test_format_links_change_youtu_be():
     content = "This is a https://youtu.be/watch?v=FK-KC2aQpcI video"
     expected = ("This is a\n\n<iframe frameborder='0' width='500' height='352' "
-                "src='http://www.youtube.com/embed/watch?v=FK-KC2aQpcI'  "
+                "src='http://www.youtube.com/embed/watch?v=FK-KC2aQpcI' "
                 "allowfullscreen='allowfullscreen'></iframe>\n\n video")
 
     result = textile_utils.format_links(content)
