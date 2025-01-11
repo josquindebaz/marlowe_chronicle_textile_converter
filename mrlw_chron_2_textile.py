@@ -263,8 +263,10 @@ def protect_quotes(block):
 
 def format_date(block):
     """better date forms"""
+
     # locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
     dates = re.findall(r"[\s:](\d{1,2}/\s*\d{1,2}/\d{4})[^/]", block)
+
     for date in list(set(dates)):
         day, month, year = re.split(r"/", date)
         new = datetime.date(int(year), int(month), int(day))

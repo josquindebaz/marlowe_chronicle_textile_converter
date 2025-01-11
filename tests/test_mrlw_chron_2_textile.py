@@ -245,12 +245,17 @@ def test_format_sigles_can_handle_acronyms():
 #
 # def test_protect_quotes():
 #     assert False
-#
-#
-# def test_format_date():
-#     assert False
-#
-#
+
+
+def test_format_date():
+    block = 'The dates 26/ 1/2005, 28/12/2024, 3/ 1/2025, and 03/01/2025 are fine'
+    expected = 'The dates 26 January 2005, 28 December 2024, 3 January 2025, and 3 January 2025 are fine'
+
+    result = mrlw_chron_2_textile.format_date(block)
+
+    assert result == expected
+
+
 # def test_format_marks():
 #     assert False
 
