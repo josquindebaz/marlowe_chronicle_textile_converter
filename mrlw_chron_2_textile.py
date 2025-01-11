@@ -252,16 +252,6 @@ def format_quotes(block):
     return block
 
 
-def protect_quotes(block):
-    """quotes to html or echap for preambule"""
-    if not len(re.findall('"', block)) % 2:
-        block = format_quotes(block)
-    else:
-        block = re.sub('"*', '\\"', block)
-
-    return block
-
-
 def format_marks(block):
     """add, delete and simplify marks for textile"""
     block = dates_to_long_dates(block)
@@ -297,7 +287,7 @@ def harmonize_domain_url(block):
 def generate_preamble(title, excerpt, extra_js, date):
     """the preamble of the Jekyll file"""
 
-    result = f'title: "{protect_quotes(title)}"\nexcerpt: "{protect_quotes(excerpt)}"\n'
+    result = f'title: "{format_quotes(title)}"\nexcerpt: "{format_quotes(excerpt)}"\n'
     if extra_js:
         result += f"extra_js: {", ".join(extra_js)} \n"
 

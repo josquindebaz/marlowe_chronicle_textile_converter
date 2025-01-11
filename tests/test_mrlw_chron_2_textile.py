@@ -258,12 +258,6 @@ def test_format_sigles_can_handle_acronyms():
 #     assert False
 #
 #
-# def test_protect_quotes():
-#     assert False
-
-
-# def test_format_marks():
-#     assert False
 
 
 # ChroniqueParser
@@ -306,6 +300,7 @@ h2. {{ page.title }}
 p(publish_date). samedi 11 janvier 2025 19:41:52"""
 
     assert result == expected
+
 
 def test_generate_preamble_with_extra_js():
     title = "a title"
