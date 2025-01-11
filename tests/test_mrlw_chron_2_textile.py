@@ -203,6 +203,29 @@ J'ose présumer que Tirésias et Nominatim ont les bonnes coordonnées !\r\n\r\r
     assert (parser.typed_sentences[20][0][4236:] == expected_map[4236:])
 
 
+def test_chronicle_with_histogram():
+    with open("source_samples/2025-01-04-chronique_mrlw.txt", 'rb') as c:
+        chronicle_content = c.read()
+
+    parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
+
+    assert parser.date == datetime.datetime(2025, 1, 4, 23, 5, 45)
+    assert parser.title == 'Pour tout dire La sociologie informatique ne passionne pas les foules :'
+    assert parser.logs == ('Saturday 4 January 2025 23:05:45\nchronicle text size: 20167 chars\nfound 24 blocks\n'
+                           'Pour tout dire La sociologie informatique ne passionne pas les foules :\n')
+
+    expected_publish_date = r'\np\(publish_date\). samedi 4 janvier 2025 23:05:45\n'
+    assert re.search(expected_publish_date, parser.chronique)
+
+    assert "barplot" in parser.extra_js
+
+    expected_histogram_1 = '<notextile>\n <script class="code" type="text/javascript">\n$(document).ready(function(){ \nvar s = [ 0, 259, 279, 320, 318, 315, 287, 267, 291, 312, 308, 357, 361, 348, 342, 306, 280, 220, 272, 205, 228, 4 ];\nvar ticks = [\' 2004 \',\' 2005 \',\' 2006 \',\' 2007 \',\' 2008 \',\' 2009 \',\' 2010 \',\' 2011 \',\' 2012 \',\' 2013 \',\' 2014 \',\' 2015 \',\' 2016 \',\' 2017 \',\' 2018 \',\' 2019 \',\' 2020 \',\' 2021 \',\' 2022 \',\' 2023 \',\' 2024 \',\' 2025 \'];\nvar plot = $.jqplot(\'chart_0\', [s,],{\n\tseriesColors: [\'#'
+    expected_histogram_2 = '\'], \n\tseriesDefaults:{renderer:$.jqplot.BarRenderer, rendererOptions:{fillToZero: true}},\n\taxes:{\n\t\txaxis:{renderer: $.jqplot.CategoryAxisRenderer, ticks: ticks},\n\t\tyaxis: {pad: 1.05, tickOptions: {formatString: \'%d\'}}\n\t}\n});\n});\n </script>\n</notextile>\n\n<div id="chart_0" style="width: 700px;"></div>'
+
+    assert parser.typed_sentences[7][0][484:960] == expected_histogram_1
+    assert parser.typed_sentences[7][0][966:1267] == expected_histogram_2
+
+
 ######## static methods
 
 def test_format_sigles_returns_block_if_no_sigles():
@@ -261,6 +284,7 @@ def test_make_html_quotes_do_nothing_if_no_quotes():
 
     assert result == text
 
+
 def test_make_html_quotes_replace_double_quotes():
     text = "Zola écrivait : \" La vérité est en marche ; rien ne peut plus l'arrêter \" en 1897."
     expected = "Zola écrivait :  &#171;&#160;La vérité est en marche ; rien ne peut plus l'arrêter&#160;&#187;  en 1897."
@@ -268,6 +292,7 @@ def test_make_html_quotes_replace_double_quotes():
     result = mrlw_chron_2_textile.make_html_quotes(text)
 
     assert result == expected
+
 
 # ChroniqueParser
 
@@ -343,5 +368,3 @@ def test_split_date_and_following():
     assert len(result) == 2
     assert result[0] == " 3/ 1/2025 23:7:2 "
     assert result[1] == '\r\r\nMarlowe : '
-
-

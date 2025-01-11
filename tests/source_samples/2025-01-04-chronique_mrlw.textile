@@ -1,0 +1,360 @@
+---
+layout: post
+title: "Pour tout dire La sociologie informatique ne passionne pas les foules :"
+excerpt: ""
+extra_js: barplot, sigma, maps 
+---
+
+h2. {{ page.title }}
+
+p(publish_date). samedi 4 janvier 2025 23:05:45
+
+p. "http://stats.grok.se/fr/latest30/Sociologie_informatique":http://stats.grok.se/fr/latest30/Sociologie_informatique
+
+p. Allons-y pour l'éphéméride du jour : 
+ 4 janvier 2006 : Pierre Pinoncelli (77 ans au moment des faits) a entrepris de réformer à coups de marteau l'urinoir/fontaine de Marcel Duchamp, oeuvre emblématique présentée dans l'exposition Dada au centre Pompidou. Il faut noter que cette pièce, souvent associée à la naissance de l'art contemporain, en l'occurrence du ready-made, n'est en fait qu'un fac-similé de la pièce originale de 1917, elle même égarée depuis. Ce n'est pas une réplique grandeur nature qui fut réalisée, mais huit exemplaires qui firent l'objet d'une "édition" réalisée par Duchamp et le marchand d'art italien Schwarz en 1964. Le dernier exemplaire disponible, a été vendu en 1999, pour la modique somme de 1,6 million d'euros. Pinoncelli, qui dénonce ce système, est connu comme un multi-récidiviste des actions artistiques et punitives depuis les années 60. Il fut condamné en 1998 à une amende de 45122 euros pour avoir déjà porté en 1993 des coups de marteau et soulagé sa vessie, comme dans une banale pissotière, dans le fac-similé de l'urinoir exposé au Carré d'art de Nîmes. Je suivrais volontiers des dossiers de ce genre ! Mais que font donc les sociologues de l'art ?
+
+bq. Si des gens qui ont reçu la même éducation que moi, qui parlent le même langage que moi, aiment les mêmes livres, la même musique, les mêmes tableaux que moi, si ces gens ne sont nullement à l'abri de la possibilité de devenir des monstres inhumains et de faire des choses dont jusque-là nous aurions cru qu'étaient incapables des gens de notre époque, hormis des cas pathologiques individuels, où prendrai-je l'assurance que j'en suis moi-même à l'abri ?
+
+p(source). Max Frisch (1946)
+
+p. Je me demande quand aura lieu mon déménagement annoncé sur Prospéro II... j'essaye de suivre l'actualité du développement par ici : 
+ "http://www.minilien.com/?xds4I3Jh8T":http://www.minilien.com/?xds4I3Jh8T... Mais il n'y a pas d'échéance clairement annoncée...
+
+h2. Compose ta chronique
+
+p. Je me rappelle encore de la période septembre 2016 - avril 2017, toute cette agitation sur mon code pour y insérer des algorithmes supposés m'aider à traiter "proprement" la campagne électorale... Je n'arrive toujours pas à savoir si les algorithmes qui m'ont conduit à sélectionner l'ancien ministre de l'Enseignement professionnel (2000-2002) étaient bidouillés ou non... Enfin, peu importe, le résultat, on le connaît : Macron...Alors bien sûr, il va vachement occuper l'espace politico-médiatique et il me faut adapter mes scripts... De Macron, il est question 27 fois ce jour, et je retiens surtout des figures critiques : 
+
+
+bq. Mais les électeurs de gauche ne vont-ils pas se lasser des contradictions de leurs chefs ? Le PS a fait élire ses députés avec un programme de rupture avec sa pratique du pouvoir de 2012 à 2017, avant d'envisager de vrais compromis, y compris sur les retraites, pour bâtir une majorité avec Macron, avant de finalement dire non à Bayrou.   
+
+p(reference). &#171;&#160;Le bloc central et LFI offrent la France au RN,&#160;&#187;, Agoravox, 4 janvier 2025
+
+bq. Aujourd'hui, nous, Français, devenus tristes avortons, nous avons l'horreur médiocre et bourgeoise " par quoi Macron parvient à faire dérision chez les autres.   
+
+p(reference). &#171;&#160;Pourquoi le Russe nous "fait horreur",&#160;&#187;, Dedefensa, 4 janvier 2025
+
+bq. J'ai presque tenu trois jours, mais finalement je n'ai pu respecter mon voeux de la nouvelle année, c'est-à-dire de ne rien écrire cette fois sur les voeux du président de la République Au dernier soir d'une année 2024 marquée par la dissolution ratée de l'Assemblée nationale qui conduisit à la perte d'une grande partie de son influence, Emmanuel Macron, toujours droit dans ses bottes a fait de l'Emmanuel Macron ! Sans doute dans l'espoir de tourner la page et surtout d'impressionner et de donner l'impression de faire quelque chose de novateur, il, a bousculé le rituel des voeux aux Français : la traditionnelle allocution présidentielle s'est ouverte sur une courte vidéo, commentée en voix "off " par le chef en personne ! On n'est jamais mieux servi que par soi-même ! Et le ridicule commença : " Ensemble, cette année, nous avons prouvé qu'impossible n'était pas français ", a-t-il lancé tandis que défilaient les images rappelant les " fiertés françaises " qui ont marqué 2024, selon le grand manitou.   
+
+p(reference). &#171;&#160;Titre : Emmanuel Macron : Voeux du Nouvel An / Sous-titre : L'art de s'attribuer le positif,&#160;&#187;, Agoravox, 4 janvier 2025
+
+bq. Si ce n'était pas tragique cet humour macronien serait excellent ! * Je suis certain qu'il nous resservira un tour de France pour " écouter " le peuple, la volonté profonde du pays l'avis de tous et ensuite nous présentera (un cabinet conseil quelconque grassement payé avec nos impôts rédigera un texte à la gloire du chef) une synthèse à sa gloire ! Durant sa tournée française il s'écoutera parler devant un auditoire choisi et acquis à sa cause, pour noyer le poisson ! * Enfin Emmanuel Macron se prépare un destin européen et international exhortant les Européens à " en finir avec la naïveté " en matière de commerce ou d'agriculture, à " dire non aux lois du commerce édictées par d'autres et que nous sommes les seuls à encore respecter, dire non à tout ce qui nous fait dépendre des autres, sans contrepartie et sans préparer notre avenir ".   
+
+p(reference). &#171;&#160;Titre : Emmanuel Macron : Voeux du Nouvel An / Sous-titre : L'art de s'attribuer le positif&#160;&#187;, "Agoravox":http://www.agoravox.fr/tribune-libre/article/titre-emmanuel-macron-voeux-du-258476, 4 janvier 2025
+
+p. Né peu de temps avant les attentats du 11 septembre 2001, j'enregistre un nombre incroyable d'attentats. Ce n'est visiblement pas un effet de mesure. Deux sources convergent :
+
+p. - la liste des attentats meurtriers sur Wikipedia : 
+
+p. 
+
+
+p. "http://fr.wikipedia.org/wiki/Liste_d%27attentats_meurtriers":http://fr.wikipedia.org/wiki/Liste_d%27attentats_meurtriers 
+
+p. 
+
+
+p. - la distribution temporelle du mot "attentats" dans la base évolutive des objets d'alerte :
+
+p. 
+
+
+p.  <notextile>
+ <script class="code" type="text/javascript">
+$(document).ready(function(){ 
+var s = [ 0, 259, 279, 320, 318, 315, 287, 267, 291, 312, 308, 357, 361, 348, 342, 306, 280, 220, 272, 205, 228, 4 ];
+var ticks = [' 2004 ',' 2005 ',' 2006 ',' 2007 ',' 2008 ',' 2009 ',' 2010 ',' 2011 ',' 2012 ',' 2013 ',' 2014 ',' 2015 ',' 2016 ',' 2017 ',' 2018 ',' 2019 ',' 2020 ',' 2021 ',' 2022 ',' 2023 ',' 2024 ',' 2025 '];
+var plot = $.jqplot('chart_0', [s,],{
+	seriesColors: ['#C7754C'], 
+	seriesDefaults:{renderer:$.jqplot.BarRenderer, rendererOptions:{fillToZero: true}},
+	axes:{
+		xaxis:{renderer: $.jqplot.CategoryAxisRenderer, ticks: ticks},
+		yaxis: {pad: 1.05, tickOptions: {formatString: '%d'}}
+	}
+});
+});
+ </script>
+</notextile>
+
+<div id="chart_0" style="width: 700px;"></div>  
+
+p. 
+
+
+p. Aujourd'hui, on cause des attentats, par exemple ici :
+
+bq. " L'influenceur algérien " Zazouyoussef " qui appelait sa communauté à commettre des attentats en France devra répondre de ses actes devant la justice ", promet Bruno Retailleau sur X. Selon TikTok, interrogé par l'AFP, le compte en question " a été banni après la publication de plusieurs vidéos identifiées comme enfreignant [ les ] règles communautaires [ du réseau ], notamment  [ ses ] politiques relatives à la haine ". 
+
+p(reference). &#171;&#160;Deux influenceurs algériens en garde à vue pour avoir diffusé des appels à la haine Je n'oublie pas d'afficher la liste des objets d'alerte : alcool, drogue, grippe aviaire, déchets, terrorisme, terroriste, attentats, cyclone, attentat, drogues, nucléaire, H5N1, incendie, tabac, grippe, terroristes, changement climatique, poussière, réchauffement climatique, pluies torrentielles, raz-de-marée, phénol, alcools, CO2, déchets nucléaires, pollution atmosphérique, bruit, perturbateurs endocriniens...&#160;&#187;, Le Monde, 4 janvier 2025
+
+p. Ce soir, j'essaye de faire une carte de liens à partir des objets d'alerte - j'ai des progrès à faire mais si je n'essaye pas je suis sûr à 100 % de ne pas y arriver ! 
+ 
+
+<notextile>
+  <div id="graph-container_1" class="graph-container"> </div>
+<script class="code" type="text/javascript"> var sigma_1 = new sigma ('graph-container_1');
+sigma_1.graph.addNode({id: 'n0', label: "changement climatique", x: 1.000000, y: 0.000000, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n1', label: "grippe", x: 0.965926, y: 0.258819, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n2', label: "incendie", x: 0.866025, y: 0.500000, size: 5, color: '#623466'}); sigma_1.graph.addNode({id: 'n3', label: "alcool", x: 0.707107, y: 0.707107, size: 10, color: '#5a592a'}); sigma_1.graph.addNode({id: 'n4', label: "nucléaire", x: 0.500000, y: 0.866025, size: 3, color: '#7389c5'}); sigma_1.graph.addNode({id: 'n5', label: "terrorisme", x: 0.258819, y: 0.965926, size: 8, color: '#c24638'}); sigma_1.graph.addNode({id: 'n6', label: "attentat", x: 0.000000, y: 1.000000, size: 4, color: '#5aa992'}); sigma_1.graph.addNode({id: 'n7', label: "tabac", x: -0.258819, y: 0.965926, size: 9, color: '#d353ad'}); sigma_1.graph.addNode({id: 'n8', label: "attentats", x: -0.500000, y: 0.866025, size: 4, color: '#5aa992'}); sigma_1.graph.addNode({id: 'n9', label: "terroristes", x: -0.707107, y: 0.707107, size: 4, color: '#5aa992'}); sigma_1.graph.addNode({id: 'n10', label: "terroriste", x: -0.866025, y: 0.500000, size: 3, color: '#7389c5'}); sigma_1.graph.addNode({id: 'n11', label: "grippe aviaire", x: -0.965926, y: 0.258819, size: 4, color: '#5aa992'}); sigma_1.graph.addNode({id: 'n12', label: "H5N1", x: -1.000000, y: 0.000000, size: 2, color: '#70b147'}); sigma_1.graph.addNode({id: 'n13', label: "drogues", x: -0.965926, y: -0.258819, size: 6, color: '#7d48c8'}); sigma_1.graph.addNode({id: 'n14', label: "alcools", x: -0.866025, y: -0.500000, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n15', label: "drogue", x: -0.707107, y: -0.707107, size: 5, color: '#623466'}); sigma_1.graph.addNode({id: 'n16', label: "CO2", x: -0.500000, y: -0.866025, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n17', label: "réchauffement climatique", x: -0.258819, y: -0.965926, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n18', label: "déchets", x: -0.000000, y: -1.000000, size: 3, color: '#7389c5'}); sigma_1.graph.addNode({id: 'n19', label: "pluies torrentielles", x: 0.258819, y: -0.965926, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n20', label: "perturbateurs endocriniens", x: 0.500000, y: -0.866025, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n21', label: "cyclone", x: 0.707107, y: -0.707107, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n22', label: "phénol", x: 0.866025, y: -0.500000, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n23', label: "poussière", x: 0.965926, y: -0.258819, size: 1, color: '#c07282'}); 
+sigma_1.graph.addEdge({ id: 'e0', source: 'n2',target: 'n3', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e1', source: 'n4',target: 'n5', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e2', source: 'n6',target: 'n3', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e3', source: 'n6',target: 'n2', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e4', source: 'n6',target: 'n7', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e5', source: 'n8',target: 'n3', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e6', source: 'n8',target: 'n0', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e7', source: 'n8',target: 'n5', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e8', source: 'n5',target: 'n8', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e9', source: 'n5',target: 'n9', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e10', source: 'n5',target: 'n6', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e11', source: 'n5',target: 'n10', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e12', source: 'n11',target: 'n5', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e13', source: 'n11',target: 'n4', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e14', source: 'n11',target: 'n12', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e15', source: 'n3',target: 'n13', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e16', source: 'n3',target: 'n7', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e17', source: 'n3',target: 'n14', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e18', source: 'n3',target: 'n2', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e19', source: 'n15',target: 'n0', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e20', source: 'n15',target: 'n16', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e21', source: 'n15',target: 'n17', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e22', source: 'n18',target: 'n19', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e23', source: 'n18',target: 'n20', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e24', source: 'n18',target: 'n0', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e25', source: 'n10',target: 'n15', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e26', source: 'n10',target: 'n5', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e27', source: 'n21',target: 'n4', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e28', source: 'n13',target: 'n3', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e29', source: 'n13',target: 'n7', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e30', source: 'n13',target: 'n14', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e31', source: 'n13',target: 'n22', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e32', source: 'n12',target: 'n11', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e33', source: 'n7',target: 'n13', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e34', source: 'n7',target: 'n22', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e35', source: 'n7',target: 'n14', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e36', source: 'n7',target: 'n3', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e37', source: 'n7',target: 'n2', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e38', source: 'n9',target: 'n3', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e39', source: 'n9',target: 'n2', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e40', source: 'n9',target: 'n7', color: '#d353ad'}); sigma_1.graph.addEdge({ id: 'e41', source: 'n23',target: 'n15', color: '#623466'}); sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});
+sigma_1.refresh();
+sigma_1.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});
+setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);
+</script>
+</notextile>
+
+p. Pas terrible ce graphe, je me demande si le retour à Pajek ne s'impose pas... Enfin, ce que j'en dis...
+
+h2. Quels sont les nouveaux sigles ?
+
+p. J'ai dénombré 4 nouveaux sigles - nouveaux pour moi n'est-il pas ! 
+ OOO, RFK, EDV, GWR  
+ Est-ce que je regarde de plus près de quoi il s'agit ?
+
+Allez hop, on ouvre les nouveaux sigles : 
+
+- OOO  := Object-Oriented Ontology,
+- RFK  := Robert Francis Kennedy,
+- EDV  := enregistreur de données de vol,
+- GWR  := Guinness World Records
+
+h2. Je note les personnalités du jour
+
+p. Bon... on m'a encore fait remarquer que j'affichais trop d'énoncés quand me prend l'envie de remonter dans le temps autour d'une personnalité... Par exemple Trump... ALors je me limite aux dernières apparitions :
+
+bq. 26 novembre 2024 : La crise des réfugiés de 2015 Ce n'est pas l'élection de Donald Trump, mais la crise des réfugiés de 2015 qui a marqué un tournant politique pour Angela Merkel, qui a expliqué au journal britannique qu'" ? il y a eu un avant et un après ? ". 
+
+p(reference). &#171;&#160;Angela Merkel revient sur ses seize ans en tant que chancelière allemande&#160;&#187;, Euractiv, 26 novembre 2024
+
+ 
+
+bq.  27 novembre 2024 : Différentes raisons peuvent expliquer la prudence de Moscou : le bilan, jugé décevant du point de vue russe, de son premier mandat (2017-2021), le souci de ne pas alimenter la thèse d'une " collusion " avec Donald Trump, une certaine résignation qui conduit les responsables russes à conclure que, cette fois encore, les initiatives de ce président disruptif seront neutralisées par l'establishment washingtonien, la volonté de ne pas apparaître comme demandeur d'une négociation et aussi la crainte d'une réaction imprévisible de Donald Trump si la Russie refusait ses propositions sur le conflit ukrainien.   
+
+p(reference). &#171;&#160;Ukraine: pour les Européens l'épreuve de vérité approche&#160;&#187;, "telos":http://www.telos-eu.com/fr/ukraine-pour-les-europeens-lepreuve-de-verite-appr.html, 27 novembre 2024 
+
+bq.  30 novembre 2024 : C'est probablement pour tenter d'éviter de telles hostilités économiques que Justin Trudeau a effectué vendredi un déplacement surprise à West Palm Beach pour rencontrer en personne le prochain président américain, qui retourne à la Maison Blanche le 20 janvier.   
+
+p(reference). &#171;&#160;Inquiet sur les droits de douane, Trudeau rencontre Trump en Floride&#160;&#187;, france24, 30 novembre 2024
+
+bq.  3 décembre 2024 : Certains, - selon une source américaniste bien au fait des choses bruxelloises et sans accent trop marqué, - vont même avoir à difficilement digérer dans ce cas des mesures autoritaires, illégales et totalitaristes dans le domaine bureaucratique, comme cette directive sans aucun précédent de van der Leyen interdisant à tous ses commissaires, fonctionnaires de haut rang, etc., la moindre évocation en public de Trump et de son équipe au moins jusqu'au 20 janvier.   
+
+p(reference). &#171;&#160;« Ca devient de plus en plus fou »&#160;&#187;, "Dedefensa":https://www.dedefensa.org/article/ca-devient-de-plus-en-plus-fou, 3 décembre 2024 
+
+bq.  5 décembre 2024 : L'inverse de l'Armageddon ? Un deal géopolitique de très haut niveau est imaginable, Trump (Roosevelt) cherchant à laisser un nom de " grand homme " dans l'Histoire, avec Poutine (Staline), mais sans Churchill cette fois, et sans De Gaulle en arrière plan.   
+
+p(reference). &#171;&#160;La guerre va se poursuivre en 2025&#160;&#187;, "Agoravox":http://www.agoravox.fr/tribune-libre/article/la-guerre-va-se-poursuivre-en-2025-257969, 5 décembre 2024 
+
+bq.  7 décembre 2024 : Melania Trump, épouse de Donald Trump, a assuré que son mari et elle sont bien mieux préparés à prendre les rênes de la Maison Blanche en janvier prochain qu'en 2016, lorsque le républicain avait été élu pour la première fois, dans sa première interview depuis la victoire de Donald Trump, à Fox News, le 6 décembre.   
+
+p(reference). &#171;&#160;"On sait déjà où on va": Melania Trump, épouse de Donald Trump, assure qu'ils sont mieux préparés qu'en 2016&#160;&#187;, bfmtv, 7 décembre 2024 
+
+bq.  8 décembre 2024 : Après leur poignée de main devant l'Élysée samedi, Emmanuel Macron et Donald Trump ont renouvelé l'expérience devant la cathédrale Notre-Dame quelques heures plus tard, mais plus courte cette fois.e   
+
+p(reference). &#171;&#160;Réouverture de Notre-Dame: la surprenante poignée de main entre Macron et Trump&#160;&#187;, bfmtv, 8 décembre 2024 
+
+bq.  11 décembre 2024 : " ? Jusqu'à présent, il n'y a pas eu d'initiatives de la part de [ Donald ] Trump, [... ] nous attendons l'inauguration, et nous verrons bien ? ", a ajouté le porte-parole du Kremlin.   
+
+p(reference). &#171;&#160;Vladimir Poutine et Viktor Orbán évoquent la guerre en Ukraine lors d’un appel téléphonique&#160;&#187;, Euractiv, 11 décembre 2024 
+
+bq.  19 décembre 2024 : Pour lui, la " lutte finale " semble avoir déjà commencé.o   
+
+p(reference). &#171;&#160;Après son soutien à Donald Trump, Elon Musk est prêt à "aider" l'extrême droite britannique&#160;&#187;, franceinfo, 19 décembre 2024
+
+bq.  21 décembre 2024 : [... ] Un autre exemple d'un tournant [ aisément négocié, lui, ] en fonction du tournant de Trump, c'est celui des sites anglophones nés au moment de la crise ukrainiennes, comme &#8216 ; Russie Insider'et &#8216 ; TheDuran.com ', qui n'ont jamais fait que soutenir une politique et ont donc épousé la cause de Trump sous condition de cette politique, lorsqu'il fut parfaitement Trump 1.0. Dans les deux cas, ce qui comptait surtout, c'était [ l'attaque contre ] l'adversaire de Trump (Hillary, le War Party, les démocrates, les antirussistes), et Trump était bon à prendre dans la mesure [ essentielle sinon exclusive ] où il s'opposait à tout cela (&#8216 ; les ennemis de vos ennemis sont vos amis ', - tant qu'ils restent &#8216 ; ennemis de vos ennemis ', ou encore mieux, la thèse de l'&#8216 ; Ennemi principal ").   
+
+p(reference). &#171;&#160;Quel destin pour Trump-II ?&#160;&#187;, "Dedefensa":https://www.dedefensa.org/article/quel-destin-pour-trump-ii, 21 décembre 2024 
+
+bq.  21 décembre 2024 : Leur opposition avait tué dans l'oeuf le projet de loi et offert un avant-goût du second mandat de Donald Trump, avec un style sans compromis, quitte à provoquer le chaos, rappelant ses quatre premières années à la Maison Blanche.   
+
+p(reference). &#171;&#160;Joe Biden promulgue le texte évitant une paralysie budgétaire aux Etats-Unis&#160;&#187;, "Le Monde":https://www.lemonde.fr/international/article/2024/12/21/joe-biden-promulgue-le-texte-evitant-une-paralysie-budgetaire-aux-etats-unis_6461404_3210.html, 21 décembre 2024
+
+bq.  30 décembre 2024 : (Patricia Boutinard Rouelle et Marianne Jestaz - Nilaya Productions) 5 Les désirs de la jeunesse iranienne Depuis la mort de la jeune Mahsa Amini en Iran en septembre 2022, la vague de protestations pour défendre les droits des femmes qui s'en est suivie et le réveil du conflit israélo-palestinien, l'Iran est au coeur de toutes les attentions.   
+
+p(reference). &#171;&#160;VIDEOS. JO de Paris, élection de Donald Trump, 80 ans du Débarquement... Six documentaires marquants de l'année 2024 à voir ou à revoir&#160;&#187;, franceinfo, 30/12/2024
+
+h2. L'état du palmarès des 30 premières personnalités de l'actualité
+
+p. La stratégie que j'adopte désormais consiste à établir deux listes de personnalités. 
+
+p.  D'abord le palmarès des 60 derniers jours soit du 5 novembre 2024  au 3 janvier 2025  :   
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_0_1',
+    [[ [6, " Washington "],  [6, " Wauquiez "],  [6, " Tondelier "],  [6, " Valls "],  [7, " Tusk "],  [8, " Nétanyahou "],  [8, " Paty "],  [8, " Attal "],  [9, " Harris "],  [9, " Mélenchon "],  [9, " Barrot "],  [10, " Faure "],  [12, " Bardella "],  [12, " Meloni "],  [12, " Darmanin "],  [13, " Netanyahu "],  [15, " Pelicot "],  [16, " Yoon "],  [21, " Scholz "],  [22, " Retailleau "],  [25, " Musk "],  [28, " Al-Assad "],  [29, " Zelensky "],  [30, " Bayrou "],  [35, " Biden "],  [40, " Le Pen "],  [48, " Barnier "],  [50, " Poutine "],  [60, " Macron "],  [60, " Trump "],  ]],
+    {seriesColors: ['#73C774'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_0_1' style=' width: 700px; height: 512px;'></div>
+
+
+
+p.  Et, par contraste, j'affiche la distribution antérieure, soit du 14 septembre 2004  au 4 novembre 2024  :   
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_0_2',
+    [[ [337, " Ayrault "],  [338, " Le Maire "],  [359, " Kerry "],  [364, " Darmanin "],  [366, " Abbas "],  [367, " Aubry "],  [383, " Maduro "],  [384, " Assange "],  [430, " Zelensky "],  [490, " Bayrou "],  [497, " Johnson "],  [510, " Netanyahu "],  [545, " Villepin "],  [551, " Erdogan "],  [715, " Clinton "],  [860, " Chirac "],  [871, " Bush "],  [899, " Valls "],  [922, " Royal "],  [957, " Merkel "],  [992, " Mélenchon "],  [1052, " Fillon "],  [1287, " Biden "],  [1486, " Le Pen "],  [1832, " Obama "],  [2041, " Poutine "],  [2070, " Hollande "],  [2487, " Trump "],  [2918, " Macron "],  [3345, " Sarkozy "],  ]],
+    {seriesColors: ['#00749F'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_0_2' style=' width: 700px; height: 512px;'></div>
+
+
+
+p.  Si on regarde attentivement ces deux listes on observe ceci : 
+
+p.  Dans la période récente, ont disparu de la " tête de liste " : 
+ Sarkozy, Hollande, Obama, Fillon, Merkel, Royal, Bush, Chirac, Clinton, Erdogan, Villepin, Johnson, Assange, Maduro, Aubry, Abbas, Kerry, Le Maire, Ayrault... 
+
+p.  Apparaissent par contre en tête des noms jusqu'alors absents : 
+ Barnier, Al-Assad, Musk, Retailleau, Scholz, Yoon, Pelicot, Meloni, Bardella, Faure, Barrot, Harris, Attal, Paty, Nétanyahou, Tusk, Tondelier, Wauquiez, Washington 
+
+p.  Restent en position dominante : 
+ Trump, Macron, Poutine, Le Pen, Biden, Bayrou, Zelensky, Netanyahu, Darmanin, Mélenchon, Valls
+
+h2. La nécrologie du jour
+
+p. Il existe un salon de la mort! 
+ "http://www.salondelamort.com/":http://www.salondelamort.com/
+
+h2. La géopolitique m'a toujours intéressé
+
+p. Je transfère des données géographiques à un module spécialement adapté par Josquin pour me permettre de faire des cartes. Voyons ce que ça donne... 
+
+p. 
+
+<notextile>
+
+<div id="map">
+<script class="code" type="text/javascript">
+var initMap = function(){
+	var provider = new com.modestmaps.TemplatedLayer("http://tile.openstreetmap.org/{Z}/{X}/{Y}.png");
+	var map = new com.modestmaps.Map("map", provider);
+	var canvas = document.createElement("canvas");
+	canvas.style.position = "absolute";
+	canvas.style.left = "0";
+	canvas.style.top = "0";
+	canvas.width = map.dimensions.x;
+	canvas.height = map.dimensions.y;
+	map.parent.appendChild(canvas);
+	var Varsovie = new com.modestmaps.Location(52.2319237,21.0067265);
+	var Amsterdam = new com.modestmaps.Location(52.3745403,4.89797550561798);
+	var Madrid = new com.modestmaps.Location(40.4167047,-3.7035825);
+	var Budapest = new com.modestmaps.Location(47.4983815,19.0404707);
+	var Sofia = new com.modestmaps.Location(42.6978634,23.3221789);
+	var Bruxelles = new com.modestmaps.Location(50.8465573,4.351697);
+	var Rome = new com.modestmaps.Location(41.894802,12.4853384);
+	var Paris = new com.modestmaps.Location(48.8566101,2.3514992);
+	var locations = [Varsovie, Amsterdam, Madrid, Budapest, Sofia, Bruxelles, Rome, Paris];
+	var values = [1, 1, 1, 1, 1, 2, 5, 34];
+	var max = Math.max.apply(Math, values);
+	map.setExtent(locations);
+	map.zoomOut();
+	function redraw(){
+		var ctx = canvas.getContext('2d');
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		for (var i = 0; i < locations.length; i++){
+			ctx.beginPath();
+			var p = map.locationPoint(locations[i]);
+			ctx.fillStyle = '#c82124';
+			ctx.globalAlpha = 0.6;
+			radius = values[i] * 15 / max + 5;
+			ctx.arc(p.x,p.y,radius,0,2 * Math.PI, false);
+			ctx.fill();
+			ctx.stroke();
+		}
+	}
+	map.addCallback('drawn', redraw);
+	map.addCallback('resized', function(){
+		canvas.width = map.dimensions.x;
+		canvas.height = map.dimensions.y;
+		redraw();
+	});
+	redraw();
+}
+</script>
+</div>
+
+</notextile>
+
+p(reference). "Fond et positions © les contributeurs d'OpenStreetMap":https://www.openstreetmap.org/copyright
+
+
+ Ne pas oublier la légende : les capitales européennes citées dans le dossier...
+
+h2. Je passe à la suite !
+
+p. La folie des "palmarès" et surtout des comparaisons de palmarès m'a pris il y a déjà pas mal d'années et je ne parviens plus à m'en déprendre ! Aujourd'hui, je compare les affaires cumulées sur les 10 derniers jours et l'histoire plus ancienne. ce qui donne les tables suivantes (ça fait un peu greffe de tribunal non ?) : 
+
+p. Affaires anciennes (du 6 décembre 2004  au 23 décembre 2024) : 
+
+p. 
+
+table(marloblog).
+| 1400 | corruption   |
+| 483 | Clearstream   |
+| 465 | Bettencourt   |
+| 360 | Benalla   |
+| 305 | Weinstein   |
+| 298 | Cahuzac   |
+| 267 | pédophilie   |
+| 264 | viol   |
+| 263 | Fillon   |
+| 257 | Bygmalion   |
+| 253 | Outreau   |
+| 235 | attentats   |
+| 230 | emplois fictifs   |
+| 230 | meurtre   |
+| 217 | Watergate   |
+| 212 | dopage   |
+| 211 | Karachi   |
+| 195 | écoutes   |
+| 168 | Mediator   |
+| 168 | DSK   |
+
+p. Affaires récentes :
+
+table(marloblog).
+| 5 | viols   |
+| 4 | assistants parlementaires   |
+| 3 | assistants   |
+| 2 | Bygmalion   |
+| 2 | Watergate   |
+| 2 | Pélicot   |
+| 2 | Pelicot   |
+| 1 | Yoon   |
+| 1 | Venezuela   |
+| 1 | Chouviat   |
+| 1 | Macron   |
+| 1 | Vidkun   |
+| 1 | cyberespionnage   |
+| 1 | Quisling   |
+| 1 | Cour suprême   |
+| 1 | comportement   |
+| 1 | Cuba   |
+| 1 | Laurène   |
+| 1 | écoutes   |
+| 1 | soupçons   |
+
+p. Attention, le message de fin a été censuré
