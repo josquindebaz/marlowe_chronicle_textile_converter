@@ -254,11 +254,20 @@ def test_format_sigles_can_handle_acronyms():
 #     assert False
 #
 #
-# def test_format_quotes():
-#     assert False
-#
-#
+def test_make_html_quotes_do_nothing_if_no_quotes():
+    text = "any thing"
 
+    result = mrlw_chron_2_textile.make_html_quotes(text)
+
+    assert result == text
+
+def test_make_html_quotes_replace_double_quotes():
+    text = "Zola écrivait : \" La vérité est en marche ; rien ne peut plus l'arrêter \" en 1897."
+    expected = "Zola écrivait :  &#171;&#160;La vérité est en marche ; rien ne peut plus l'arrêter&#160;&#187;  en 1897."
+
+    result = mrlw_chron_2_textile.make_html_quotes(text)
+
+    assert result == expected
 
 # ChroniqueParser
 

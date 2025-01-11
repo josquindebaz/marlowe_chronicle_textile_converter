@@ -236,20 +236,17 @@ def format_map(block):
     return new + end
 
 
-def format_quotes(block):
-    """replace quotes by html"""
-    if not len(re.findall('"', block)) % 2:
-        while re.search('"', block):
-            block = re.sub(r'"', " &#171;&#160;", block, 1)
-            block = re.sub(r'"', "&#160;&#187; ", block, 1)
-    # block = re.sub("&#8220;\s*"," &#171;&#160;",block)
-    # block = re.sub("\u201c\s*"," &#171;&#160;;", block)
-    # block = re.sub("\s*\xab"," &#171;&#160;", block)
-    # block = re.sub("\s*&#8221;","&#160;&#187; ", block)
-    # block = re.sub("\s*\u201d","&#160;&#187; ", block)
-    # block = re.sub("\s*\xbb","&#160;&#187; ", block)
+def make_html_quotes(text):
+    """replace quotes by html quotes"""
 
-    return block
+    if text.find('"') == -1:
+        return text
+
+    while re.search('"', text):
+        text = re.sub(r'"\s*', " &#171;&#160;", text, 1)
+        text = re.sub(r'\s*"', "&#160;&#187; ", text, 1)
+
+    return text
 
 
 def format_marks(block):
@@ -287,7 +284,7 @@ def harmonize_domain_url(block):
 def generate_preamble(title, excerpt, extra_js, date):
     """the preamble of the Jekyll file"""
 
-    result = f'title: "{format_quotes(title)}"\nexcerpt: "{format_quotes(excerpt)}"\n'
+    result = f'title: "{make_html_quotes(title)}"\nexcerpt: "{make_html_quotes(excerpt)}"\n'
     if extra_js:
         result += f"extra_js: {", ".join(extra_js)} \n"
 
