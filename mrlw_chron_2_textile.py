@@ -120,31 +120,36 @@ def format_barplot(block, barplot_count):
     return new
 
 
-def format_histo(block, num):
-    """format an histogram for js"""
+def make_histogram(block, plot_id):
+    """Make a histogram in js"""
+
     core = re.split("--histo--", block)
-    new = ('<notextile>\n <script class="code" type="text/javascript">\n'
-           '$(document).ready(function(){ \n')
-    serie = []
+    series = []
     ticks = []
+    random_color = random.choice(['#fba919', '#00749F', '#73C774', '#C7754C'])
+
     for fragment in re.split(";", core[1])[:-1]:
         tick, value = re.split(",", fragment)
         ticks.append(tick)
-        serie.append(value)
-    new += "var s = [%s];\n" % (",".join(serie))
-    new += "var ticks = ['%s'];\n" % ("','".join(ticks))
-    new += "var plot = $.jqplot('chart_%d', [s,]," % num
-    new += "{\n\tseriesColors: ['%s'], " % \
-           random.choice(['#fba919', '#00749F', '#73C774', '#C7754C'])
-    new += ("\n\tseriesDefaults:{renderer:$.jqplot.BarRenderer, "
-            "rendererOptions:{fillToZero: true}},\n\taxes:{\n"
-            "\t\txaxis:{renderer: $.jqplot.CategoryAxisRenderer, "
-            "ticks: ticks},\n\t\tyaxis: {pad: 1.05, "
-            "tickOptions: {formatString: '%d'}}\n\t}\n});\n});\n"
-            " </script>\n</notextile>\n\n")
-    new += '<div id="chart_%d" style="width: 700px;"></div>' % num
+        series.append(value)
 
-    return core[0] + new + core[2]
+    series = ",".join(series)
+    ticks = "','".join(ticks)
+
+    histogram = (f"<notextile>\n "
+                 f"<script class=\"code\" type=\"text/javascript\">\n"
+                 f"$(document).ready(function()" "{"" \n"
+                 f"var s = [{series}];\n"
+                 f"var ticks = ['{ticks}'];\n"
+                 f"var plot = $.jqplot('chart_{plot_id}', [s,],""{\n"
+                 f"\tseriesColors: ['{random_color}'], \n"
+                 "\tseriesDefaults:{renderer:$.jqplot.BarRenderer, rendererOptions:{fillToZero: true}},\n\taxes:{\n"
+                 "\t\txaxis:{renderer: $.jqplot.CategoryAxisRenderer, ticks: ticks},\n"
+                 "\t\tyaxis: {pad: 1.05, tickOptions: {formatString: '%d'}}\n\t}\n});\n});\n </script>\n"
+                 "</notextile>\n\n"
+                 f"<div id=\"chart_{plot_id}\" style=\"width: 700px;\"></div>")
+
+    return core[0] + histogram + core[2]
 
 
 def format_graphe(block, graphe_count):
@@ -402,7 +407,7 @@ class ChroniqueParser:
                 if re.search("--histo--", block):
                     if "barplot" not in self.extra_js:
                         self.extra_js.append("barplot")
-                    block = format_histo(block, histo_count)
+                    block = make_histogram(block, histo_count)
                     histo_count += 1
 
                 if re.search("--graphe--", block):
