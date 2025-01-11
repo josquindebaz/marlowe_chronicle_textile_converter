@@ -30,6 +30,7 @@ def dates_to_long_dates(block):
 
     return block
 
+
 def datetime_to_long_datetime(date_time):
     """28/12/2024 23:4:53 to samedi 28 décembre 2024 23:04:53"""
 
