@@ -345,19 +345,3 @@ def test_split_date_and_following():
     assert result[1] == '\r\r\nMarlowe : '
 
 
-def test_harmonize_domain_url_change_gspr_free():
-    content = "Voici un lien http://gspr.ehess.free.fr/ à consulter."
-    expected = 'Voici un lien http://gspr-ehess.com/ à consulter.'
-
-    result = mrlw_chron_2_textile.harmonize_domain_url(content)
-
-    assert result == expected
-
-
-def test_harmonize_domain_url_change_prosperologie_ip():
-    content = "Voici un lien http://92.243.27.161 à consulter."
-    expected = 'Voici un lien http://prosperologie.org à consulter.'
-
-    result = mrlw_chron_2_textile.harmonize_domain_url(content)
-
-    assert result == expected

@@ -26,3 +26,21 @@ def test_datetime_to_full_datetime():
     result = utils.datetime_to_long_datetime(date)
 
     assert result == "vendredi 3 janvier 2025 23:07:02"
+
+
+def test_harmonize_domain_url_change_gspr_free():
+    content = "Voici un lien http://gspr.ehess.free.fr/ à consulter."
+    expected = 'Voici un lien http://gspr-ehess.com/ à consulter.'
+
+    result = utils.harmonize_domain_url(content)
+
+    assert result == expected
+
+
+def test_harmonize_domain_url_change_prosperologie_ip():
+    content = "Voici un lien http://92.243.27.161 à consulter."
+    expected = 'Voici un lien http://prosperologie.org à consulter.'
+
+    result = utils.harmonize_domain_url(content)
+
+    assert result == expected
