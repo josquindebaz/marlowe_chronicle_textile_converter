@@ -1,4 +1,5 @@
 import datetime
+import re
 
 import mrlw_chron_2_textile
 
@@ -12,6 +13,9 @@ def test_entire_chronicle():
     assert parser.date == datetime.datetime(2024, 12, 28, 23, 4, 53)
     assert parser.title == "Now, I'm taking the head out of the jumble, the mayhem, the mess ..."
     assert parser.logs == "Saturday 28 December 2024 23:04:53\nchronicle text size: 171446 chars\nfound 22 blocks\nNow, I'm taking the head out of the jumble, the mayhem, the mess ...\n"
+
+    expected_publish_date = r'\np\(publish_date\). samedi 28 décembre 2024 23:04:53\n'
+    assert re.search(expected_publish_date, parser.chronique)
 
     expected_graph_block = (
         "Par moment, j'oublie de lancer la procédure qui active le générateur de graphe ! Voici le résultat du jour sur les objets d'alerte : \n \n\n"
@@ -79,6 +83,10 @@ def test_entire_chronicle():
                            'vos propos chers interlocuteurs \n')
 
 
+    expected_publish_date = r'\np\(publish_date\). dimanche 29 décembre 2024 23:06:03\n'
+    assert re.search(expected_publish_date, parser.chronique)
+
+
 def test_chronicle_with_map():
     with open("source_samples/2025-01-03-chronique_mrlw.txt", 'rb') as c:
         chronicle_content = c.read()
@@ -88,6 +96,11 @@ def test_chronicle_with_map():
     assert parser.date == datetime.datetime(2025, 1, 3, 23, 7, 2)
     assert parser.title == "Marlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)"
     assert parser.logs == "Friday 3 January 2025 23:07:02\nchronicle text size: 17002 chars\nfound 24 blocks\nMarlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)\n"
+
+    expected_publish_date = r'\np\(publish_date\). vendredi 3 janvier 2025 23:07:02\n'
+    assert re.search(expected_publish_date, parser.chronique)
+
+
 
     expected_map = """La collection des capitales mondiales récupérée sur Wikipedia est mise à contribution pour faire des cartes. Voici la projection du jour - les gros points sont cela va de soi les capitales les plus citées... Vous suivez ? 
 
@@ -245,12 +258,8 @@ def test_format_sigles_can_handle_acronyms():
 #
 # def test_protect_quotes():
 #     assert False
-#
-#
-# def test_format_date():
-#     assert False
-#
-#
+
+
 # def test_format_marks():
 #     assert False
 
@@ -296,14 +305,6 @@ def test_split_date_and_following():
     assert len(result) == 2
     assert result[0] == " 3/ 1/2025 23:7:2 "
     assert result[1] == '\r\r\nMarlowe : '
-
-
-def test_format_introduction_date():
-    introduction_date = " 3/ 1/2025 23:7:2 "
-
-    result = mrlw_chron_2_textile.get_introduction_date(introduction_date)
-
-    assert result == datetime.datetime(2025, 1, 3, 23, 7, 2)
 
 
 def test_harmonize_domain_url_change_gspr_free():

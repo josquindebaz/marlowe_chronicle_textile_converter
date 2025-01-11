@@ -4,13 +4,13 @@ GPL 3
 """
 
 import re
-import datetime
 import random
 import libmrlwchrnck
 from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
 from CityLocator import CityLocator
 from textile_utils import format_links
+from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime
 
 
 def format_sigles(block):
@@ -261,21 +261,9 @@ def protect_quotes(block):
     return block
 
 
-def format_date(block):
-    """better date forms"""
-    # locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
-    dates = re.findall(r"[\s:](\d{1,2}/\s*\d{1,2}/\d{4})[^/]", block)
-    for date in list(set(dates)):
-        day, month, year = re.split(r"/", date)
-        new = datetime.date(int(year), int(month), int(day))
-        block = re.sub(date, new.strftime("%-d %B %Y"), block)
-
-    return block
-
-
 def format_marks(block):
     """add, delete and simplify marks for textile"""
-    block = format_date(block)
+    block = dates_to_long_dates(block)
     #block = format_quotes(block)
     block = re.sub(r"\s+&#160;", "&#160;", block)
     block = re.sub(r"&#160;\s+", "&#160;", block)
@@ -296,18 +284,6 @@ def split_date_and_following(content):
     """get the timestamp and return the following text"""
 
     return re.split("\r\n", content, 1)
-
-def get_introduction_date(date):
-    """Get date from text date"""
-
-    (day, month, year,
-     hour, minutes, seconds) = (re.search(r"(\d*)/\s*(\d*)/(\d{4})\s*(\d*):(\d*):(\d*)", date)
-                                .group(1, 2, 3, 4, 5, 6))
-
-    return datetime.datetime.combine(
-        datetime.date(int(year), int(month), int(day)),
-        datetime.time(int(hour), int(minutes), int(seconds))
-    )
 
 
 def harmonize_domain_url(block):
@@ -592,10 +568,11 @@ class ChroniqueParser:
                            protect_quotes(self.excerpt))
         if self.extra_js:
             self.chronique += "extra_js: %s \n" % (", ".join(self.extra_js))
-        self.chronique += "---\n\n"
-        # locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
-        self.chronique += "h2. {{ page.title }}\n\np(publish_date). %s" % \
-                          (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
+
+        self.chronique += ("---\n\n"
+                           "h2. {{ page.title }}\n\n"
+                           f"p(publish_date). {datetime_to_long_datetime(self.date)}")
+
 
     def write_textile(self):
         """write chronicle for jekyll"""
