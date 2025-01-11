@@ -35,3 +35,10 @@ def datetime_to_long_datetime(date_time):
     """28/12/2024 23:4:53 to samedi 28 décembre 2024 23:04:53"""
 
     return format_datetime(date_time, "eeee d MMMM Y H:mm:ss", locale='fr_FR.UTF-8')
+
+
+def harmonize_domain_url(block):
+    block = re.sub("gspr.ehess.free.fr", "gspr-ehess.com", block)
+    block = re.sub("92.243.27.161", "prosperologie.org", block)
+
+    return block

@@ -11,7 +11,7 @@ from CityLocator import CityLocator
 from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
 from textile_utils import format_links
-from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime
+from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime, harmonize_domain_url
 
 
 def format_sigles(block):
@@ -272,13 +272,6 @@ def split_date_and_following(content):
     """get the timestamp and return the following text"""
 
     return re.split("\r\n", content, 1)
-
-
-def harmonize_domain_url(block):
-    block = re.sub("gspr.ehess.free.fr", "gspr-ehess.com", block)
-    block = re.sub("92.243.27.161", "prosperologie.org", block)
-
-    return block
 
 
 def generate_preamble(title, excerpt, extra_js, date):
