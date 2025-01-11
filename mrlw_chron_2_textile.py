@@ -10,7 +10,7 @@ from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
 from CityLocator import CityLocator
 from textile_utils import format_links
-from utils import get_introduction_date, enhance_date_output
+from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime
 
 
 def format_sigles(block):
@@ -263,7 +263,7 @@ def protect_quotes(block):
 
 def format_marks(block):
     """add, delete and simplify marks for textile"""
-    block = enhance_date_output(block)
+    block = dates_to_long_dates(block)
     #block = format_quotes(block)
     block = re.sub(r"\s+&#160;", "&#160;", block)
     block = re.sub(r"&#160;\s+", "&#160;", block)
@@ -568,10 +568,11 @@ class ChroniqueParser:
                            protect_quotes(self.excerpt))
         if self.extra_js:
             self.chronique += "extra_js: %s \n" % (", ".join(self.extra_js))
-        self.chronique += "---\n\n"
-        # locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
-        self.chronique += "h2. {{ page.title }}\n\np(publish_date). %s" % \
-                          (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
+
+        self.chronique += ("---\n\n"
+                           "h2. {{ page.title }}\n\n"
+                           f"p(publish_date). {datetime_to_long_datetime(self.date)}")
+
 
     def write_textile(self):
         """write chronicle for jekyll"""
