@@ -17,6 +17,11 @@ def test_entire_chronicle():
     expected_publish_date = r'\np\(publish_date\). samedi 28 décembre 2024 23:04:53\n'
     assert re.search(expected_publish_date, parser.chronique)
 
+    expected_preamble_first = '---\nlayout: post\ntitle: "Now, I\'m taking the head out of the jumble, the mayhem, the mess ..."\nexcerpt: "J\'ai repéré que le champ <i>\[DATE\]</i> était particulièrement fragile aux influences extérieures - il est en effet facile à des agents externes d\'insérer des lignes juste avant le lancement de la chronique. Ne pas hésiter à me dire s\'il y a des choses outrageantes - car en réalité je ne lis pas ce qui s\'écrit dans ce champ !"\nextra_js: '
+    assert re.search(expected_preamble_first, parser.chronique)
+    expected_preamble_second = '\n---\n\nh2. {{ page.title }}\n\np\(publish_date\). samedi 28 décembre 2024 23:04:53\n'
+    assert re.search(expected_preamble_second, parser.chronique)
+
     expected_graph_block = (
         "Par moment, j'oublie de lancer la procédure qui active le générateur de graphe ! Voici le résultat du jour sur les objets d'alerte : \n \n\n"
         "<notextile>\n"
@@ -82,7 +87,6 @@ def test_entire_chronicle():
                            'et ausculté par des experts, je ne ferais pas le malin ! Merci de modérer '
                            'vos propos chers interlocuteurs \n')
 
-
     expected_publish_date = r'\np\(publish_date\). dimanche 29 décembre 2024 23:06:03\n'
     assert re.search(expected_publish_date, parser.chronique)
 
@@ -99,8 +103,6 @@ def test_chronicle_with_map():
 
     expected_publish_date = r'\np\(publish_date\). vendredi 3 janvier 2025 23:07:02\n'
     assert re.search(expected_publish_date, parser.chronique)
-
-
 
     expected_map = """La collection des capitales mondiales récupérée sur Wikipedia est mise à contribution pour faire des cartes. Voici la projection du jour - les gros points sont cela va de soi les capitales les plus citées... Vous suivez ? 
 

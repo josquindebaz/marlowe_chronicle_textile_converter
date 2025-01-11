@@ -293,6 +293,22 @@ def harmonize_domain_url(block):
     return block
 
 
+def generate_preambule(title, excerpt, extra_js, date):
+    """the preambule of the jeckyll file"""
+
+    result = 'title: "%s"\nexcerpt: "%s"\n' % \
+                      (protect_quotes(title),
+                       protect_quotes(excerpt))
+    if extra_js:
+        result += "extra_js: %s \n" % (", ".join(extra_js))
+
+    result += ("---\n\n"
+                       "h2. {{ page.title }}\n\n"
+                       f"p(publish_date). {datetime_to_long_datetime(date)}")
+
+    return result
+
+
 class ChroniqueParser:
     """Analyse and parse chronicle content"""
 
@@ -311,7 +327,7 @@ class ChroniqueParser:
 
         self.type_sentences(re.split(r"Marlowe\s*:\s*", following)[1:])
         self.prepare_blocks()
-        self.generate_preambule()
+        self.chronique += generate_preambule(self.title, self.excerpt, self.extra_js, self.date)
         self.generate_blocks()
         # self.write_textile()
         self.logs = "%s\n" % (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
@@ -560,19 +576,6 @@ class ChroniqueParser:
         citation = re.sub(r"bq\.\s*<BR>\s*", "bq. ", citation)
 
         return citation
-
-    def generate_preambule(self):
-        """the preambule of the jeckyll file"""
-        self.chronique += 'title: "%s"\nexcerpt: "%s"\n' % \
-                          (protect_quotes(self.title),
-                           protect_quotes(self.excerpt))
-        if self.extra_js:
-            self.chronique += "extra_js: %s \n" % (", ".join(self.extra_js))
-
-        self.chronique += ("---\n\n"
-                           "h2. {{ page.title }}\n\n"
-                           f"p(publish_date). {datetime_to_long_datetime(self.date)}")
-
 
     def write_textile(self):
         """write chronicle for jekyll"""
