@@ -207,9 +207,6 @@ def test_format_sigles_can_handle_acronyms():
     assert result == 'Voici le contenu des "nouveaux" sigles : \n\n- TGC  := taxe générale sur la consommation,\n- SALT  := Strategic Arms Limitation Talks,\n- BSAOM  := bâtiment de soutien et d \' assistance outre-mer'
 
 
-# def test_format_links():
-#     assert False
-
 # def test_format_numbered_list():
 #     assert False
 #
@@ -308,3 +305,20 @@ def test_format_introduction_date():
 
     assert result == datetime.datetime(2025, 1, 3, 23, 7, 2)
 
+
+def test_harmonize_domain_url_change_gspr_free():
+    content = "Voici un lien http://gspr.ehess.free.fr/ à consulter."
+    expected = 'Voici un lien http://gspr-ehess.com/ à consulter.'
+
+    result = mrlw_chron_2_textile.harmonize_domain_url(content)
+
+    assert result == expected
+
+
+def test_harmonize_domain_url_change_prosperologie_ip():
+    content = "Voici un lien http://92.243.27.161 à consulter."
+    expected = 'Voici un lien http://prosperologie.org à consulter.'
+
+    result = mrlw_chron_2_textile.harmonize_domain_url(content)
+
+    assert result == expected
