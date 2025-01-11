@@ -3,12 +3,13 @@ Author Josquin Debaz
 GPL 3
 """
 
-import re
 import random
+import re
+
 import libmrlwchrnck
+from CityLocator import CityLocator
 from Referencer import Referencer
 from sigmajs_generator import SigmaJsGenerator
-from CityLocator import CityLocator
 from textile_utils import format_links
 from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime
 
@@ -199,7 +200,7 @@ def format_map(block):
             'map.parent.appendChild(canvas);\n')
 
     cities = dict(re.split(",", line)
-                 for line in re.split(r"\s*;\s*", core)[:-1])
+                  for line in re.split(r"\s*;\s*", core)[:-1])
 
     for city in cities:
         latitude, longitude = city_locator.get_coordinates(city)
@@ -241,12 +242,12 @@ def format_quotes(block):
         while re.search('"', block):
             block = re.sub(r'"', " &#171;&#160;", block, 1)
             block = re.sub(r'"', "&#160;&#187; ", block, 1)
-    #block = re.sub("&#8220;\s*"," &#171;&#160;",block)
-    #block = re.sub("\u201c\s*"," &#171;&#160;;", block)
-    #block = re.sub("\s*\xab"," &#171;&#160;", block)
-    #block = re.sub("\s*&#8221;","&#160;&#187; ", block)
-    #block = re.sub("\s*\u201d","&#160;&#187; ", block)
-    #block = re.sub("\s*\xbb","&#160;&#187; ", block)
+    # block = re.sub("&#8220;\s*"," &#171;&#160;",block)
+    # block = re.sub("\u201c\s*"," &#171;&#160;;", block)
+    # block = re.sub("\s*\xab"," &#171;&#160;", block)
+    # block = re.sub("\s*&#8221;","&#160;&#187; ", block)
+    # block = re.sub("\s*\u201d","&#160;&#187; ", block)
+    # block = re.sub("\s*\xbb","&#160;&#187; ", block)
 
     return block
 
@@ -264,7 +265,7 @@ def protect_quotes(block):
 def format_marks(block):
     """add, delete and simplify marks for textile"""
     block = dates_to_long_dates(block)
-    #block = format_quotes(block)
+    # block = format_quotes(block)
     block = re.sub(r"\s+&#160;", "&#160;", block)
     block = re.sub(r"&#160;\s+", "&#160;", block)
     block = re.sub("<br> <br> - ", "\n\n- ", block)
@@ -293,18 +294,16 @@ def harmonize_domain_url(block):
     return block
 
 
-def generate_preambule(title, excerpt, extra_js, date):
-    """the preambule of the jeckyll file"""
+def generate_preamble(title, excerpt, extra_js, date):
+    """the preamble of the Jekyll file"""
 
-    result = 'title: "%s"\nexcerpt: "%s"\n' % \
-                      (protect_quotes(title),
-                       protect_quotes(excerpt))
+    result = f'title: "{protect_quotes(title)}"\nexcerpt: "{protect_quotes(excerpt)}"\n'
     if extra_js:
-        result += "extra_js: %s \n" % (", ".join(extra_js))
+        result += f"extra_js: {", ".join(extra_js)} \n"
 
     result += ("---\n\n"
-                       "h2. {{ page.title }}\n\n"
-                       f"p(publish_date). {datetime_to_long_datetime(date)}")
+               "h2. {{ page.title }}\n\n"
+               f"p(publish_date). {datetime_to_long_datetime(date)}")
 
     return result
 
@@ -327,14 +326,14 @@ class ChroniqueParser:
 
         self.type_sentences(re.split(r"Marlowe\s*:\s*", following)[1:])
         self.prepare_blocks()
-        self.chronique += generate_preambule(self.title, self.excerpt, self.extra_js, self.date)
+        self.chronique += generate_preamble(self.title, self.excerpt, self.extra_js, self.date)
         self.generate_blocks()
         # self.write_textile()
         self.logs = "%s\n" % (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
         self.logs += "chronicle text size: %d chars\n" % (len(following))
         self.logs += "found %d blocks\n" % (len(self.typed_sentences))
         self.logs += "%s\n" % self.title
-        #print(self.logs)
+        # print(self.logs)
 
     def type_sentences(self, sentences):
         """Attribute a type to each sentences : title, par, citation, sigles,
@@ -397,7 +396,7 @@ class ChroniqueParser:
                 parts = re.split("\r\n", sentence[0])
                 if len(parts) == 3:
                     citation, source = parts[1:]
-                    #citation, source = re.split("\r\n", sentence[0])[1:]
+                    # citation, source = re.split("\r\n", sentence[0])[1:]
                     self.typed_sentences[i][0] = \
                         "\n\nbq. %s\n\np(source). %s\n\n" % (citation, source)
             elif sentence[1] == "par":
@@ -476,7 +475,7 @@ class ChroniqueParser:
 
     def generate_citations(self, block):
         """split and find citations"""
-        #how many quotes ?
+        # how many quotes ?
         occurences = len(re.findall("<br> Auteur :", block))
         if occurences > 1:
             decoupe = re.split("<br><br>|<br> <br>|<BR><BR>|<BR> <BR>", block)
@@ -494,7 +493,7 @@ class ChroniqueParser:
 
     def format_citation(self, citation):
         """format citation for textile"""
-        #print(citation)
+        # print(citation)
         fragments = re.split("<br> Auteur ", citation)
         if len(fragments) == 1:
             if not re.search(r"^\s*$", citation):
@@ -502,12 +501,12 @@ class ChroniqueParser:
         elif len(fragments) == 2:
             table = False
 
-            #check for url in database
+            # check for url in database
             try:
                 aut, date, tit = re.search(r":\s*(.*)\s*Date :\s*(.*)\s* "
                                            r"Titre :(.*)",
                                            fragments[1]).group(1, 2, 3)
-                #when table
+                # when table
                 if re.search(r'\d*  -  ', tit):
                     tit, table = re.split("<br> <br>", tit)
 
@@ -516,7 +515,7 @@ class ChroniqueParser:
                 url = self.url_referencer.get_url(aut.strip(),
                                                   date.strip(),
                                                   tit.strip())
-                #for the test comment above and uncomment HERE
+                # for the test comment above and uncomment HERE
                 #                url = False
                 if url:
                     reference = ('\n\np(reference). &#171;&#160;'

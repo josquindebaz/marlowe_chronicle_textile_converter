@@ -289,12 +289,44 @@ def test_format_sigles_can_handle_acronyms():
 #
 #
 
-#
-#
-# def test_generate_preambule():
-#     assert False
-#
-#
+def test_generate_preamble_without_extra_js():
+    title = "a title"
+    excerpt = "an excerpt"
+    extra_js = []
+    date = datetime.datetime(2025, 1, 11, 19, 41, 52)
+
+    result = mrlw_chron_2_textile.generate_preamble(title, excerpt, extra_js, date)
+
+    expected = """title: "a title"
+excerpt: "an excerpt"
+---
+
+h2. {{ page.title }}
+
+p(publish_date). samedi 11 janvier 2025 19:41:52"""
+
+    assert result == expected
+
+def test_generate_preamble_with_extra_js():
+    title = "a title"
+    excerpt = "an excerpt"
+    extra_js = ['an_extra', 'another_extra']
+    date = datetime.datetime(2025, 1, 11, 19, 41, 52)
+
+    result = mrlw_chron_2_textile.generate_preamble(title, excerpt, extra_js, date)
+
+    expected = """title: "a title"
+excerpt: "an excerpt"
+extra_js: an_extra, another_extra 
+---
+
+h2. {{ page.title }}
+
+p(publish_date). samedi 11 janvier 2025 19:41:52"""
+
+    assert result == expected
+
+
 # def test_write_textile():
 #     assert False
 
