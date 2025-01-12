@@ -9,6 +9,7 @@ import re
 import libmrlwchrnck
 from CityLocator import CityLocator
 from Referencer import Referencer
+from js.HistogramDrawer import HistogramDrawer
 from sigmajs_generator import SigmaJsGenerator
 from textile_utils import format_links
 from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime, harmonize_domain_url
@@ -120,31 +121,13 @@ def format_barplot(block, barplot_count):
     return new
 
 
-def format_histo(block, num):
-    """format an histogram for js"""
-    core = re.split("--histo--", block)
-    new = ('<notextile>\n <script class="code" type="text/javascript">\n'
-           '$(document).ready(function(){ \n')
-    serie = []
-    ticks = []
-    for fragment in re.split(";", core[1])[:-1]:
-        tick, value = re.split(",", fragment)
-        ticks.append(tick)
-        serie.append(value)
-    new += "var s = [%s];\n" % (",".join(serie))
-    new += "var ticks = ['%s'];\n" % ("','".join(ticks))
-    new += "var plot = $.jqplot('chart_%d', [s,]," % num
-    new += "{\n\tseriesColors: ['%s'], " % \
-           random.choice(['#fba919', '#00749F', '#73C774', '#C7754C'])
-    new += ("\n\tseriesDefaults:{renderer:$.jqplot.BarRenderer, "
-            "rendererOptions:{fillToZero: true}},\n\taxes:{\n"
-            "\t\txaxis:{renderer: $.jqplot.CategoryAxisRenderer, "
-            "ticks: ticks},\n\t\tyaxis: {pad: 1.05, "
-            "tickOptions: {formatString: '%d'}}\n\t}\n});\n});\n"
-            " </script>\n</notextile>\n\n")
-    new += '<div id="chart_%d" style="width: 700px;"></div>' % num
+def make_histogram(block, plot_id):
+    """Make a histogram in js"""
 
-    return core[0] + new + core[2]
+    division = block.split("--histo--")
+    drawer = HistogramDrawer(division[1], plot_id)
+
+    return division[0] + drawer.histogram + division[2]
 
 
 def format_graphe(block, graphe_count):
@@ -402,7 +385,7 @@ class ChroniqueParser:
                 if re.search("--histo--", block):
                     if "barplot" not in self.extra_js:
                         self.extra_js.append("barplot")
-                    block = format_histo(block, histo_count)
+                    block = make_histogram(block, histo_count)
                     histo_count += 1
 
                 if re.search("--graphe--", block):
