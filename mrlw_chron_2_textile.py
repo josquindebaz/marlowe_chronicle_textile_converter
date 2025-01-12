@@ -9,7 +9,7 @@ import re
 import libmrlwchrnck
 from CityLocator import CityLocator
 from Referencer import Referencer
-from js.Histogram import Histogram
+from js.HistogramDrawer import HistogramDrawer
 from sigmajs_generator import SigmaJsGenerator
 from textile_utils import format_links
 from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime, harmonize_domain_url
@@ -124,10 +124,10 @@ def format_barplot(block, barplot_count):
 def make_histogram(block, plot_id):
     """Make a histogram in js"""
 
-    core = re.split("--histo--", block)
-    histogram = Histogram(core[1], plot_id)
+    division = block.split("--histo--")
+    drawer = HistogramDrawer(division[1], plot_id)
 
-    return core[0] + histogram.histogram + core[2]
+    return division[0] + drawer.histogram + division[2]
 
 
 def format_graphe(block, graphe_count):
