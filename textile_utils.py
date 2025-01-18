@@ -1,4 +1,7 @@
+import random
 import re
+
+from js.BarplotDrawer import BarplotDrawer
 
 
 def format_links(block):
@@ -40,3 +43,65 @@ def format_links(block):
         block += fragment
 
     return block
+
+
+def format_table(block):
+    """format a table for textile"""
+
+    parts = block.split('<BR>')
+
+    result = f"{parts[0]}\n\ntable(marloblog)."
+
+    for value in parts[1:-1]:
+        if re.search('<br>', value):
+            table_separator = re.sub('<br>', '', value)
+            table_separator = table_separator.strip()
+            line = f"\n\np. {table_separator}\n\ntable(marloblog)."
+        else:
+            line = re.sub(r'(\d+)\s*-\s*(.*)\s*-\s*',
+                          '\n| \\1 | \\2 |', value)
+        result += line
+
+    result += parts[-1]
+
+    return result
+
+
+def format_barplot(block, barplot_count):
+    """create script content for barplot"""
+
+    result = ""
+    barplot_sub_count = 0
+    barplot_id_prefix = f"palm_{barplot_count}_"
+    barplot_drawer = BarplotDrawer()
+
+    for part in block.split("<br> <br>"):
+        if not re.search(r"<BR>\d+", part):
+            transformed_part = f"\n\np. {part}"
+        else:
+            barplot_sub_count += 1
+            barplot_id = f"{barplot_id_prefix}{barplot_sub_count}"
+            barplot_drawer.draw(barplot_id, part)
+            transformed_part = barplot_drawer.plot
+
+        result += transformed_part
+
+    return result
+
+
+def table_or_barplot(block, barplot_count):
+    """Format data in table or graph"""
+
+    if re.search(r"\n\nh3\.", block):
+        select = "table"
+    else:
+        select = random.choice(["table", "barplot"])
+
+    if select == 'table':
+        return "table", format_table(block)
+
+    try:
+        test = format_barplot(block, barplot_count)
+        return "barplot", test
+    except:
+        return "table", format_table(block)
