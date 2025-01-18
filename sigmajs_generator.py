@@ -5,7 +5,9 @@ from re import split
 def make_intro(graph_id, graph_number):
     """Set first lines of the graph"""
 
-    return (f'<script class="code" type="text/javascript"> '
+    return (f'\n\n<notextile>\n  <div id="graph-container_{graph_number}" '
+            'class="graph-container"> </div>\n'
+            f'<script class="code" type="text/javascript"> '
             f'var {graph_id} = new sigma (\'graph-container_{graph_number}\');\n')
 
 
@@ -16,7 +18,7 @@ def make_ending(graph_id):
             f"{graph_id}.refresh();\n"
             f"{graph_id}.startForceAtlas2(""{barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
             "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\nsetTimeout(function() {"
-            f"{graph_id}.stopForceAtlas2();""}, 3000);\n</script>\n")
+            f"{graph_id}.stopForceAtlas2();""}, 3000);\n</script>\n</notextile>\n\n")
 
 
 def set_lists(network_text):

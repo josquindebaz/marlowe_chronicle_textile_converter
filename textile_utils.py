@@ -111,13 +111,7 @@ def table_or_barplot(block, barplot_count):
 def format_graph(block, graphe_count):
     """format a graphe for js"""
 
-    fragments = re.split("--graphe--", block)
-    block = fragments[0]
-    block += ('\n\n<notextile>\n  <div id="graph-container_%d" '
-              'class="graph-container"> </div>\n') % graphe_count
-    formed = SigmaJsGenerator(fragments[1], graphe_count)
-    block += formed.graph
-    block += "</notextile>\n\n"
-    block += fragments[2]
+    part = re.split("--graphe--", block)
+    drawer = SigmaJsGenerator(part[1], graphe_count)
 
-    return block
+    return part[0] + drawer.graph + part[2]
