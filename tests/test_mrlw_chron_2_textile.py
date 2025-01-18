@@ -254,10 +254,6 @@ def test_format_sigles_can_handle_acronyms():
 #     assert False
 #
 #
-# def test_format_table():
-#     assert False
-#
-#
 # def test_format_barplot():
 #     assert False
 

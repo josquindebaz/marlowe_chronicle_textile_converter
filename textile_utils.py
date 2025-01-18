@@ -45,19 +45,24 @@ def format_links(block):
 
 def format_table(block):
     """format a table for textile"""
-    fragments = re.split('<BR>', block)
-    block = fragments[0] + "\n\ntable(marloblog)."
-    for fragment in fragments[1:-1]:
-        if re.search('<br>', fragment):
-            fragment = re.sub('<br>', '', fragment)
-            fragment = "\n\np. %s\n\ntable(marloblog)." % fragment.strip()
-        else:
-            fragment = re.sub(r'(\d{1,})\s*-\s*(.*)\s*-\s*',
-                              '\n| \\1 | \\2 |', fragment)
-        block += fragment
-    block += fragments[-1]
 
-    return block
+    parts = block.split('<BR>')
+
+    result =  f"{parts[0]}\n\ntable(marloblog)."
+
+    for value in parts[1:-1]:
+        if re.search('<br>', value):
+            table_separator = re.sub('<br>', '', value)
+            table_separator = table_separator.strip()
+            line = f"\n\np. {table_separator}\n\ntable(marloblog)."
+        else:
+            line = re.sub(r'(\d+)\s*-\s*(.*)\s*-\s*',
+                              '\n| \\1 | \\2 |', value)
+        result += line
+
+    result += parts[-1]
+
+    return result
 
 
 def format_barplot(block, barplot_count):
