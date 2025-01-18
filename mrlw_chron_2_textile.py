@@ -245,7 +245,7 @@ class ChroniqueParser:
 
                     block = format_links(block)
 
-                if re.search(r'\d*  -  ', block):
+                if re.search(r'\d*\s{2}-\s{2}', block):
                     choice, block = table_or_barplot(block, barplot_count)
                     if choice == "barplot":
                         barplot_count += 1
