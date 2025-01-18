@@ -76,49 +76,54 @@ def format_barplot(block, barplot_count):
         if not re.search(r"<BR>\d+", item):
             item = "\n\np. " + item
         else:
-            values = re.split("<BR>", item)
-            reverse_fragments = []
-            for i, value in enumerate(values):
-                if i == 0:
-                    item = value
-                elif re.search(r'\d+\s+- ', value):
-                    if i == 1:
-                        barplot_sub_count += 1
-                        item += ("\n\n<notextile>\n <script class='code' "
-                                 " type='text/javascript'>\n  $(document).ready("
-                                 "function(){\n   var plot_palm = $.jqplot("
-                                 "'palm_%s_%s',\n    [[ ") % \
-                                (barplot_count, barplot_sub_count)
-                    value = re.sub(r'(\d+)\s+- (.*) - ',
-                                      '[\\1, "\\2"], ',
-                                      value)
-                    reverse_fragments.append(value)
-                    value = ""
-                elif i == len(values) - 1:
-                    value = "".join(reversed(reverse_fragments))
-                    color = colors.pop(random.randint(0, len(colors) - 1))
-                    value += ("]],\n    {seriesColors: ['%s'],"
-                                 "\n     seriesDefaults: {\n      renderer: "
-                                 "$.jqplot.BarRenderer,\n      pointLabels:"
-                                 " {show: true, location: 'e', edgeTolerance: "
-                                 "-15},\n      shadow: false,\n      "
-                                 "rendererOptions: {"
-                                 "barDirection: 'horizontal'}},\n     axes: {"
-                                 "\n      yaxis: {tickOptions: {fontSize: "
-                                 "'11pt'}, renderer: "
-                                 "$.jqplot.CategoryAxisRenderer}},\n     "
-                                 "grid: {background: '#fff'}\n    });});\n"
-                                 " </script>\n</notextile>\n\n"
-                                 "<div id='palm_%s_%s' "
-                                 "style=' width: 700px; height: %dpx;'></div>"
-                                 "\n\n") % (color,
-                                            barplot_count,
-                                            barplot_sub_count,
-                                            len(values) * 16 / 100 * 100)
-                item += value
+            item, barplot_sub_count = draw_barplot(barplot_count, barplot_sub_count, colors, item)
         result += item
 
     return result
+
+
+def draw_barplot(barplot_count, barplot_sub_count, colors, item):
+    values = re.split("<BR>", item)
+    reverse_fragments = []
+    for i, value in enumerate(values):
+        if i == 0:
+            item = value
+        elif re.search(r'\d+\s+- ', value):
+            if i == 1:
+                barplot_sub_count += 1
+                item += ("\n\n<notextile>\n <script class='code' "
+                         " type='text/javascript'>\n  $(document).ready("
+                         "function(){\n   var plot_palm = $.jqplot("
+                         "'palm_%s_%s',\n    [[ ") % \
+                        (barplot_count, barplot_sub_count)
+            value = re.sub(r'(\d+)\s+- (.*) - ',
+                           '[\\1, "\\2"], ',
+                           value)
+            reverse_fragments.append(value)
+            value = ""
+        elif i == len(values) - 1:
+            value = "".join(reversed(reverse_fragments))
+            color = colors.pop(random.randint(0, len(colors) - 1))
+            value += ("]],\n    {seriesColors: ['%s'],"
+                      "\n     seriesDefaults: {\n      renderer: "
+                      "$.jqplot.BarRenderer,\n      pointLabels:"
+                      " {show: true, location: 'e', edgeTolerance: "
+                      "-15},\n      shadow: false,\n      "
+                      "rendererOptions: {"
+                      "barDirection: 'horizontal'}},\n     axes: {"
+                      "\n      yaxis: {tickOptions: {fontSize: "
+                      "'11pt'}, renderer: "
+                      "$.jqplot.CategoryAxisRenderer}},\n     "
+                      "grid: {background: '#fff'}\n    });});\n"
+                      " </script>\n</notextile>\n\n"
+                      "<div id='palm_%s_%s' "
+                      "style=' width: 700px; height: %dpx;'></div>"
+                      "\n\n") % (color,
+                                 barplot_count,
+                                 barplot_sub_count,
+                                 len(values) * 16 / 100 * 100)
+        item += value
+    return item, barplot_sub_count
 
 
 def table_or_barplot(block, barplot_count):
