@@ -67,17 +67,21 @@ def format_table(block):
 
 def format_barplot(block, barplot_count):
     """create script content for barplot"""
-    new = ""
+
+    result = ""
     barplot_sub_count = 0
     colors = ['#fba919', '#00749F', '#73C774', '#C7754C']
-    for item in re.split("<br> <br>", block):
-        if re.search(r"<BR>\d{1,}", item):
-            fragments = re.split("<BR>", item)
+
+    for item in block.split("<br> <br>"):
+        if not re.search(r"<BR>\d+", item):
+            item = "\n\np. " + item
+        else:
+            values = re.split("<BR>", item)
             reverse_fragments = []
-            for i, fragment in enumerate(fragments):
+            for i, value in enumerate(values):
                 if i == 0:
-                    item = fragment
-                elif re.search(r'\d{1,}\s{1,}- ', fragment):
+                    item = value
+                elif re.search(r'\d+\s+- ', value):
                     if i == 1:
                         barplot_sub_count += 1
                         item += ("\n\n<notextile>\n <script class='code' "
@@ -85,15 +89,15 @@ def format_barplot(block, barplot_count):
                                  "function(){\n   var plot_palm = $.jqplot("
                                  "'palm_%s_%s',\n    [[ ") % \
                                 (barplot_count, barplot_sub_count)
-                    fragment = re.sub(r'(\d{1,})\s{1,}- (.*) - ',
+                    value = re.sub(r'(\d+)\s+- (.*) - ',
                                       '[\\1, "\\2"], ',
-                                      fragment)
-                    reverse_fragments.append(fragment)
-                    fragment = ""
-                elif i == len(fragments) - 1:
-                    fragment = "".join(reversed(reverse_fragments))
+                                      value)
+                    reverse_fragments.append(value)
+                    value = ""
+                elif i == len(values) - 1:
+                    value = "".join(reversed(reverse_fragments))
                     color = colors.pop(random.randint(0, len(colors) - 1))
-                    fragment += ("]],\n    {seriesColors: ['%s'],"
+                    value += ("]],\n    {seriesColors: ['%s'],"
                                  "\n     seriesDefaults: {\n      renderer: "
                                  "$.jqplot.BarRenderer,\n      pointLabels:"
                                  " {show: true, location: 'e', edgeTolerance: "
@@ -110,13 +114,11 @@ def format_barplot(block, barplot_count):
                                  "\n\n") % (color,
                                             barplot_count,
                                             barplot_sub_count,
-                                            len(fragments) * 16 / 100 * 100)
-                item += fragment
-        else:
-            item = "\n\np. " + item
-        new += item
+                                            len(values) * 16 / 100 * 100)
+                item += value
+        result += item
 
-    return new
+    return result
 
 
 def table_or_barplot(block, barplot_count):

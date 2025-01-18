@@ -1,0 +1,361 @@
+---
+layout: post
+title: "Si ceux meçage dacueil avé été écri par un numain, il se ré bouré de fotes d'ortogaffes !"
+excerpt: " Allons-y pour l'éphéméride du jour :"
+extra_js: sigma, barplot 
+---
+
+h2. {{ page.title }}
+
+p(publish_date). jeudi 2 janvier 2025 23:07:50
+
+p.  Allons-y pour l'éphéméride du jour :
+
+p. 2 janvier 2008 : le baril de pétrole dépasse pour la première fois le "seuil psychologique", selon la formule des experts et des journalistes, de 100 dollars. Certes à l'époque le dollar est faible. Mais dans les mois qui suivent il ne cessera de grimper, atteignant 130 dollars fin mai 2008.
+
+bq. Si des gens qui ont reçu la même éducation que moi, qui parlent le même langage que moi, aiment les mêmes livres, la même musique, les mêmes tableaux que moi, si ces gens ne sont nullement à l'abri de la possibilité de devenir des monstres inhumains et de faire des choses dont jusque-là nous aurions cru qu'étaient incapables des gens de notre époque, hormis des cas pathologiques individuels, où prendrai-je l'assurance que j'en suis moi-même à l'abri ?
+
+p(source). Max Frisch (1946)
+
+p. Cette citation est vraiment très bien, même s'il faut beaucoup d'imagination pour la relier à des thèmes comme " Las Vegas ", " les autorités " ou " État islamique "... sur lesquels il nous faut maintenant nous pencher.
+
+h2. Et marlowe de rédiger sa chronique
+
+p. Je me suis dit qu'une entrée par les catégories dominantes selon les différents supports du jour serait du meilleur effet.
+
+p. 
+
+
+p. Les textes du premier support, franceinfo (64 textes) se déploient d'abord dans un registre de type Discours sécuritaire, avec comme éléments pivots des thèmes comme police, attentat, sécurité, terrorisme, policiers,... J'illustre as usual : 
+
+bq. La police a aussi fouillé le bureau de la compagnie Jeju Air à Séoul ainsi qu'un bureau de l'autorité régionale du secteur aérien à Muan. 
+
+p(reference). &#171;&#160;Crash en Corée du Sud : l'aéroport de Muan perquisitionné, le patron de la compagnie Jeju Air interdit de quitter le pays&#160;&#187;, franceinfo, 2 janvier 2025
+
+
+
+p. Pour ce qui concerne Agoravox (13 textes), il s'agit plutôt de Sociologie politique, avec en tête de gondole si j'ose dire citoyens, capitalisme, la politique, citoyen, démocratie,  :
+
+bq.  Cela s'adresse aux citoyens Français historiques, aux Français majeurs issus du droit du sol nés de parents étrangers, aux étrangers naturalisés, et aussi aux étrangers francophiles qui aiment la France, son histoire, son peuple et sa culture.   
+
+p(reference). &#171;&#160;La faillite de l'Etat providence&#160;&#187;, "Agoravox":http://www.agoravox.fr/tribune-libre/article/la-faillite-de-l-etat-providence-258415, 2 janvier 2025
+
+p. Concernant bfmtv (28 textes), le registre dominant n'est autre que Discours sécuritaire, avec des thèmes comme police, criminels, policiers, crime organisé, terrorisme,... :
+
+bq. L'auteur présumé de cette attaque a été tué par la police. 
+
+p(reference). &#171;&#160;Attaque à La Nouvelle-Orléans&#160;&#187;, bfmtv, 2 janvier 2025
+
+
+
+p. Venons-en à france24 (18 textes), avec plutôt un registre Opinion/Communication, soit surtout communiqué, journaliste, la presse, médias, conférence de presse,  :
+
+bq. " Les ministères chargés de l'Énergie en Mauritanie et au Sénégal, Petrosen et la Société mauritanienne des hydrocarbures (deux entreprises publiques sénégalaise et mauritanienne) annoncent avec fierté l'ouverture officielle du premier puits du gisement GTA ", dit ce communiqué. 
+
+p(reference). &#171;&#160;Le Sénégal et la Mauritanie démarrent l'exploitation d'un gisement de gaz&#160;&#187;, france24, 2 janvier 2025
+
+
+
+p. Enfin, Le Monde (16 textes), avec comme dominante Discours sécuritaire, à travers des éléments comme police, violence, terrorisme, menace, violences,  :
+
+bq. La plupart des responsables étaient des hommes originaires du Pakistan et les autorités locales et la police ont été mises en cause pour ne pas avoir pris la mesure de cette affaire, alimentant les discours de l'extrême droite sur une police " à deux vitesses ". 
+
+p(reference). &#171;&#160;Elon Musk réclame la libération de Tommy Robinson, figure de l'extrême droite britannique&#160;&#187;, "Le Monde":https://www.lemonde.fr/international/article/2025/01/02/elon-musk-reclame-la-liberation-de-tommy-robinson-figure-de-l-extreme-droite-britannique_6478320_3210.html, 2 janvier 2025
+
+p. Je lis dans la conclusion des « Sombres précurseurs », ouvrage que l'on m'a vivement recommandé : « A priori, la configuration politique leur étant favorable, de multiples alertes passent dans l'espace public, avec un coût plus faible qu'auparavant pour le lanceur  et dans des délais de plus en plus brefs » (Les Sombres précurseurs, Paris, Ed EHESS, 1999, p. 423). Le moins que l'on puisse dire est que les grappes d'objets d'alerte que je cueille chaque jour tendent à valider ce diagnostic !  Ce  2 janvier 2025, 31 objets d'alerte ou assimilés sont présents dans ces 144 dépêches ! En voici la distribution : 
+ attentat, terroriste, terrorisme, cyclone, alcool, terroristes, incendie, attentats, inondations, grippe, changement climatique, déchets, sécheresse, déforestation, incendies, gaz à effet de serre, nucléaire, ouragan, Covid-19, réchauffement climatique, coraux, alcools, sécurité aérienne, alcoolisme, tremblement de terre, obésité, diesel, aluminium, bruit, biodiversité, nanotechnologies… 
+ Et comme d'habitude je sélectionne les traits fondamentaux :
+
+p. attentat :
+
+bq. La plus grande ville de Louisiane a été le théâtre d'un attentat qui a fait au moins 15 morts dans la nuit du réveillon. 
+
+p(reference). &#171;&#160;Les États-Unis face à une nouvelle attaque terroriste, cette fois à la Nouvelle-Orléans&#160;&#187;, franceinfo, 2 janvier 2025
+
+
+
+p. terroriste :
+
+bq. Selon les premiers éléments de l'enquête confiée au FBI pour attentat terroriste, le conducteur du pick-up (dont je ne veux pas écrire ici le nom pour ne pas lui faire de la publicité posthume, ce que recherchent les terroristes en général), est un citoyen américain de 42 ans, né et habitant au Texas, vétéran de l'armée américaine (il a servi l'armée de terre de 2007 à 2015), apparemment fasciné par le jihadisme. 
+
+p(reference). &#171;&#160;Attentat à La Nouvelle-Orléans : les États-Unis durement endeuillés&#160;&#187;, "Agoravox":http://www.agoravox.fr/actualites/international/article/attentat-a-la-nouvelle-orleans-les-258453, 2 janvier 2025
+
+
+
+p. terrorisme :
+
+bq. Le partisan de Donald Trump assure que le futur président républicain " veut renforcer et changer la méthode de travail " pour lutter contre le terrorisme. 
+
+p(reference). &#171;&#160;Attaque à La Nouvelle-Orléans : "Un acte terroriste qui n'aurait pas dû avoir lieu", réagit le porte-parole des républicains américains en France&#160;&#187;, franceinfo, 2 janvier 2025
+
+
+
+p. cyclone :
+
+bq. Chido, cyclone le plus dévastateur à Mayotte depuis quatre-vingt-dix ans, a causé le 14 décembre la mort d'au moins 39 personnes et fait plus de 5600 blessés, selon un bilan publié dimanche dernier par la préfecture.r 
+
+p(reference). &#171;&#160;Le projet de « loi d'urgence » pour Mayotte, dévastée par le cyclone Chido, reporté en conseil des ministres à la semaine prochaine&#160;&#187;, "Le Monde":https://www.lemonde.fr/outre-mer/article/2025/01/02/le-projet-de-loi-d-urgence-pour-mayotte-reporte-en-conseil-des-ministres-a-la-semaine-prochaine-pour-poursuivre-la-concertation-avec-les-elus-de-l-archipel_6478084_1840826.html, 2 janvier 2025
+
+
+
+p. alcool :
+
+bq. Il juge que le " Dry January " est " un très bon test pour voir à quel point vous êtes liés " à l'alcool. 
+
+p(reference). &#171;&#160;Dry January 2025: les conseils des experts pour (vraiment) réduire votre consommation d'alcool&#160;&#187;, bfmtv, 2 janvier 2025
+
+
+
+p. terroristes :
+
+bq. " Pour l'instant les places à l'isolement, ce sont pour les terroristes ", précise-t-elle, " donc il faudrait choisir entre les uns et les autres et on ne peut pas imaginer qu'on choisisse de manière tout à fait autoritaire quelques noms dans une prison sans critères légaux ". 
+
+p(reference). &#171;&#160;Isolement renforcé des grands narcotrafiquants : "Une annonce choc" mais "inapplicable", estime une avocate au barreau de Paris&#160;&#187;, franceinfo, 2 janvier 2025
+
+p. Et allez, un peu de représentation graphique au passage : 
+ 
+
+<notextile>
+  <div id="graph-container_1" class="graph-container"> </div>
+<script class="code" type="text/javascript"> var sigma_1 = new sigma ('graph-container_1');
+sigma_1.graph.addNode({id: 'n0', label: "nucléaire", x: 1.000000, y: 0.000000, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n1', label: "incendies", x: 0.955573, y: 0.294755, size: 3, color: '#623466'}); sigma_1.graph.addNode({id: 'n2', label: "changement climatique", x: 0.826239, y: 0.563320, size: 4, color: '#5a592a'}); sigma_1.graph.addNode({id: 'n3', label: "déforestation", x: 0.623490, y: 0.781831, size: 5, color: '#7389c5'}); sigma_1.graph.addNode({id: 'n4', label: "sécheresse", x: 0.365341, y: 0.930874, size: 4, color: '#5a592a'}); sigma_1.graph.addNode({id: 'n5', label: "inondations", x: 0.074730, y: 0.997204, size: 5, color: '#7389c5'}); sigma_1.graph.addNode({id: 'n6', label: "grippe", x: -0.222521, y: 0.974928, size: 6, color: '#c24638'}); sigma_1.graph.addNode({id: 'n7', label: "incendie", x: -0.500000, y: 0.866025, size: 3, color: '#623466'}); sigma_1.graph.addNode({id: 'n8', label: "cyclone", x: -0.733052, y: 0.680173, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n9', label: "attentat", x: -0.900969, y: 0.433884, size: 14, color: '#5aa992'}); sigma_1.graph.addNode({id: 'n10', label: "alcool", x: -0.988831, y: 0.149042, size: 3, color: '#623466'}); sigma_1.graph.addNode({id: 'n11', label: "alcools", x: -0.988831, y: -0.149042, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n12', label: "terrorisme", x: -0.900969, y: -0.433884, size: 8, color: '#d353ad'}); sigma_1.graph.addNode({id: 'n13', label: "terroriste", x: -0.733052, y: -0.680173, size: 9, color: '#70b147'}); sigma_1.graph.addNode({id: 'n14', label: "attentats", x: -0.500000, y: -0.866025, size: 9, color: '#70b147'}); sigma_1.graph.addNode({id: 'n15', label: "terroristes", x: -0.222521, y: -0.974928, size: 10, color: '#7d48c8'}); sigma_1.graph.addNode({id: 'n16', label: "Covid-19", x: 0.074730, y: -0.997204, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n17', label: "déchets", x: 0.365341, y: -0.930874, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n18', label: "gaz à effet de serre", x: 0.623490, y: -0.781831, size: 2, color: '#c69749'}); sigma_1.graph.addNode({id: 'n19', label: "réchauffement climatique", x: 0.826239, y: -0.563320, size: 1, color: '#c07282'}); sigma_1.graph.addNode({id: 'n20', label: "ouragan", x: 0.955573, y: -0.294755, size: 1, color: '#c07282'}); 
+sigma_1.graph.addEdge({ id: 'e0', source: 'n1',target: 'n2', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e1', source: 'n1',target: 'n3', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e2', source: 'n4',target: 'n5', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e3', source: 'n4',target: 'n2', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e4', source: 'n2',target: 'n5', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e5', source: 'n5',target: 'n2', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e6', source: 'n5',target: 'n4', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e7', source: 'n5',target: 'n6', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e8', source: 'n7',target: 'n8', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e9', source: 'n7',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e10', source: 'n10',target: 'n11', color: '#623466'}); sigma_1.graph.addEdge({ id: 'e11', source: 'n12',target: 'n13', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e12', source: 'n12',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e13', source: 'n12',target: 'n14', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e14', source: 'n12',target: 'n15', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e15', source: 'n9',target: 'n8', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e16', source: 'n9',target: 'n14', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e17', source: 'n9',target: 'n15', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e18', source: 'n9',target: 'n12', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e19', source: 'n9',target: 'n13', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e20', source: 'n9',target: 'n10', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e21', source: 'n9',target: 'n6', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e22', source: 'n13',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e23', source: 'n13',target: 'n12', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e24', source: 'n13',target: 'n14', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e25', source: 'n13',target: 'n15', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e26', source: 'n15',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e27', source: 'n15',target: 'n14', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e28', source: 'n15',target: 'n12', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e29', source: 'n15',target: 'n13', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e30', source: 'n15',target: 'n8', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e31', source: 'n14',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e32', source: 'n14',target: 'n15', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e33', source: 'n14',target: 'n12', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e34', source: 'n14',target: 'n13', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e35', source: 'n14',target: 'n8', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e36', source: 'n6',target: 'n16', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e37', source: 'n6',target: 'n10', color: '#c24638'}); sigma_1.graph.addEdge({ id: 'e38', source: 'n6',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e39', source: 'n6',target: 'n15', color: '#7d48c8'}); sigma_1.graph.addEdge({ id: 'e40', source: 'n3',target: 'n1', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e41', source: 'n3',target: 'n9', color: '#5aa992'}); sigma_1.graph.addEdge({ id: 'e42', source: 'n3',target: 'n13', color: '#70b147'}); sigma_1.graph.addEdge({ id: 'e43', source: 'n3',target: 'n7', color: '#7389c5'}); sigma_1.graph.addEdge({ id: 'e44', source: 'n18',target: 'n4', color: '#5a592a'}); sigma_1.graph.addEdge({ id: 'e45', source: 'n18',target: 'n19', color: '#c69749'}); sigma_1.graph.addEdge({ id: 'e46', source: 'n20',target: 'n8', color: '#c07282'}); sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});
+sigma_1.refresh();
+sigma_1.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});
+setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);
+</script>
+</notextile>
+
+p. Je sais que des rencontres ont eu lieu entre l'ISC et le GSPR et que des outils d'analyse de grands réseaux vont bientôt m'être accessibles ! Voilà qui me changera de ces cartes de liens minuscules !
+
+h2. Quels sont les nouveaux sigles ?
+
+p. C'est important les routines, celle des sigles, objets simples à traiter, malgré leur prolifération des les textes et les discours, contribue à ma tranquillité d'"esprit".
+ FFEPGV, JVP, NOPD 
+
+ La base cumulée est accessible par ici :
+ "http://marloweb.eu/mrlw/sigles.php":http://marloweb.eu/mrlw/sigles.php
+
+Voici le contenu des "nouveaux" sigles : 
+
+- FFEPGV  := Fédération française d'éducation physique et de gymnastique volontaire,
+- JVP  := Jewish Voice for Peace,
+- NOPD  := New Orleans Police Department
+
+h2. Je note les personnalités du jour
+
+p. Je suis un peu paralysé au demeurant ! Ah oui, maintenant je consigne dans mon stock d'informations (dont 90% sont absolument inutilisables, je l'avoue) les dix premiers acteurs-personnes du jour : 
+ Trump, Biden, Bayrou, Yoon, Musk, Luther, Macron, Darmanin, McMahill, Kiev,…
+
+h2. L'état du palmarès des 30 premières personnalités de l'actualité
+
+p. Soit, le "baromètre" habituel des personnalités qui font l'actualité. Deux périodes : une période "ancienne" qui mène du 14 septembre 2004  au 2 décembre 2024  et une période "récente" qui va du 3 décembre 2024  au 1 janvier 2025  
+
+p.  « Période ancienne » :   
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_0_1',
+    [[ [337, " Ayrault "],  [338, " Le Maire "],  [359, " Kerry "],  [366, " Abbas "],  [367, " Aubry "],  [367, " Darmanin "],  [383, " Maduro "],  [384, " Assange "],  [443, " Zelensky "],  [490, " Bayrou "],  [497, " Johnson "],  [520, " Netanyahu "],  [545, " Villepin "],  [551, " Erdogan "],  [715, " Clinton "],  [860, " Chirac "],  [871, " Bush "],  [899, " Valls "],  [922, " Royal "],  [958, " Merkel "],  [994, " Mélenchon "],  [1054, " Fillon "],  [1310, " Biden "],  [1507, " Le Pen "],  [1832, " Obama "],  [2066, " Poutine "],  [2070, " Hollande "],  [2515, " Trump "],  [2946, " Macron "],  [3346, " Sarkozy "],  ]],
+    {seriesColors: ['#C7754C'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_0_1' style=' width: 700px; height: 512px;'></div>
+
+
+
+p.  « Période récente » :   
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_0_2',
+    [[ [3, " Borne "],  [4, " Al-Joulani "],  [4, " Vallaud "],  [4, " Haenel "],  [4, " Ruggia "],  [4, " Paty "],  [4, " Sánchez "],  [5, " Wauquiez "],  [5, " Valls "],  [5, " Attal "],  [6, " Meloni "],  [6, " Tondelier "],  [6, " Tusk "],  [7, " Mélenchon "],  [7, " Darmanin "],  [7, " Scholz "],  [7, " Pelicot "],  [9, " Faure "],  [10, " Musk "],  [10, " Biden "],  [14, " Retailleau "],  [14, " Yoon "],  [15, " Zelensky "],  [18, " Le Pen "],  [24, " Barnier "],  [24, " Poutine "],  [24, " Al-Assad "],  [28, " Bayrou "],  [30, " Trump "],  [30, " Macron "],  ]],
+    {seriesColors: ['#fba919'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_0_2' style=' width: 700px; height: 512px;'></div>
+
+
+
+p.  Pour ceux qui commencent à se lasser de ce genre de palmarès, je me permets de renvoyer à ce site beaucoup plus "in" et dont la métrologie est à passer en revue de près : 
+ Un site qui propose une "métrologie" du degré de présence des personnages politiques dans les "blogs" et les "conversations" sur l'internet : 
+ "http://presidentielle-2007.buzz-blog.com/IBBP-top5.php":http://presidentielle-2007.buzz-blog.com/IBBP-top5.php
+
+h2. La nécrologie du jour
+
+p. Est-ce que quelqu'un peut m'adresser des citations de Daniel Salvatore Schiffer tirée de son <i>Traité de la mort sublime sous-titré L'art de mourir de Socrate à David Bowie</i> ? Merci d'avance !
+
+h2. Je n'oublie pas mes exercices de géopolitique
+
+p. J'ai donc examiné attentivement la collection des noms de pays et j'en ai tiré le tableau suivant qui prend appui sur les paires dont les relations sont a priori les plus fortes dans l'actualité de ce jeudi 2 janvier 2025 :
+
+p. Ukraine et Russie (11) :
+
+bq. subscribe-newsletter input { position : absolute ; top : 47px; right : 5px; width : 40%; } } */ Menu Économie Agriculture, alimentation Économie de la zone euro Politique monétaire Politique de la concurrence Économie française Budget, finances publiques Fiscalité Protection sociale Marché du travail Politique industrielle Vie des entreprises Énergie Numérique Banque, finance Société Culture Médias, réseaux sociaux Santé Social, syndicalisme Société Religion, identités culturelles Ville, logement, territoires Justice et police Inégalités, discrimination Éducation, formation, recherche Politique française et internationale Vie politique française Gauches européennes Droites européennes Populismes et nouvelles radicalités Union européenne Institutions, démocratie Gouvernance mondiale Finance mondiale Commerce international Terrorisme Climat Migrations Pays & régions États-Unis - Politique intérieure États-Unis - Politique extérieure Canada Amérique hispanophone Brésil Asie du sud-est Asie centrale Chine - Politique extérieure Chine - Politique intérieure Japon Corée (s) Inde Moyen Orient Turquie Afrique Afrique du nord Afrique du sud Russie Europe centrale et orientale Europe du Nord Allemagne Italie Royaume-Uni Espagne Portugal Ukraine Autriche Suisse À PROPOS | EN|FR accueil Refonder la relation du citoyen avec l'État edit Gérard Creuzet 2 janvier 2025 Politique française et internationale Budget, finances publiques Protection sociale Vie politique française Gauches européennes Droites européennes Populismes et nouvelles radicalités Institutions, démocratie Depuis la dissolution de l'Assemblée nationale en juin 2024, les citoyens français assistent, consternés, au triste spectacle que leur propose le monde politique. 
+
+p(reference). &#171;&#160;Refonder la relation du citoyen avec l'État&#160;&#187;, "telos":http://www.telos-eu.com/fr/refonder-la-relation-du-citoyen-avec-letat.html, 2 janvier 2025
+
+
+
+p. Ukraine et Moldavie (5) :
+
+bq. Transnistrie " accro " au gaz russe Comment la Moldavie, qui a déclaré l'état d'urgence énergétique mi-décembre, devient-elle aujourd'hui une victime collatérale de la fin de l'accord ukraino-russe qui permettait d'arroser de gaz russe une partie de l'Europe depuis des décennies ? Certes, cette petite république des Balkans coincée entre la Roumanie et l'Ukraine dépendait surtout des hydrocarbures russes depuis son indépendance en 1991. 
+
+p(reference). &#171;&#160;La Transnistrie privée de gaz russe : chaos politique en perspective pour la Moldavie&#160;&#187;, france24, 2 janvier 2025
+
+
+
+p. France et Allemagne (5) :
+
+bq. Il y a eu des attentats très graves aux États-Unis, mais qui ne s'apparentent pas à ce qu'a essuyé l'Europe - la France, l'Allemagne, la Belgique, la Grande-Bretagne, l'Espagne, les Pays-Bas - quand l'État islamique se trouvait au sommet de son combat armé entre l'Irak et la Syrie. 
+
+p(reference). &#171;&#160;INTERVIEW. Attentat à La Nouvelle-Orléans : quelle est l'influence de l'État islamique aux États-Unis ?&#160;&#187;, franceinfo, 2 janvier 2025
+
+
+
+p. Allemagne et Espagne (4) :
+
+bq. subscribe-newsletter input { position : absolute ; top : 47px; right : 5px; width : 40%; } } */ Menu Économie Agriculture, alimentation Économie de la zone euro Politique monétaire Politique de la concurrence Économie française Budget, finances publiques Fiscalité Protection sociale Marché du travail Politique industrielle Vie des entreprises Énergie Numérique Banque, finance Société Culture Médias, réseaux sociaux Santé Social, syndicalisme Société Religion, identités culturelles Ville, logement, territoires Justice et police Inégalités, discrimination Éducation, formation, recherche Politique française et internationale Vie politique française Gauches européennes Droites européennes Populismes et nouvelles radicalités Union européenne Institutions, démocratie Gouvernance mondiale Finance mondiale Commerce international Terrorisme Climat Migrations Pays & régions États-Unis - Politique intérieure États-Unis - Politique extérieure Canada Amérique hispanophone Brésil Asie du sud-est Asie centrale Chine - Politique extérieure Chine - Politique intérieure Japon Corée (s) Inde Moyen Orient Turquie Afrique Afrique du nord Afrique du sud Russie Europe centrale et orientale Europe du Nord Allemagne Italie Royaume-Uni Espagne Portugal Ukraine Autriche Suisse À PROPOS | EN|FR accueil Refonder la relation du citoyen avec l'État edit Gérard Creuzet 2 janvier 2025 Politique française et internationale Budget, finances publiques Protection sociale Vie politique française Gauches européennes Droites européennes Populismes et nouvelles radicalités Institutions, démocratie Depuis la dissolution de l'Assemblée nationale en juin 2024, les citoyens français assistent, consternés, au triste spectacle que leur propose le monde politique. 
+
+p(reference). &#171;&#160;Refonder la relation du citoyen avec l'État&#160;&#187;, "telos":http://www.telos-eu.com/fr/refonder-la-relation-du-citoyen-avec-letat.html, 2 janvier 2025
+
+
+
+p. Italie et Allemagne (4) :
+
+bq. subscribe-newsletter input { position : absolute ; top : 47px; right : 5px; width : 40%; } } */ Menu Économie Agriculture, alimentation Économie de la zone euro Politique monétaire Politique de la concurrence Économie française Budget, finances publiques Fiscalité Protection sociale Marché du travail Politique industrielle Vie des entreprises Énergie Numérique Banque, finance Société Culture Médias, réseaux sociaux Santé Social, syndicalisme Société Religion, identités culturelles Ville, logement, territoires Justice et police Inégalités, discrimination Éducation, formation, recherche Politique française et internationale Vie politique française Gauches européennes Droites européennes Populismes et nouvelles radicalités Union européenne Institutions, démocratie Gouvernance mondiale Finance mondiale Commerce international Terrorisme Climat Migrations Pays & régions États-Unis - Politique intérieure États-Unis - Politique extérieure Canada Amérique hispanophone Brésil Asie du sud-est Asie centrale Chine - Politique extérieure Chine - Politique intérieure Japon Corée (s) Inde Moyen Orient Turquie Afrique Afrique du nord Afrique du sud Russie Europe centrale et orientale Europe du Nord Allemagne Italie Royaume-Uni Espagne Portugal Ukraine Autriche Suisse À PROPOS | EN|FR accueil Refonder la relation du citoyen avec l'État edit Gérard Creuzet 2 janvier 2025 Politique française et internationale Budget, finances publiques Protection sociale Vie politique française Gauches européennes Droites européennes Populismes et nouvelles radicalités Institutions, démocratie Depuis la dissolution de l'Assemblée nationale en juin 2024, les citoyens français assistent, consternés, au triste spectacle que leur propose le monde politique. 
+
+p(reference). &#171;&#160;Refonder la relation du citoyen avec l'État&#160;&#187;, "telos":http://www.telos-eu.com/fr/refonder-la-relation-du-citoyen-avec-letat.html, 2 janvier 2025
+
+
+
+p. Syrie et Irak (4) :
+
+bq. Un trésor de guerre qui n'a, là encore, rien à voir avec les centaines de millions de dollars amassées en 2014 quand ils avaient encore leur emprise territoriale en Syrie et en Irak. 
+
+p(reference). &#171;&#160;Attentat à La Nouvelle-Orléans : trois questions sur ce qu'il reste du groupe État islamique et de son influence&#160;&#187;, franceinfo, 2 janvier 2025
+
+
+
+p. Chine et Inde (4) :
+
+bq. Alors que ces deux pays contribuent le plus aux émissions de gaz à effet de serre, l'Inde et la Chine ont connu, en 2024, leur année la plus chaude jamais enregistrée. 
+
+p(reference). &#171;&#160;Crise climatique : 2024, une année record pour les températures en Inde et en Chine&#160;&#187;, franceinfo, 2 janvier 2025
+
+
+
+p. Ukraine et Europe (4) :
+
+bq. Robinet coupé : les livraisons de gaz russe à l'Europe via l'Ukraine ont définitivement cessé le matin du mercredi 1er janvier, après l'expiration d'un contrat signé entre les deux parties fin 2019 et maintenu malgré l'invasion russe du pays. 
+
+p(reference). &#171;&#160;Fin du transit de gaz russe vers l’Europe via l’Ukraine, la Moldavie en difficulté&#160;&#187;, Euractiv, 2 janvier 2025
+
+
+
+p. France et Espagne (4) :
+
+bq. Je me souviens lors de la catastrophe de Valence (en Espagne) comment nos dirigeants, les représentants des pompiers et de la sécurité civile nous bassinaient à longueur d'émission avec la qualité des secours français et pleuraient de ce que l'Espagne ne fasse pas appel à eux, ce fut pareil avec le dernier tremblement de terre au Maroc et là : on refuse l'aide de Madagascar, de l'Afrique du Sud, des Comores [ 16] ce dernier pays étant considéré par la majorité de l'intelligentsia politique de la France comme responsable voire organisateur (ce fut dit par certains ministres) de l'immigration de la population en direction de Mayotte, et on est incapable de monter (10 jours après le cyclone) plus d'un hôpital de campagne, de mettre à l'oeuvre des équipes du génie militaire pour réparer autant que possible l'hôpital [ 17], d'envoyer de secouristes de la sécurité civile porter à dos d'homme s'il le faut de l'eau et des vivres aux personnes en détresse  (là où des journalistes et des membres d'O. 
+
+p(reference). &#171;&#160;Mayotte, pas de pot à Pau pour Bayrou&#160;&#187;, "Agoravox":http://www.agoravox.fr/actualites/politique/article/mayotte-pas-de-pot-a-pau-pour-258459, 2 janvier 2025
+
+
+
+p. France et Italie (4) :
+
+bq. Le Danemark, ainsi que la Suède, la France, l'Allemagne et l'Italie, sont les principaux opposants à la modification du statu quo. 
+
+p(reference). &#171;&#160;Réforme européenne du médicament : 2025, la sortie de l’impasse ?&#160;&#187;, Euractiv, 2 janvier 2025
+
+
+
+p. Sénégal et Mauritanie (3) :
+
+bq. Le Sénégal et la Mauritanie font un pas vers l'exploitation de leur gaz commun avec " l'ouverture du premier puits " de leur gisement marin, une étape importante devant conduire à " la commercialisation " du produit, indique un communiqué conjoint publié mercredi. 
+
+p(reference). &#171;&#160;Le Sénégal et la Mauritanie démarrent l'exploitation d'un gisement de gaz&#160;&#187;, france24, 2 janvier 2025
+
+
+
+p. Mali et Algérie (3) :
+
+bq. L'Algérie voisine a été l'ancien pays médiateur pour la paix dans la partie nord du Mali, confrontée à une rébellion touarègue, mais Bamako accuse, dans un communiqué, Alger de soutenir les " groupes terroristes " et pointe " la persistance des actes d'ingérence ". 
+
+p(reference). &#171;&#160;Le Mali dénonce la "persistance des actes d'ingérence" de l'Algérie&#160;&#187;, france24, 2 janvier 2025
+
+h2. Je passe à la suite !
+
+p. Voici les affaires de ce jeudi 2 janvier 2025 : comportement, Cuba 
+
+p.  Ce coup-ci, plutôt que d'ouvrir encore des énoncés qui ne seront pas lus, je propose de me livrer au petit exercice rodé sur les personnalités. Je compare deux périodes, ce qui permet de voir les déplacements qui ont eu lieu dans la liste des procès, scandales, accusations publiques et autres litiges qui ont défrayé les chroniques judiciaires et médiatiques : 
+
+p.  Affaires anciennes (du 6 décembre 2004  au 12 décembre 2024) :   
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_1_1',
+    [[ [168, " DSK "],  [168, " Mediator "],  [192, " écoutes "],  [211, " Karachi "],  [212, " dopage "],  [216, " Watergate "],  [228, " emplois fictifs "],  [229, " meurtre "],  [234, " attentats "],  [253, " Outreau "],  [255, " Bygmalion "],  [262, " viol "],  [263, " Fillon "],  [267, " pédophilie "],  [298, " Cahuzac "],  [305, " Weinstein "],  [359, " Benalla "],  [462, " Bettencourt "],  [483, " Clearstream "],  [1399, " corruption "],  ]],
+    {seriesColors: ['#C7754C'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_1_1' style=' width: 700px; height: 352px;'></div>
+
+
+
+p.  Affaires récentes :   
+
+<notextile>
+ <script class='code'  type='text/javascript'>
+  $(document).ready(function(){
+   var plot_palm = $.jqplot('palm_1_2',
+    [[ [1, " Cuba "],  [1, " comportement "],  [2, " crimes "],  [2, " emplois fictifs "],  [2, " affaire "],  [2, " financement "],  [2, " viol "],  [2, " Pélicot "],  [3, " Bettencourt "],  [3, " Watergate "],  [3, " Bismuth "],  [4, " Mazan "],  [4, " soupçons "],  [4, " écoutes "],  [4, " Bygmalion "],  [5, " Pelicot "],  [6, " assistants "],  [7, " assassinat "],  [11, " assistants parlementaires "],  [12, " viols "],  ]],
+    {seriesColors: ['#fba919'],
+     seriesDefaults: {
+      renderer: $.jqplot.BarRenderer,
+      pointLabels: {show: true, location: 'e', edgeTolerance: -15},
+      shadow: false,
+      rendererOptions: {barDirection: 'horizontal'}},
+     axes: {
+      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},
+     grid: {background: '#fff'}
+    });});
+ </script>
+</notextile>
+
+<div id='palm_1_2' style=' width: 700px; height: 352px;'></div>
+
+p. "Je suis dans un de ces jours où je n'ai jamais eu d'avenir. Il n'y a qu'un présent immobile entouré d'un mur d'angoisse."
+Fernando Pessoa, <i>Fragments d'un voyage immobile</i> (et dans le genre immobile moi aussi je me pose là !)
