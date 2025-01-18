@@ -10,8 +10,7 @@ import libmrlwchrnck
 from Referencer import Referencer
 from js.HistogramDrawer import HistogramDrawer
 from js.MapDrawer import MapDrawer
-from sigmajs_generator import SigmaJsGenerator
-from textile_utils import format_links, table_or_barplot
+from textile_utils import format_links, table_or_barplot, format_graph
 from utils import get_introduction_date, dates_to_long_dates, datetime_to_long_datetime, harmonize_domain_url
 
 
@@ -41,20 +40,6 @@ def make_histogram(block, plot_id):
     drawer = HistogramDrawer(division[1], plot_id)
 
     return division[0] + drawer.histogram + division[2]
-
-
-def format_graphe(block, graphe_count):
-    """format a graphe for js"""
-    fragments = re.split("--graphe--", block)
-    block = fragments[0]
-    block += ('\n\n<notextile>\n  <div id="graph-container_%d" '
-              'class="graph-container"> </div>\n') % graphe_count
-    formed = SigmaJsGenerator(fragments[1], graphe_count)
-    block += formed.graph
-    block += "</notextile>\n\n"
-    block += fragments[2]
-
-    return block
 
 
 def format_cloud(block, cloud_count):
@@ -268,7 +253,7 @@ class ChroniqueParser:
                     graphe_count += 1
                     if graphe_count < 2:
                         self.extra_js.append("sigma")
-                    block = format_graphe(block, graphe_count)
+                    block = format_graph(block, graphe_count)
 
                 if re.search("--nuage--", block):
                     cloud_count += 1
