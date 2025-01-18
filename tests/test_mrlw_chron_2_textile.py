@@ -265,7 +265,6 @@ def test_format_sigles_can_handle_acronyms():
 #
 
 
-
 def test_format_histogram():
     block = "--histo-- 2004 , 0 ; 2005 , 259 ; 2006 , 279 ; 2007 , 320 ; 2008 , 318 ; 2009 , 315 ; 2010 , 287 ; 2011 , 267 ; 2012 , 291 ; 2013 , 312 ; 2014 , 308 ; 2015 , 357 ; 2016 , 361 ; 2017 , 348 ; 2018 , 342 ; 2019 , 306 ; 2020 , 280 ; 2021 , 220 ; 2022 , 272 ; 2023 , 205 ; 2024 , 228 ; 2025 , 4 ;  --histo--  "
     count = 1
@@ -295,10 +294,6 @@ var plot = $.jqplot('chart_1', [s,],{
     assert result == expected
 
 
-#
-# def test_format_graphe():
-#     assert False
-#
 #
 # def test_format_cloud():
 #     assert False

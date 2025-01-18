@@ -2,6 +2,7 @@ import random
 import re
 
 from js.BarplotDrawer import BarplotDrawer
+from sigmajs_generator import SigmaJsGenerator
 
 
 def format_links(block):
@@ -105,3 +106,12 @@ def table_or_barplot(block, barplot_count):
         return "barplot", test
     except:
         return "table", format_table(block)
+
+
+def format_graph(block, graphe_count):
+    """format a graphe for js"""
+
+    part = re.split("--graphe--", block)
+    drawer = SigmaJsGenerator(part[1], graphe_count)
+
+    return part[0] + drawer.graph + part[2]

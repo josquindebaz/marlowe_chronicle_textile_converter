@@ -1,28 +1,25 @@
-from sigmajs_generator import SigmaJsGenerator, set_lists, set_edges
-
-expected_intro = '<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');'
-expected_ending = ("sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});\n"
-                   "sigma_1.refresh();\n"
-                   "sigma_1.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
-                   "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\n"
-                   "setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);\n"
-                   '</script>\n')
+from sigmajs_generator import SigmaJsGenerator, set_lists, set_edges, make_intro, make_ending
 
 
 def test_can_add_intro():
-    generated_graph = SigmaJsGenerator("", 1)
+    expected_intro = '\n\n<notextile>\n  <div id="graph-container_1" class="graph-container"> </div>\n<script class="code" type="text/javascript"> var sigma_1 = new sigma (\'graph-container_1\');\n'
 
-    result = generated_graph.graph.split("\n")[0]
+    result = make_intro("sigma_1", 1)
 
     assert result == expected_intro
 
 
 def test_can_add_ending():
-    generated_graph = SigmaJsGenerator("", 1)
+    expected_ending = ("sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});\n"
+                       "sigma_1.refresh();\n"
+                       "sigma_1.startForceAtlas2({barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
+                       "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\n"
+                       "setTimeout(function() {sigma_1.stopForceAtlas2();}, 3000);\n"
+                       '</script>\n</notextile>\n\n')
 
-    result = generated_graph.graph
+    result = make_ending("sigma_1")
 
-    assert result == expected_intro + "\n\n" + expected_ending
+    assert result == expected_ending
 
 
 def test_can_add_edges():
@@ -36,12 +33,12 @@ def test_can_add_edges():
         "sigma_1.graph.addNode({id: 'n0', label: \"foo\", x: 1.000000, y: 0.000000, size: 1, color: '#c07282'}); "
         "sigma_1.graph.addNode({id: 'n1', label: \"bar\", x: -1.000000, y: 0.000000, size: 1, color: '#c07282'}); ")
 
-    assert result[1] == expected_nodes
+    assert result[5] == expected_nodes
 
     expected_edges = ("sigma_1.graph.addEdge({ id: 'e0', source: 'n0',target: 'n1', color: '#c07282'}); "
                       "sigma_1.settings({labelThreshold: 1, defaultEdgeType: 'curve'});")
 
-    assert result[2] == expected_edges
+    assert result[6] == expected_edges
 
 
 def test_can_set_lists():

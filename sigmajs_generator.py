@@ -1,24 +1,13 @@
 import math
 from re import split
 
-default_color = "#7e8cc6"
-
-principal_colors = ["#c69749",
-                    "#7d48c8",
-                    "#70b147",
-                    "#d353ad",
-                    "#5aa992",
-                    "#c24638",
-                    "#7389c5",
-                    "#5a592a",
-                    "#623466",
-                    "#c07282"]
-
 
 def make_intro(graph_id, graph_number):
     """Set first lines of the graph"""
 
-    return (f'<script class="code" type="text/javascript"> '
+    return (f'\n\n<notextile>\n  <div id="graph-container_{graph_number}" '
+            'class="graph-container"> </div>\n'
+            f'<script class="code" type="text/javascript"> '
             f'var {graph_id} = new sigma (\'graph-container_{graph_number}\');\n')
 
 
@@ -29,7 +18,7 @@ def make_ending(graph_id):
             f"{graph_id}.refresh();\n"
             f"{graph_id}.startForceAtlas2(""{barnesHutOptimize: true, slowDown: 1, strongGravityMode: true, "
             "outboundAttractionDistribution: false, linLogMode: false, adjustSizes: true});\nsetTimeout(function() {"
-            f"{graph_id}.stopForceAtlas2();""}, 3000);\n</script>\n")
+            f"{graph_id}.stopForceAtlas2();""}, 3000);\n</script>\n</notextile>\n\n")
 
 
 def set_lists(network_text):
@@ -62,6 +51,19 @@ def set_lists(network_text):
 
 def set_edges(graph_id, nodes, edges):
     """generate text to describe edges in SigmaJS format"""
+
+    default_color = "#7e8cc6"
+
+    principal_colors = ["#c69749",
+                        "#7d48c8",
+                        "#70b147",
+                        "#d353ad",
+                        "#5aa992",
+                        "#c24638",
+                        "#7389c5",
+                        "#5a592a",
+                        "#623466",
+                        "#c07282"]
 
     edge_text = ""
     partition_colors = {}
