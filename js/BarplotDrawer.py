@@ -11,38 +11,42 @@ def closing_barplot(barplot_id, color, values, height):
     result = "".join(values)
     result += ("]],\n    {"
                f"seriesColors: ['{color}'],\n"
-               "     seriesDefaults: {\n      renderer: $.jqplot.BarRenderer,\n      pointLabels: {show: true, location: 'e', edgeTolerance: -15},\n      shadow: false,\n      rendererOptions: {barDirection: 'horizontal'}},\n     axes: {\n      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},\n     grid: {background: '#fff'}\n    });});\n </script>\n</notextile>\n\n"
+               "     seriesDefaults: {\n      renderer: $.jqplot.BarRenderer,\n"
+               "      pointLabels: {show: true, location: 'e', edgeTolerance: -15},\n      shadow: false,\n"
+               "      rendererOptions: {barDirection: 'horizontal'}},\n"
+               "     axes: {\n      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},\n"
+               "     grid: {background: '#fff'}\n    });});\n </script>\n"
+               "</notextile>\n\n"
                f"<div id='{barplot_id}' style=' width: 700px; height: {height}px;'></div>\n\n")
 
     return result
 
 
+def format_values(raw_values):
+    max_to_min_values = [
+        re.sub(r'(\d+)\s+- (.*) - ', '[\\1, "\\2"], ', value)
+        for value in raw_values[1:-1]
+    ]
+
+    return reversed(max_to_min_values)
+
+
 class BarplotDrawer:
-    def __init__(self, barplot_name, barplot_sub_count, item):
-        colors = ['#fba919', '#00749F', '#73C774', '#C7754C']
+    """Draw a js barplot from values"""
 
-        raw_values = re.split("<BR>", item)
-        reversed_values = []
+    def __init__(self):
+        self.plot = ""
+        self.colors = ['#fba919', '#00749F', '#73C774', '#C7754C']
 
-        result = ""
+    def draw(self, barplot_id, value_block, color=None):
+        raw_values = re.split("<BR>", value_block)
 
-        for i, value in enumerate(raw_values):
-            if i == 0:
-                result = value
-            elif re.search(r'\d+\s+- ', value):
-                if i == 1:
-                    barplot_sub_count += 1
-                    result += introducing_barplot(f"{barplot_name}{barplot_sub_count}")
-                reversed_value = re.sub(r'(\d+)\s+- (.*) - ', '[\\1, "\\2"], ', value)
-                reversed_values.append(reversed_value)
-            elif i == len(raw_values) - 1:
-                barplot_id = f"{barplot_name}{barplot_sub_count}"
-                color = colors.pop(random.randint(0, len(colors) - 1))
-                values = reversed(reversed_values)
-                height = "%d" % (len(raw_values) * 16 / 100 * 100)
-                value = closing_barplot(barplot_id, color, values, height)
+        result = raw_values[0] + introducing_barplot(barplot_id)
 
-                result += value
+        if color is None:
+            color = self.colors.pop(random.randint(0, len(self.colors) - 1))
 
-        self.barplot_sub_count = barplot_sub_count
-        self.result = result
+        height = "%d" % (len(raw_values) * 16 / 100 * 100)
+        min_to_max_values = format_values(raw_values)
+
+        self.plot = result + closing_barplot(barplot_id, color, min_to_max_values, height)

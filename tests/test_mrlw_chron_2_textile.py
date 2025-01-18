@@ -236,7 +236,7 @@ def test_chronicle_with_barplot():
 
     expected_barplot = '\n\np. Soit, le "baromètre" habituel des personnalités qui font l\'actualité. Deux périodes : une période "ancienne" qui mène du 14 septembre 2004  au 2 décembre 2024  et une période "récente" qui va du 3 décembre 2024  au 1 janvier 2025  \n\np.  « Période ancienne » :  \n\n<notextile>\n <script class=\'code\'  type=\'text/javascript\'>\n  $(document).ready(function(){\n   var plot_palm = $.jqplot(\'palm_0_1\',\n    [[ [337, " Ayrault "],  [338, " Le Maire "],  [359, " Kerry "],  [366, " Abbas "],  [367, " Aubry "],  [367, " Darmanin "],  [383, " Maduro "],  [384, " Assange "],  [443, " Zelensky "],  [490, " Bayrou "],  [497, " Johnson "],  [520, " Netanyahu "],  [545, " Villepin "],  [551, " Erdogan "],  [715, " Clinton "],  [860, " Chirac "],  [871, " Bush "],  [899, " Valls "],  [922, " Royal "],  [958, " Merkel "],  [994, " Mélenchon "],  [1054, " Fillon "],  [1310, " Biden "],  [1507, " Le Pen "],  [1832, " Obama "],  [2066, " Poutine "],  [2070, " Hollande "],  [2515, " Trump "],  [2946, " Macron "],  [3346, " Sarkozy "],  ]],\n    {seriesColors: [\'#00749F\'],\n     seriesDefaults: {\n      renderer: $.jqplot.BarRenderer,\n      pointLabels: {show: true, location: \'e\', edgeTolerance: -15},\n      shadow: false,\n      rendererOptions: {barDirection: \'horizontal\'}},\n     axes: {\n      yaxis: {tickOptions: {fontSize: \'11pt\'}, renderer: $.jqplot.CategoryAxisRenderer}},\n     grid: {background: \'#fff\'}\n    });});\n </script>\n</notextile>\n\n<div id=\'palm_0_1\' style=\' width: 700px; height: 512px;\'></div>\n\n\n\np.  « Période récente » :  \n\n<notextile>\n <script class=\'code\'  type=\'text/javascript\'>\n  $(document).ready(function(){\n   var plot_palm = $.jqplot(\'palm_0_2\',\n    [[ [3, " Borne "],  [4, " Al-Joulani "],  [4, " Vallaud "],  [4, " Haenel "],  [4, " Ruggia "],  [4, " Paty "],  [4, " Sánchez "],  [5, " Wauquiez "],  [5, " Valls "],  [5, " Attal "],  [6, " Meloni "],  [6, " Tondelier "],  [6, " Tusk "],  [7, " Mélenchon "],  [7, " Darmanin "],  [7, " Scholz "],  [7, " Pelicot "],  [9, " Faure "],  [10, " Musk "],  [10, " Biden "],  [14, " Retailleau "],  [14, " Yoon "],  [15, " Zelensky "],  [18, " Le Pen "],  [24, " Barnier "],  [24, " Poutine "],  [24, " Al-Assad "],  [28, " Bayrou "],  [30, " Trump "],  [30, " Macron "],  ]],\n    {seriesColors: [\'#C7754C\'],\n     seriesDefaults: {\n      renderer: $.jqplot.BarRenderer,\n      pointLabels: {show: true, location: \'e\', edgeTolerance: -15},\n      shadow: false,\n      rendererOptions: {barDirection: \'horizontal\'}},\n     axes: {\n      yaxis: {tickOptions: {fontSize: \'11pt\'}, renderer: $.jqplot.CategoryAxisRenderer}},\n     grid: {background: \'#fff\'}\n    });});\n </script>\n</notextile>\n\n<div id=\'palm_0_2\' style=\' width: 700px; height: 512px;\'></div>\n\n\n\np.  Pour ceux qui commencent à se lasser de ce genre de palmarès, je me permets de renvoyer à ce site beaucoup plus "in" et dont la métrologie est à passer en revue de près : \n Un site qui propose une "métrologie" du degré de présence des personnages politiques dans les "blogs" et les "conversations" sur l\'internet : \n "http://presidentielle-2007.buzz-blog.com/IBBP-top5.php":http://presidentielle-2007.buzz-blog.com/IBBP-top5.php\r\n\r\r\n'
 
-    if parser.typed_sentences[15][0].find("plot_palm"):
+    if not parser.typed_sentences[15][0].find("table(marloblog)"):
         assert remove_random_color(parser.typed_sentences[15][0]) == remove_random_color(expected_barplot)
 
 
@@ -262,10 +262,7 @@ def test_format_sigles_can_handle_acronyms():
 # def test_format_numbered_list():
 #     assert False
 #
-#
-# def test_table_or_barplot():
-#     assert False
-#
+
 
 
 def test_format_histogram():

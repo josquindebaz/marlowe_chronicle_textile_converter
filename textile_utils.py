@@ -72,26 +72,26 @@ def format_barplot(block, barplot_count):
 
     result = ""
     barplot_sub_count = 0
+    barplot_id_prefix = f"palm_{barplot_count}_"
+    barplot_drawer = BarplotDrawer()
 
     for part in block.split("<br> <br>"):
         if not re.search(r"<BR>\d+", part):
             transformed_part = f"\n\np. {part}"
         else:
-            barplot_id_prefix = f"palm_{barplot_count}_"
-            transformed_part, barplot_sub_count = draw_barplot(barplot_id_prefix, barplot_sub_count, part)
+            barplot_sub_count += 1
+            barplot_id = f"{barplot_id_prefix}{barplot_sub_count}"
+            barplot_drawer.draw(barplot_id, part)
+            transformed_part = barplot_drawer.plot
 
         result += transformed_part
 
     return result
 
 
-def draw_barplot(barplot_name, barplot_sub_count, item):
-    drawer = BarplotDrawer(barplot_name, barplot_sub_count, item)
-    return drawer.result, drawer.barplot_sub_count
-
-
 def table_or_barplot(block, barplot_count):
     """Format data in table or graph"""
+
     if re.search(r"\n\nh3\.", block):
         select = "table"
     else:
@@ -101,6 +101,7 @@ def table_or_barplot(block, barplot_count):
         return "table", format_table(block)
 
     try:
-        return "barplot", format_barplot(block, barplot_count)
+        test = format_barplot(block, barplot_count)
+        return "barplot", test
     except:
         return "table", format_table(block)
