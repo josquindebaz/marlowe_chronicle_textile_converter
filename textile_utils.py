@@ -1,3 +1,4 @@
+import random
 import re
 
 
@@ -40,3 +41,90 @@ def format_links(block):
         block += fragment
 
     return block
+
+
+def format_table(block):
+    """format a table for textile"""
+    fragments = re.split('<BR>', block)
+    block = fragments[0] + "\n\ntable(marloblog)."
+    for fragment in fragments[1:-1]:
+        if re.search('<br>', fragment):
+            fragment = re.sub('<br>', '', fragment)
+            fragment = "\n\np. %s\n\ntable(marloblog)." % fragment.strip()
+        else:
+            fragment = re.sub(r'(\d{1,})\s*-\s*(.*)\s*-\s*',
+                              '\n| \\1 | \\2 |', fragment)
+        block += fragment
+    block += fragments[-1]
+
+    return block
+
+
+def format_barplot(block, barplot_count):
+    """create script content for barplot"""
+    new = ""
+    barplot_sub_count = 0
+    colors = ['#fba919', '#00749F', '#73C774', '#C7754C']
+    for item in re.split("<br> <br>", block):
+        if re.search(r"<BR>\d{1,}", item):
+            fragments = re.split("<BR>", item)
+            reverse_fragments = []
+            for i, fragment in enumerate(fragments):
+                if i == 0:
+                    item = fragment
+                elif re.search(r'\d{1,}\s{1,}- ', fragment):
+                    if i == 1:
+                        barplot_sub_count += 1
+                        item += ("\n\n<notextile>\n <script class='code' "
+                                 " type='text/javascript'>\n  $(document).ready("
+                                 "function(){\n   var plot_palm = $.jqplot("
+                                 "'palm_%s_%s',\n    [[ ") % \
+                                (barplot_count, barplot_sub_count)
+                    fragment = re.sub(r'(\d{1,})\s{1,}- (.*) - ',
+                                      '[\\1, "\\2"], ',
+                                      fragment)
+                    reverse_fragments.append(fragment)
+                    fragment = ""
+                elif i == len(fragments) - 1:
+                    fragment = "".join(reversed(reverse_fragments))
+                    color = colors.pop(random.randint(0, len(colors) - 1))
+                    fragment += ("]],\n    {seriesColors: ['%s'],"
+                                 "\n     seriesDefaults: {\n      renderer: "
+                                 "$.jqplot.BarRenderer,\n      pointLabels:"
+                                 " {show: true, location: 'e', edgeTolerance: "
+                                 "-15},\n      shadow: false,\n      "
+                                 "rendererOptions: {"
+                                 "barDirection: 'horizontal'}},\n     axes: {"
+                                 "\n      yaxis: {tickOptions: {fontSize: "
+                                 "'11pt'}, renderer: "
+                                 "$.jqplot.CategoryAxisRenderer}},\n     "
+                                 "grid: {background: '#fff'}\n    });});\n"
+                                 " </script>\n</notextile>\n\n"
+                                 "<div id='palm_%s_%s' "
+                                 "style=' width: 700px; height: %dpx;'></div>"
+                                 "\n\n") % (color,
+                                            barplot_count,
+                                            barplot_sub_count,
+                                            len(fragments) * 16 / 100 * 100)
+                item += fragment
+        else:
+            item = "\n\np. " + item
+        new += item
+
+    return new
+
+
+def table_or_barplot(block, barplot_count):
+    """Format data in table or graph"""
+    if re.search(r"\n\nh3\.", block):
+        select = "table"
+    else:
+        select = random.choice(["table", "barplot"])
+
+    if select == 'table':
+        return "table", format_table(block)
+
+    try:
+        return "barplot", format_barplot(block, barplot_count)
+    except:
+        return "table", format_table(block)
