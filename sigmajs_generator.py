@@ -1,19 +1,6 @@
 import math
 from re import split
 
-default_color = "#7e8cc6"
-
-principal_colors = ["#c69749",
-                    "#7d48c8",
-                    "#70b147",
-                    "#d353ad",
-                    "#5aa992",
-                    "#c24638",
-                    "#7389c5",
-                    "#5a592a",
-                    "#623466",
-                    "#c07282"]
-
 
 def make_intro(graph_id, graph_number):
     """Set first lines of the graph"""
@@ -62,6 +49,19 @@ def set_lists(network_text):
 
 def set_edges(graph_id, nodes, edges):
     """generate text to describe edges in SigmaJS format"""
+
+    default_color = "#7e8cc6"
+
+    principal_colors = ["#c69749",
+                        "#7d48c8",
+                        "#70b147",
+                        "#d353ad",
+                        "#5aa992",
+                        "#c24638",
+                        "#7389c5",
+                        "#5a592a",
+                        "#623466",
+                        "#c07282"]
 
     edge_text = ""
     partition_colors = {}
