@@ -145,8 +145,6 @@ class ChroniqueParser:
     """Analyse and parse chronicle content"""
 
     def __init__(self, texte):
-        self.date = ""
-        self.title = ""
         self.excerpt = ""
         self.chronique = "---\nlayout: post\n"
         self.typed_sentences = []
@@ -155,18 +153,26 @@ class ChroniqueParser:
 
         origin = texte.decode("cp1252")
         introduction_date, following = split_date_and_following(origin)
-        self.date = get_introduction_date(introduction_date)
+        date = get_introduction_date(introduction_date)
+        self.url_referencer = Referencer(date.strftime("%Y-%m-%d"))
+
+        self.add_log(date.strftime("%A %-d %B %Y %H:%M:%S"))
+        self.add_log(f"chronicle text size: {len(following)} chars")
 
         self.type_sentences(re.split(r"Marlowe\s*:\s*", following)[1:])
-        self.prepare_blocks()
-        self.chronique += generate_preamble(self.title, self.excerpt, self.extra_js, self.date)
+        self.add_log(f"found {len(self.typed_sentences)} blocks")
+
+        title = self.prepare_blocks()
+        self.add_log(title)
+
+        self.chronique += generate_preamble(title, self.excerpt, self.extra_js, date)
         self.generate_blocks()
-        # self.write_textile()
-        self.logs = "%s\n" % (self.date.strftime("%A %-d %B %Y %H:%M:%S"))
-        self.logs += "chronicle text size: %d chars\n" % (len(following))
-        self.logs += "found %d blocks\n" % (len(self.typed_sentences))
-        self.logs += "%s\n" % self.title
-        # print(self.logs)
+
+        # self.write_textile(date)
+
+
+    def add_log(self, text):
+        self.logs += f"{text}\n"
 
     def type_sentences(self, sentences):
         """Attribute a type to each sentences : title, par, citation, sigles,
@@ -205,18 +211,18 @@ class ChroniqueParser:
 
     def prepare_blocks(self):
         """textile enriching each block"""
+
+        title = ""
         barplot_count = 0
         graphe_count = 0
         cloud_count = 0
         histo_count = 0
-        self.url_referencer = Referencer(self.date.strftime("%Y-%m-%d"))
 
         for i, sentence in enumerate(self.typed_sentences):
             if sentence[1] == 'title':
                 title = self.typed_sentences[0][0]
                 if re.search(r"\r\n", title):
                     title, self.excerpt = re.split(r"[\r\n]+", title)
-                self.title = title
             elif sentence[1] == "sigles":
                 block = sentence[0]
                 parts = re.split(" <br><br> ", block, 1)
@@ -284,6 +290,8 @@ class ChroniqueParser:
                     block = format_map(block)
 
                 self.typed_sentences[i][0] = format_marks(block)
+
+        return title
 
     def generate_blocks(self):
         """add blocks to chronicle"""
@@ -409,10 +417,11 @@ class ChroniqueParser:
 
         return citation
 
-    def write_textile(self):
+    def write_textile(self, date):
         """write chronicle for jekyll"""
+
         with open("/home/josquin/marloblog/_posts/chroniques/"
-                  "%s-chronique_mrlw.textile" % self.date.strftime("%Y-%m-%d"),
+                  "%s-chronique_mrlw.textile" % date.strftime("%Y-%m-%d"),
                   'w') as handle:
             handle.write(self.chronique)
 

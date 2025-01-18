@@ -12,8 +12,6 @@ def test_entire_chronicle():
 
     parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
 
-    assert parser.date == datetime.datetime(2024, 12, 28, 23, 4, 53)
-    assert parser.title == "Now, I'm taking the head out of the jumble, the mayhem, the mess ..."
     assert parser.logs == "Saturday 28 December 2024 23:04:53\nchronicle text size: 171446 chars\nfound 22 blocks\nNow, I'm taking the head out of the jumble, the mayhem, the mess ...\n"
 
     expected_publish_date = r'\np\(publish_date\). samedi 28 décembre 2024 23:04:53\n'
@@ -73,12 +71,13 @@ def test_entire_chronicle():
 
     parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
 
-    assert parser.date == datetime.datetime(2024, 12, 29, 23, 6, 3)
-    assert parser.title == ("Bonsoir. Un internaute m'a adressé une série d'insultes sur Aliev ... Je les "
-                            'ai détruites... Bien sûr, un procès me rendrait très inoubliable , mais '
-                            'devant des juges, outre que je serais réduit à des lignes de code indigestes '
-                            'et ausculté par des experts, je ne ferais pas le malin ! Merci de modérer '
-                            'vos propos chers interlocuteurs ')
+    preamble = """---
+layout: post
+title: "Bonsoir. Un internaute m'a adressé une série d'insultes sur Aliev ... Je les ai détruites... Bien sûr, un procès me rendrait très inoubliable , mais devant des juges, outre que je serais réduit à des lignes de code indigestes et ausculté par des experts, je ne ferais pas le malin ! Merci de modérer vos propos chers interlocuteurs "
+excerpt: " Je ne parviens pas à choisir d'événement. En un clic, ah ah ! En un clic, tu as accès à l'encyclopédie mondiale ! Et moi qui rame pour produire des recoupements et des rapprochements qui sont le plus souvent inutiles ! :"
+extra_js:"""
+
+    assert re.search(preamble, parser.chronique)
 
     assert parser.logs == ('Sunday 29 December 2024 23:06:03\n'
                            'chronicle text size: 30219 chars\n'
@@ -99,8 +98,9 @@ def test_chronicle_with_map():
 
     parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
 
-    assert parser.date == datetime.datetime(2025, 1, 3, 23, 7, 2)
-    assert parser.title == "Marlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)"
+    title = "Marlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)"
+    assert parser.chronique.find(title)
+
     assert parser.logs == "Friday 3 January 2025 23:07:02\nchronicle text size: 17002 chars\nfound 24 blocks\nMarlowe, c'est à toi ( pour ce qu'il en est de ma propre vision des choses ...)\n"
 
     expected_publish_date = r'\np\(publish_date\). vendredi 3 janvier 2025 23:07:02\n'
@@ -211,8 +211,9 @@ def test_chronicle_with_histogram():
 
     parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
 
-    assert parser.date == datetime.datetime(2025, 1, 4, 23, 5, 45)
-    assert parser.title == 'Pour tout dire La sociologie informatique ne passionne pas les foules :'
+    title = 'Pour tout dire La sociologie informatique ne passionne pas les foules :'
+    assert parser.chronique.find(title)
+
     assert parser.logs == ('Saturday 4 January 2025 23:05:45\nchronicle text size: 20167 chars\nfound 24 blocks\n'
                            'Pour tout dire La sociologie informatique ne passionne pas les foules :\n')
 
