@@ -48,7 +48,7 @@ def format_table(block):
 
     parts = block.split('<BR>')
 
-    result =  f"{parts[0]}\n\ntable(marloblog)."
+    result = f"{parts[0]}\n\ntable(marloblog)."
 
     for value in parts[1:-1]:
         if re.search('<br>', value):
@@ -57,7 +57,7 @@ def format_table(block):
             line = f"\n\np. {table_separator}\n\ntable(marloblog)."
         else:
             line = re.sub(r'(\d+)\s*-\s*(.*)\s*-\s*',
-                              '\n| \\1 | \\2 |', value)
+                          '\n| \\1 | \\2 |', value)
         result += line
 
     result += parts[-1]
@@ -70,60 +70,61 @@ def format_barplot(block, barplot_count):
 
     result = ""
     barplot_sub_count = 0
-    colors = ['#fba919', '#00749F', '#73C774', '#C7754C']
 
-    for item in block.split("<br> <br>"):
-        if not re.search(r"<BR>\d+", item):
-            item = "\n\np. " + item
+    for part in block.split("<br> <br>"):
+        if not re.search(r"<BR>\d+", part):
+            transformed_part = f"\n\np. {part}"
         else:
-            item, barplot_sub_count = draw_barplot(barplot_count, barplot_sub_count, colors, item)
-        result += item
+            barplot_id_prefix = f"palm_{barplot_count}_"
+            transformed_part, barplot_sub_count = draw_barplot(barplot_id_prefix, barplot_sub_count, part)
+
+        result += transformed_part
 
     return result
 
 
-def draw_barplot(barplot_count, barplot_sub_count, colors, item):
-    values = re.split("<BR>", item)
-    reverse_fragments = []
-    for i, value in enumerate(values):
+def draw_barplot(barplot_name, barplot_sub_count, item):
+    colors = ['#fba919', '#00749F', '#73C774', '#C7754C']
+
+    raw_values = re.split("<BR>", item)
+    reversed_values = []
+
+    result = ""
+
+    for i, value in enumerate(raw_values):
         if i == 0:
-            item = value
+            result = value
         elif re.search(r'\d+\s+- ', value):
             if i == 1:
                 barplot_sub_count += 1
-                item += ("\n\n<notextile>\n <script class='code' "
-                         " type='text/javascript'>\n  $(document).ready("
-                         "function(){\n   var plot_palm = $.jqplot("
-                         "'palm_%s_%s',\n    [[ ") % \
-                        (barplot_count, barplot_sub_count)
-            value = re.sub(r'(\d+)\s+- (.*) - ',
-                           '[\\1, "\\2"], ',
-                           value)
-            reverse_fragments.append(value)
-            value = ""
-        elif i == len(values) - 1:
-            value = "".join(reversed(reverse_fragments))
+                result += introducing_barplot(f"{barplot_name}{barplot_sub_count}")
+            reversed_value = re.sub(r'(\d+)\s+- (.*) - ', '[\\1, "\\2"], ', value)
+            reversed_values.append(reversed_value)
+        elif i == len(raw_values) - 1:
+            barplot_id = f"{barplot_name}{barplot_sub_count}"
             color = colors.pop(random.randint(0, len(colors) - 1))
-            value += ("]],\n    {seriesColors: ['%s'],"
-                      "\n     seriesDefaults: {\n      renderer: "
-                      "$.jqplot.BarRenderer,\n      pointLabels:"
-                      " {show: true, location: 'e', edgeTolerance: "
-                      "-15},\n      shadow: false,\n      "
-                      "rendererOptions: {"
-                      "barDirection: 'horizontal'}},\n     axes: {"
-                      "\n      yaxis: {tickOptions: {fontSize: "
-                      "'11pt'}, renderer: "
-                      "$.jqplot.CategoryAxisRenderer}},\n     "
-                      "grid: {background: '#fff'}\n    });});\n"
-                      " </script>\n</notextile>\n\n"
-                      "<div id='palm_%s_%s' "
-                      "style=' width: 700px; height: %dpx;'></div>"
-                      "\n\n") % (color,
-                                 barplot_count,
-                                 barplot_sub_count,
-                                 len(values) * 16 / 100 * 100)
-        item += value
-    return item, barplot_sub_count
+            values = reversed(reversed_values)
+            height = "%d" % (len(raw_values) * 16 / 100 * 100)
+            value = closing_barplot(barplot_id, color, values, height)
+
+            result += value
+
+    return result, barplot_sub_count
+
+
+def introducing_barplot(barplot_name):
+    return ("\n\n<notextile>\n <script class='code'  type='text/javascript'>\n  $(document).ready(function(){\n"
+            f"   var plot_palm = $.jqplot('{barplot_name}',\n    [[ ")
+
+
+def closing_barplot(barplot_id, color, values, height):
+    result = "".join(values)
+    result += ("]],\n    {"
+               f"seriesColors: ['{color}'],\n"
+               "     seriesDefaults: {\n      renderer: $.jqplot.BarRenderer,\n      pointLabels: {show: true, location: 'e', edgeTolerance: -15},\n      shadow: false,\n      rendererOptions: {barDirection: 'horizontal'}},\n     axes: {\n      yaxis: {tickOptions: {fontSize: '11pt'}, renderer: $.jqplot.CategoryAxisRenderer}},\n     grid: {background: '#fff'}\n    });});\n </script>\n</notextile>\n\n"
+               f"<div id='{barplot_id}' style=' width: 700px; height: {height}px;'></div>\n\n")
+
+    return result
 
 
 def table_or_barplot(block, barplot_count):
