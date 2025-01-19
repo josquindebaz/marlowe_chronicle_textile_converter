@@ -241,6 +241,50 @@ def test_chronicle_with_barplot():
         assert remove_random_color(parser.typed_sentences[15][0]) == remove_random_color(expected_barplot)
 
 
+def test_chronicle_with_word_cloud():
+    with open("source_samples/2024-12-29-chronique_mrlw.txt", 'rb') as c:
+        chronicle_content = c.read()
+
+    parser = mrlw_chron_2_textile.ChroniqueParser(chronicle_content)
+
+    assert re.search("extra_js: jqcloud", parser.chronique)
+
+    expected = """p. Je me suis mis à faire des nuages de tags pour être dans l'air du temps... On en pense ce qu'on veut, mais ça change de temps en temps. Soit donc le nuage des principales personnalités du jour :
+
+ 
+
+<notextile>
+ <script type="text/javascript">
+  var word_array1 = [ 		{text: "Carter", weight: 64, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Al-Assad", weight: 35, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Milanovic", weight: 22, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Aliev", weight: 21, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Bayrou", weight: 20, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Trump", weight: 18, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Kavelachvili", weight: 18, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Zourabichvili", weight: 16, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Darmanin", weight: 14, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Al-Chareh", weight: 11, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Musk", weight: 11, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Coste", weight: 10, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Primorac", weight: 10, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Macron", weight: 9, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Jacobelli", weight: 9, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Allemand", weight: 8, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Al-Charaa", weight: 8, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Dimanche", weight: 7, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Poutine", weight: 7, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+ 		{text: "Rahmane", weight: 6, color: "#"+("000000"+Math.random().toString(16).slice(2, 8).toUpperCase()).slice(-6)},
+  ];
+  $(function() { $("#cloud_1").jQCloud(word_array1);});
+ </script>
+</notextile>
+
+<div id="cloud_1" style="width: 700px; height: 350px;"></div>"""
+
+    assert parser.chronique.find(expected)
+
+
 ######## static methods
 
 def test_format_sigles_returns_block_if_no_sigles():
@@ -294,11 +338,6 @@ var plot = $.jqplot('chart_1', [s,],{
     assert result == expected
 
 
-#
-# def test_format_cloud():
-#     assert False
-#
-#
 # def test_format_map():
 #     assert False
 #
