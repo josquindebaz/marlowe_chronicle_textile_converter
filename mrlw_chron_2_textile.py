@@ -131,8 +131,6 @@ class ChroniqueParser:
         self.chronique += generate_preamble(title, self.excerpt, self.extra_js, date)
         self.generate_blocks()
 
-        # self.write_textile(date)
-
 
     def add_log(self, text):
         self.logs += f"{text}\n"
@@ -380,12 +378,3 @@ class ChroniqueParser:
         citation = re.sub(r"bq\.\s*<BR>\s*", "bq. ", citation)
 
         return citation
-
-    def write_textile(self, date):
-        """write chronicle for jekyll"""
-
-        with open("/home/josquin/marloblog/_posts/chroniques/"
-                  "%s-chronique_mrlw.textile" % date.strftime("%Y-%m-%d"),
-                  'w') as handle:
-            handle.write(self.chronique)
-
