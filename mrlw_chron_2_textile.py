@@ -95,7 +95,7 @@ def generate_preamble(title, excerpt, extra_js, date):
 
     result = f'title: "{make_html_quotes(title)}"\nexcerpt: "{make_html_quotes(excerpt)}"\n'
     if extra_js:
-        result += f"extra_js: {", ".join(extra_js)} \n"
+        result += f'extra_js: {", ".join(extra_js)} \n'
 
     result += ("---\n\n"
                "h2. {{ page.title }}\n\n"
