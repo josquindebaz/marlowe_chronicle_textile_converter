@@ -31,14 +31,14 @@ def get_last_chronicle_date():
     with open(CHRONICLE_PATH, 'rb') as chronicle_file:
         first_line = chronicle_file.readline().decode('cp1252')
 
-    only_date = first_line.split(" ")[0]
+    only_date = first_line[:10]
     day, month, year = only_date.split("/")
 
     return datetime.date(int(year), int(month), int(day))
 
 
 if __name__ == '__main__':
-    add_log("######\#####\#####\#####\#####")
+    add_log("##########################")
     latest_file_date = get_last_textile_date()
     add_log(f"latest file date {latest_file_date}")
     chronicle_date = get_last_chronicle_date()
@@ -57,10 +57,9 @@ if __name__ == '__main__':
     else:
         archive_file_name = time.strftime('%Y-%m-%d-', time.localtime()) + os.path.split(CHRONICLE_PATH)[1]
         shutil.copy(CHRONICLE_PATH, os.path.join(CHRONICLE_ARCHIVE, archive_file_name))
-        shutil.copy(CHRONICLE_PATH, CHRONICLE_ARCHIVE)
 
         add_log(f"Launching converter")
 
         with open(CHRONICLE_PATH, 'rb') as chronicle_file:
-            chronicle = chronicle_file.read().decode('cp1252')
+            chronicle = chronicle_file.read()
         mrlw_chron_2_textile.ChroniqueParser(chronicle)
