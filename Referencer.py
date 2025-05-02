@@ -1,6 +1,6 @@
 import re
 
-import libmrlwchrnck
+# import libmrlwchrnck
 
 
 class Referencer:
@@ -8,7 +8,7 @@ class Referencer:
 
     def __init__(self, date):
         self.urls = {}
-        self.urls = libmrlwchrnck.get_urls(date)
+        # self.urls = libmrlwchrnck.get_urls(date)
 
     def get_url(self, author, date, title):
         """take a known url or fetch it"""
@@ -18,7 +18,7 @@ class Referencer:
         if (author, date, title) in self.urls:
             url = self.urls[(author, date, title)]
         else:
-            url = libmrlwchrnck.get_url(author, date, title)
+            # url = libmrlwchrnck.get_url(author, date, title)
             url = "TODO"
             self.urls[(author, date, title)] = url
 

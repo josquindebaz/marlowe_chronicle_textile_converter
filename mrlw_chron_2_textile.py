@@ -5,8 +5,6 @@ GPL 3
 
 import re
 
-
-import libmrlwchrnck
 from Referencer import Referencer
 from js.CloudDrawer import CloudDrawer
 from js.HistogramDrawer import HistogramDrawer
@@ -391,7 +389,3 @@ class ChroniqueParser:
                   'w') as handle:
             handle.write(self.chronique)
 
-
-if __name__ == '__main__':
-    chronicle = libmrlwchrnck.get_chronicle()
-    ChroniqueParser(chronicle)
