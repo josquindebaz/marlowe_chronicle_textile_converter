@@ -95,7 +95,7 @@ def generate_preamble(title, excerpt, extra_js, date):
 
     result = f'title: "{make_html_quotes(title)}"\nexcerpt: "{make_html_quotes(excerpt)}"\n'
     if extra_js:
-        result += f"extra_js: {", ".join(extra_js)} \n"
+        result += f'extra_js: {", ".join(extra_js)} \n'
 
     result += ("---\n\n"
                "h2. {{ page.title }}\n\n"
@@ -130,8 +130,6 @@ class ChroniqueParser:
 
         self.chronique += generate_preamble(title, self.excerpt, self.extra_js, date)
         self.generate_blocks()
-
-        # self.write_textile(date)
 
 
     def add_log(self, text):
@@ -380,12 +378,3 @@ class ChroniqueParser:
         citation = re.sub(r"bq\.\s*<BR>\s*", "bq. ", citation)
 
         return citation
-
-    def write_textile(self, date):
-        """write chronicle for jekyll"""
-
-        with open("/home/josquin/marloblog/_posts/chroniques/"
-                  "%s-chronique_mrlw.textile" % date.strftime("%Y-%m-%d"),
-                  'w') as handle:
-            handle.write(self.chronique)
-

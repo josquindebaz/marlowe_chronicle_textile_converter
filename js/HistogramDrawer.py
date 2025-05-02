@@ -17,11 +17,12 @@ def compute(values):
 
 
 def draw(color, plot_id, series, ticks):
+    joined_ticks = "','".join(ticks)
     return (f"<notextile>\n "
             f"<script class=\"code\" type=\"text/javascript\">\n"
             f"$(document).ready(function()" "{"" \n"
-            f"var s = [{",".join(series)}];\n"
-            f"var ticks = ['{"','".join(ticks)}'];\n"
+            f'var s = [{",".join(series)}];\n'
+            f"var ticks = ['{joined_ticks}'];\n"
             f"var plot = $.jqplot('chart_{plot_id}', [s,],""{\n"
             f"\tseriesColors: ['{color}'], \n"
             "\tseriesDefaults:{renderer:$.jqplot.BarRenderer, rendererOptions:{fillToZero: true}},\n\taxes:{\n"
