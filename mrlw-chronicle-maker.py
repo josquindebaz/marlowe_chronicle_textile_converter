@@ -53,9 +53,7 @@ if __name__ == '__main__':
 
     """wait for chronicle to be available"""
     while txt_chronicle_date <= latest_file_date:
-        actual_time = time.localtime()
-
-        if actual_time.tm_hour == 1:
+        if time.localtime().tm_hour == 1:
             add_log(f"Giving up")
             break
 
