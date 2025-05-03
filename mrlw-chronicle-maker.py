@@ -28,8 +28,8 @@ def get_last_textile_date():
 
 def get_last_txt_chronicle_date():
     """extract date from last chronicle content"""
-    with open(CHRONICLE_PATH, 'rb') as txt_chronicle_file_handle:
-        first_line = txt_chronicle_file_handle.readline().decode('cp1252')
+    with open(CHRONICLE_PATH, 'rb') as txt_chronicle_file:
+        first_line = txt_chronicle_file.readline().decode('cp1252')
 
     only_date = first_line[:10]
     day, month, year = only_date.split("/")
