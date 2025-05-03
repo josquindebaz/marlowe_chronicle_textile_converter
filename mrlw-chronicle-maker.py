@@ -43,11 +43,11 @@ def write_textile(date_string, chronicle_final):
     with open(chronicle_file_path, 'w') as handle:
         handle.write(chronicle_final)
 
-
 if __name__ == '__main__':
     add_log("##########################")
     latest_file_date = get_last_textile_date()
     add_log(f"latest file date {latest_file_date}")
+
     txt_chronicle_date = get_last_txt_chronicle_date()
     add_log(f"latest chronicle date {txt_chronicle_date}")
 
@@ -67,9 +67,10 @@ if __name__ == '__main__':
         archive_file_name = txt_chronicle_date_string + "-" + os.path.split(CHRONICLE_PATH)[1]
         shutil.copy(CHRONICLE_PATH, os.path.join(CHRONICLE_ARCHIVE, archive_file_name))
 
-        add_log(f"Launching converter")
+        add_log("Converting")
 
         with open(CHRONICLE_PATH, 'rb') as txt_chronicle_file_handle:
             txt_chronicle = txt_chronicle_file_handle.read()
+
         converter = mrlw_chron_2_textile.ChroniqueParser(txt_chronicle)
         write_textile(txt_chronicle_date_string, converter.chronique)
