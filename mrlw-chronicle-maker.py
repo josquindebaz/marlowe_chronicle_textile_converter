@@ -36,9 +36,9 @@ def get_last_txt_chronicle_date():
 
     return datetime.date(int(year), int(month), int(day))
 
-def write_textile(date, chronicle_final):
+def write_textile(date_string, chronicle_final):
     """write textile chronicle for jekyll"""
-    chronicle_file_name = f"{time.strftime('%Y-%m-%d', actual_time)}-chronique_mrlw.textile"
+    chronicle_file_name = f"{date_string}-chronique_mrlw.textile"
     chronicle_file_path = os.path.join(JEKYLL_DIR, chronicle_file_name)
     with open(chronicle_file_path, 'w') as handle:
         handle.write(chronicle_final)
@@ -63,8 +63,10 @@ if __name__ == '__main__':
         time.sleep(360)
         txt_chronicle_date = get_last_txt_chronicle_date()
     else:
-        actual_time = time.localtime()
-        archive_file_name = time.strftime('%Y-%m-%d-', actual_time) + os.path.split(CHRONICLE_PATH)[1]
+        txt_chronicle_date_string = get_last_txt_chronicle_date().strftime('%Y-%m-%d')
+
+        add_log("Archiving")
+        archive_file_name = txt_chronicle_date_string + "-" + os.path.split(CHRONICLE_PATH)[1]
         shutil.copy(CHRONICLE_PATH, os.path.join(CHRONICLE_ARCHIVE, archive_file_name))
 
         add_log(f"Launching converter")
@@ -72,4 +74,4 @@ if __name__ == '__main__':
         with open(CHRONICLE_PATH, 'rb') as txt_chronicle_file_handle:
             txt_chronicle = txt_chronicle_file_handle.read()
         converter = mrlw_chron_2_textile.ChroniqueParser(txt_chronicle)
-        write_textile(actual_time, converter.chronique)
+        write_textile(txt_chronicle_date_string, converter.chronique)
