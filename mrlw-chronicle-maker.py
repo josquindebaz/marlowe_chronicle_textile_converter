@@ -13,7 +13,7 @@ CONVERTER_PATH = ""
 CHRONICLE_ARCHIVE = ""
 
 def add_log(content):
-    timestamp = time.strftime('%a, %d %b %Y %H:%M:%S', time.localtime())
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d  %H:%M:%S')
     with open(LOG_FILE, "a") as filepath:
         filepath.write(timestamp + " " + content + "\n")
 
