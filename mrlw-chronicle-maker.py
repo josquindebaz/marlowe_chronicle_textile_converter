@@ -61,6 +61,7 @@ if __name__ == '__main__':
 
         add_log(f"Waiting 5 minutes")
         time.sleep(360)
+        txt_chronicle_date = get_last_txt_chronicle_date()
     else:
         actual_time = time.localtime()
         archive_file_name = time.strftime('%Y-%m-%d-', actual_time) + os.path.split(CHRONICLE_PATH)[1]
