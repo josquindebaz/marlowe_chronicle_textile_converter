@@ -107,7 +107,7 @@ def generate_preamble(title, excerpt, extra_js, date):
 class ChroniqueParser:
     """Analyse and parse chronicle content"""
 
-    def __init__(self, texte):
+    def __init__(self, texte, database):
         self.excerpt = ""
         self.chronique = "---\nlayout: post\n"
         self.typed_sentences = []
@@ -117,7 +117,7 @@ class ChroniqueParser:
         origin = texte.decode("cp1252")
         introduction_date, following = split_date_and_following(origin)
         date = get_introduction_date(introduction_date)
-        self.url_referencer = Referencer(date.strftime("%Y-%m-%d"))
+        self.url_referencer = Referencer(database, date.strftime("%Y-%m-%d"))
 
         self.add_log(date.strftime("%A %-d %B %Y %H:%M:%S"))
         self.add_log(f"chronicle text size: {len(following)} chars")
@@ -130,7 +130,6 @@ class ChroniqueParser:
 
         self.chronique += generate_preamble(title, self.excerpt, self.extra_js, date)
         self.generate_blocks()
-
 
     def add_log(self, text):
         self.logs += f"{text}\n"
