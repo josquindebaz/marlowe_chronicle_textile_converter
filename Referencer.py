@@ -1,41 +1,43 @@
-import re
-from datetime import date
+from datetime import datetime
 
 
 def get_url_from_database(database, author, day, title):
+    """
+    returns url from given database, author, day (in date format) and title
+    """
+
     if not database:
         return ""
 
     cursor = database.cursor()
     day = day.isoformat()
-    end_of_the_day = f"{day} 23:59:59"
     request = "SELECT `m_url` FROM `tbl_texte` WHERE `m_date` >= %s AND `m_date` <= %s AND `m_auteur` = %s AND `m_titre` = %s"
 
-    try:
-        cursor.execute(request, (day, end_of_the_day, author, title))
-        result = cursor.fetchone()[0]
-    except:
-        print("issue with ", [author, day, title])
+    cursor.execute(request, (day, f"{day} 23:59:59", author, title))
+    result = cursor.fetchone()
+
+    if not result:
         return ""
 
-    return result
+    return result[0]
 
 
 def get_urls_from_database(database, day):
+    """
+    returns all url from given database ad day (in date format)
+    """
+
     if not database:
         return {}
 
     cursor = database.cursor()
     day = day.isoformat()
-    end_of_the_day = f"{day} 23:59:59"
-
     request = "SELECT `m_auteur`, `m_titre`, `m_url` FROM `tbl_texte` WHERE `m_date` >= %s AND `m_date` <= %s"
-    cursor.execute(request, (day, end_of_the_day))
-    data = cursor.fetchall()
+    cursor.execute(request, (day, f"{day} 23:59:59"))
 
     return {
         (item[0], day, item[1]): item[2]
-        for item in data
+        for item in cursor.fetchall()
     }
 
 
@@ -47,10 +49,8 @@ class Referencer:
     """
 
     def __init__(self, database, day):
-        self.urls = {}
-        self.database = database
-
-        self.urls = get_urls_from_database(self.database, day)
+        self._database = database
+        self._urls = get_urls_from_database(self._database, day)
 
     def get_url(self, author, string_formated_day, title):
         """
@@ -58,14 +58,13 @@ class Referencer:
         for a given day 01/01/2025
         """
 
-        title = re.sub(r'(\s{2,})"$', "\\1", title).strip()
+        day = datetime.strptime(string_formated_day, "%d/%m/%Y").date()
+        iso_day = day.isoformat()
+        item_identifier = (author, iso_day, title)
 
-        string_formated_day = "-".join(reversed(string_formated_day.split("/")))
+        if item_identifier not in self._urls:
+            self._urls[item_identifier] = (
+                get_url_from_database(self._database, author, day, title)
+            )
 
-        if (author, string_formated_day, title) not in self.urls:
-            self.urls[(author, string_formated_day, title)] = get_url_from_database(self.database, author,
-                                                                                    date.fromisoformat(
-                                                                                        string_formated_day),
-                                                                                    title)
-
-        return self.urls[(author, string_formated_day, title)]
+        return self._urls[item_identifier]

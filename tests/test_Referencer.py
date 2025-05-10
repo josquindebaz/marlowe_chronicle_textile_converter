@@ -52,7 +52,7 @@ class TestReferencer(unittest.TestCase):
         title = "title"
 
         referencer = Referencer(None, date.fromisoformat(db_date))
-        referencer.urls[(author, db_date, title)] = "example.com"
+        referencer._urls[(author, db_date, title)] = "example.com"
 
         result = referencer.get_url(author, marlowe_date, title)
 
@@ -126,7 +126,7 @@ class TestReferencer(unittest.TestCase):
 
         referencer = Referencer(mock_database, date.fromisoformat(db_date))
 
-        self.assertEqual(referencer.urls, expected_result)
+        self.assertEqual(referencer._urls, expected_result)
         mock_cursor.execute.assert_called_once_with(
             'SELECT `m_auteur`, `m_titre`, `m_url` FROM `tbl_texte` WHERE `m_date` >= %s AND `m_date` <= %s',
             (db_date, f'{db_date} 23:59:59'))
