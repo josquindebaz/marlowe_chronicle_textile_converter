@@ -107,7 +107,7 @@ def generate_preamble(title, excerpt, extra_js, date):
 class ChroniqueParser:
     """Analyse and parse chronicle content"""
 
-    def __init__(self, texte):
+    def __init__(self, texte, database):
         self.excerpt = ""
         self.chronique = "---\nlayout: post\n"
         self.typed_sentences = []
@@ -116,10 +116,10 @@ class ChroniqueParser:
 
         origin = texte.decode("cp1252")
         introduction_date, following = split_date_and_following(origin)
-        date = get_introduction_date(introduction_date)
-        self.url_referencer = Referencer(date.strftime("%Y-%m-%d"))
+        chronicle_datetime = get_introduction_date(introduction_date)
+        self.url_referencer = Referencer(database, chronicle_datetime.date())
 
-        self.add_log(date.strftime("%A %-d %B %Y %H:%M:%S"))
+        self.add_log(chronicle_datetime.strftime("%A %-d %B %Y %H:%M:%S"))
         self.add_log(f"chronicle text size: {len(following)} chars")
 
         self.type_sentences(re.split(r"Marlowe\s*:\s*", following)[1:])
@@ -128,9 +128,8 @@ class ChroniqueParser:
         title = self.prepare_blocks()
         self.add_log(title)
 
-        self.chronique += generate_preamble(title, self.excerpt, self.extra_js, date)
+        self.chronique += generate_preamble(title, self.excerpt, self.extra_js, chronicle_datetime)
         self.generate_blocks()
-
 
     def add_log(self, text):
         self.logs += f"{text}\n"
@@ -318,8 +317,7 @@ class ChroniqueParser:
                 url = self.url_referencer.get_url(aut.strip(),
                                                   date.strip(),
                                                   tit.strip())
-                # for the test comment above and uncomment HERE
-                #                url = False
+
                 if url:
                     reference = ('\n\np(reference). &#171;&#160;'
                                  '%s&#160;&#187;, "%s":%s, %s') % \
@@ -358,8 +356,7 @@ class ChroniqueParser:
                     else:
                         citation = decoupe[0] + "\n\n"
                 else:
-                    aut, date, tit = re.search(r":\s*(.*)\s*Date :\s*(.*)\s* "
-                                               "Titre :(.*)",
+                    aut, date, tit = re.search(r":\s*(.*)\s*Date :\s*(.*)\s* " "Titre :(.*)",
                                                decoupe[0]).group(1, 2, 3)
                     citation += ('\n\np(reference). &#171;&#160;'
                                  '%s&#160;&#187;, %s, %s') % \
