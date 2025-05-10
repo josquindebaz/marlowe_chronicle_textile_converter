@@ -117,7 +117,7 @@ class ChroniqueParser:
         origin = texte.decode("cp1252")
         introduction_date, following = split_date_and_following(origin)
         date = get_introduction_date(introduction_date)
-        self.url_referencer = Referencer(database, date.strftime("%Y-%m-%d"))
+        self.url_referencer = Referencer(database, date)
 
         self.add_log(date.strftime("%A %-d %B %Y %H:%M:%S"))
         self.add_log(f"chronicle text size: {len(following)} chars")
@@ -317,8 +317,7 @@ class ChroniqueParser:
                 url = self.url_referencer.get_url(aut.strip(),
                                                   date.strip(),
                                                   tit.strip())
-                # for the test comment above and uncomment HERE
-                #                url = False
+
                 if url:
                     reference = ('\n\np(reference). &#171;&#160;'
                                  '%s&#160;&#187;, "%s":%s, %s') % \

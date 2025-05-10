@@ -1,4 +1,5 @@
 import unittest
+from datetime import date
 from unittest.mock import MagicMock, call
 
 from Referencer import Referencer, get_url_from_database, get_urls_from_database
@@ -14,35 +15,35 @@ class TestReferencer(unittest.TestCase):
         mock_cursor.fetchone.return_value = [expected_result]
 
         author = "author"
-        date = "2025-01-01"
+        db_date = "2025-01-01"
         title = "title"
 
-        result = get_url_from_database(mock_database, author, date, title)
+        result = get_url_from_database(mock_database, author, date.fromisoformat(db_date), title)
 
         self.assertEqual(result, expected_result)
         mock_cursor.execute.assert_called_once_with(
             'SELECT `m_url` FROM `tbl_texte` WHERE `m_date` >= %s AND `m_date` <= %s AND `m_auteur` = %s AND `m_titre` = %s',
-            (date, f'{date} 23:59:59', author, title)),
+            (db_date, f'{db_date} 23:59:59', author, title)),
 
     def test_get_urls_from_database(self):
         mock_database = MagicMock()
         mock_cursor = MagicMock()
         mock_database.cursor.return_value = mock_cursor
 
-        date = "2025-01-01"
+        db_date = "2025-01-01"
         author = "author"
         title = "title"
         url = "example.com"
 
-        expected_result = {(author, date, title): url}
+        expected_result = {(author, db_date, title): url}
         mock_cursor.fetchall.return_value = [(author, title, url)]
 
-        result = get_urls_from_database(mock_database, date)
+        result = get_urls_from_database(mock_database, date.fromisoformat(db_date))
 
         self.assertEqual(result, expected_result)
         mock_cursor.execute.assert_called_once_with(
             'SELECT `m_auteur`, `m_titre`, `m_url` FROM `tbl_texte` WHERE `m_date` >= %s AND `m_date` <= %s',
-            (date, f'{date} 23:59:59'))
+            (db_date, f'{db_date} 23:59:59'))
 
     def test_get_url_returns_known_url(self):
         marlowe_date = "01/01/2025"
@@ -50,7 +51,7 @@ class TestReferencer(unittest.TestCase):
         author = "author"
         title = "title"
 
-        referencer = Referencer(None, marlowe_date)
+        referencer = Referencer(None, date.fromisoformat(db_date))
         referencer.urls[(author, db_date, title)] = "example.com"
 
         result = referencer.get_url(author, marlowe_date, title)
@@ -68,7 +69,7 @@ class TestReferencer(unittest.TestCase):
         marlowe_date = "01/01/2025"
         db_date = "2025-01-01"
 
-        referencer = Referencer(mock_database, marlowe_date)
+        referencer = Referencer(mock_database, date.fromisoformat(db_date))
 
         author = "author"
         title = "title"
@@ -94,7 +95,7 @@ class TestReferencer(unittest.TestCase):
         marlowe_date = "01/01/2025"
         db_date = "2025-01-01"
 
-        referencer = Referencer(mock_database, marlowe_date)
+        referencer = Referencer(mock_database, date.fromisoformat(db_date))
 
         author = "author"
         title = "title"
@@ -115,7 +116,6 @@ class TestReferencer(unittest.TestCase):
         mock_cursor = MagicMock()
         mock_database.cursor.return_value = mock_cursor
 
-        marlowe_date = "01/01/2025"
         db_date = "2025-01-01"
         author = "author"
         title = "title"
@@ -124,7 +124,7 @@ class TestReferencer(unittest.TestCase):
         expected_result = {(author, db_date, title): url}
         mock_cursor.fetchall.return_value = [(author, title, url)]
 
-        referencer = Referencer(mock_database, marlowe_date)
+        referencer = Referencer(mock_database, date.fromisoformat(db_date))
 
         self.assertEqual(referencer.urls, expected_result)
         mock_cursor.execute.assert_called_once_with(
