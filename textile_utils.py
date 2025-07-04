@@ -13,9 +13,9 @@ def format_links(block):
         r"(https?\S*.(jpg|png|gif|jpeg|JPG|img))":
             " !\\1!",
         r'https?://www.youtube.com/watch?\S*v=([^\s&]*)':
-            "\n\n<iframe frameborder='0' width='500' height='352' src='http://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n",
+            "\n\n<iframe frameborder='0' width='500' height='352' src='https://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n",
         r"https?://youtu.be/(.*)":
-            "\n\n<iframe frameborder='0' width='500' height='352' src='http://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n",
+            "\n\n<iframe frameborder='0' width='500' height='352' src='https://www.youtube.com/embed/\\1' allowfullscreen='allowfullscreen'></iframe>\n\n",
         r"(https?://\S*\.pdf)":
             '"\\1":\\1\n\n<object data="\\1#toolbar=0&navpanes=0&view=Fit" width="500" height="650" type="application/pdf"></object>',
         r"(https?://www.dailymotion.com/embed/video/\S*)":
