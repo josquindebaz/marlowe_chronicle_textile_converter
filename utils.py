@@ -23,6 +23,9 @@ def dates_to_long_dates(block):
     dates = re.findall(r"[\s:](\d{1,2}/\s*\d{1,2}/\d{4})[^/]", block)
 
     for pattern in list(set(dates)):
+        if (pattern == "00/00/0000"):
+            print(pattern, "invalid date")
+            continue
         day, month, year = pattern.split("/")
         date = datetime.date(int(year), int(month), int(day))
         long_date = format_date(date, format='long', locale='fr_FR.UTF-8')
